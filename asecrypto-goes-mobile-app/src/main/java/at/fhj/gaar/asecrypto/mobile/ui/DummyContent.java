@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile.dummy;
+package at.fhj.gaar.asecrypto.mobile.ui;
 
 import java.util.ArrayList;
 import java.util.HashMap;

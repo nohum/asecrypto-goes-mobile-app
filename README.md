@@ -13,4 +13,5 @@ Provided examples
 * Lab2_Task2: Fast exponentation and comparison
 * Lab3_Task1: Fermat test
 * Lab3_Task2: Miller-Rabin test
-* RSA speed up with chinese remainder
+* Exercise 15: RSA speed up with chinese remainder
+* Exercise 18: Primitive root finder

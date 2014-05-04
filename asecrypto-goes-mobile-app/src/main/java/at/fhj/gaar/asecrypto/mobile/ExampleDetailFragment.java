@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import at.fhj.gaar.asecrypto.mobile.dummy.DummyContent;
+import at.fhj.gaar.asecrypto.mobile.ui.DummyContent;
 
 /**
  * A fragment representing a single Example detail screen.

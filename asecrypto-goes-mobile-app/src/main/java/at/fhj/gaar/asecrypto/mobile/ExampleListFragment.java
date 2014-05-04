@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import at.fhj.gaar.asecrypto.mobile.dummy.DummyContent;
+import at.fhj.gaar.asecrypto.mobile.ui.DummyContent;
 
 /**
  * A list fragment representing a list of Examples. This fragment
