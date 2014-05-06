@@ -1,9 +1,10 @@
-package at.fhj.gaar.asecrypto.mobile;
+package at.fhj.gaar.asecrypto.mobile.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import at.fhj.gaar.asecrypto.mobile.R;
 
 
 /**

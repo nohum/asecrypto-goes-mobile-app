@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="at.fhj.gaar.asecrypto.mobile.ExampleListActivity"
+            android:name=".ui.ExampleListActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="at.fhj.gaar.asecrypto.mobile.ExampleDetailActivity"
+            android:name=".ui.ExampleDetailActivity"
             android:label="@string/title_example_detail"
-            android:parentActivityName="at.fhj.gaar.asecrypto.mobile.ExampleListActivity" >
+            android:parentActivityName=".ui.ExampleListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="at.fhj.gaar.asecrypto.mobile.ExampleListActivity" />

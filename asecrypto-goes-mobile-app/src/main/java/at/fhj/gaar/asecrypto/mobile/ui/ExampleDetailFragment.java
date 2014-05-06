@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile;
+package at.fhj.gaar.asecrypto.mobile.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import at.fhj.gaar.asecrypto.mobile.ui.DummyContent;
+import at.fhj.gaar.asecrypto.mobile.R;
+import at.fhj.gaar.asecrypto.mobile.ui.item.ListContent;
+import at.fhj.gaar.asecrypto.mobile.ui.item.ListItem;
 
 /**
  * A fragment representing a single Example detail screen.
@@ -26,7 +28,7 @@ public class ExampleDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private ListItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -43,7 +45,7 @@ public class ExampleDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = ListContent.getItemMap().get(getArguments().getInt(ARG_ITEM_ID));
         }
     }
 
@@ -54,7 +56,7 @@ public class ExampleDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.example_detail)).setText(mItem.content);
+            ((TextView) rootView.findViewById(R.id.example_detail)).setText(mItem.getTitle());
         }
 
         return rootView;

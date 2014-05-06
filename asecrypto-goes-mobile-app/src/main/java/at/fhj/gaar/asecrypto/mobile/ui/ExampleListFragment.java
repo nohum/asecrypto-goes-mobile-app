@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile;
+package at.fhj.gaar.asecrypto.mobile.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
-import at.fhj.gaar.asecrypto.mobile.ui.DummyContent;
+import at.fhj.gaar.asecrypto.mobile.ui.item.ListContent;
+import at.fhj.gaar.asecrypto.mobile.ui.item.ListItem;
 
 /**
  * A list fragment representing a list of Examples. This fragment
@@ -47,7 +47,7 @@ public class ExampleListFragment extends ListFragment {
         /**
          * Callback for when an item has been selected.
          */
-        public void onItemSelected(String id);
+        public void onItemSelected(int id);
     }
 
     /**
@@ -56,7 +56,7 @@ public class ExampleListFragment extends ListFragment {
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(int id) {
         }
     };
 
@@ -72,11 +72,11 @@ public class ExampleListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
+        setListAdapter(new ArrayAdapter<ListItem>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                DummyContent.ITEMS));
+                ListContent.getItems()));
     }
 
     @Override
@@ -116,7 +116,7 @@ public class ExampleListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(ListContent.getItems().get(position).getId());
     }
 
     @Override
