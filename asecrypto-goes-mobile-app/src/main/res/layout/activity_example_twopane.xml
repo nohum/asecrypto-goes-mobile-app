@@ -8,7 +8,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context="at.fhj.gaar.asecrypto.mobile.ExampleListActivity">
+    tools:context="at.fhj.gaar.asecrypto.mobile.ui.ExampleListActivity">
 
     <!--
     This layout is a two-pane layout for the Examples
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/example_list"
-        android:name="at.fhj.gaar.asecrypto.mobile.ExampleListFragment"
+        android:name="at.fhj.gaar.asecrypto.mobile.ui.ExampleListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
