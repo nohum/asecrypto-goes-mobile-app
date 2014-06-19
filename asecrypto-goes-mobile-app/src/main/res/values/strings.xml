@@ -2,14 +2,19 @@
 <resources>
 
     <string name="app_name">AseCrypto goes mobile</string>
-    <string name="title_example_detail">Example Detail</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
-    <string name="action_settings">Settings</string>
+
+    <string name="task_number_counter">Number counter</string>
+    <string name="task_euclid">Euclid iterative and recursive</string>
+    <string name="task_euclid_speed">Speed of Euclid\'s algorithm</string>
+    <string name="task_bezout">Bezout iterative and recursive</string>
+    <string name="task_slow_exponentation_speed">Speed of slow exponentation</string>
+    <string name="task_fast_exponentation">Fast exponentation and comparison</string>
+    <string name="task_fermat_test">Fermat test</string>
+    <string name="task_miller_rabin_test">Miller-Rabin test</string>
+    <string name="task_rsa_chinese_remainder">RSA and the chinese remainder</string>
+    <string name="task_primitive_roots">Primitive root finder</string>
 
 </resources>
