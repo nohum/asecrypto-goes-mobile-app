@@ -2,6 +2,9 @@ package at.fhj.gaar.asecrypto.mobile.crypto.millerrabin;
 
 import java.util.Random;
 
+import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
+import at.fhj.gaar.asecrypto.mobile.util.StopWatch;
+
 public class FermatTest {
 	
 	// after N tests, the user gets an informational message
