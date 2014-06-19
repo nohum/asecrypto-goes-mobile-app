@@ -2,6 +2,7 @@ package at.fhj.gaar.asecrypto.mobile.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -9,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import at.fhj.gaar.asecrypto.mobile.R;
-import at.fhj.gaar.asecrypto.mobile.ui.apptasks.PlaceholderFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 
 public class MainActivity extends Activity implements NavigationDrawerCallable, SectionAttachable {
 
@@ -40,10 +41,12 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
 
     @Override
     public void onTaskItemSelected(int taskId, String taskName) {
+        Fragment currentTask = TaskFragmentFactory.getFragment(taskId, taskName);
+
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(taskId + 1, taskName))
+                .replace(R.id.container, currentTask)
                 .commit();
     }
 
