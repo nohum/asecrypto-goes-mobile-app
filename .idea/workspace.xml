@@ -23,11 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/item/ListContent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/item/ListItem.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AseCrypto goes mobile.iws" />
@@ -91,16 +87,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="234">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FermatTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/crypto/millerrabin/FermatTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -114,19 +100,77 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1262" max-vertical-offset="2376">
-              <caret line="125" column="56" selection-start-line="125" selection-start-column="56" selection-end-line="125" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1602">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1766#1767#0" expanded="true" />
+                <element signature="e#1808#1809#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NavigationDrawerFragment.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33410674" vertical-offset="0" max-vertical-offset="4842">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding>
+                <element signature="e#11072#11089#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskItemIdentifiers.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskItemIdentifiers.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java">
+      <file leaf-file-name="TaskItem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85413" vertical-offset="0" max-vertical-offset="594">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SectionAttachable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/SectionAttachable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NavigationDrawerCallable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerCallable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlaceholderFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/PlaceholderFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1098">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,66 +185,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavigationDrawerFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1611" max-vertical-offset="4680">
-              <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1403179628978" expanded="false" signature="1975:2014" placeholder="&quot;Number counter&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2008:2039" placeholder="&quot;Euclid iterative and recursive&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2015:2052" placeholder="&quot;Speed of Euclid's algorithm&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2055:2086" placeholder="&quot;Bezout iterative and recursive&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2118:2167" placeholder="&quot;Speed of slow exponentation&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2152:2195" placeholder="&quot;Fast exponentation and comparison&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2146:2182" placeholder="&quot;Fermat test&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2192:2234" placeholder="&quot;Miller-Rabin test&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2202:2248" placeholder="&quot;RSA and the chinese remainder&quot;" />
-                <marker date="1403179628978" expanded="false" signature="2197:2237" placeholder="&quot;Primitive root finder&quot;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskItem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="702">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="486">
               <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CarMichaelCreator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/crypto/millerrabin/CarMichaelCreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1458">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -903,13 +892,17 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/build.gradle" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/crypto/millerrabin/FermatTest.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/ExampleListActivity.java" />
-        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_main.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/ListItem.java" />
-        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemList.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_main.xml" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/PlaceholderFragment.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerCallable.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/MainActivity.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/SectionAttachable.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java" />
       </list>
     </option>
@@ -1252,6 +1245,44 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apptasks" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AseCrypto goes mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asecrypto-goes-mobile-app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asecrypto-goes-mobile-app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="crypto" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1369,6 +1400,9 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1141" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1376,6 +1410,9 @@
       <recent name="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/crypto/millerrabin" />
       <recent name="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/crypto" />
       <recent name="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/util" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="at.fhj.gaar.asecrypto.mobile.ui" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.asecrypto-goes-mobile-app-asecrypto-goes-mobile-app">
@@ -1565,7 +1602,15 @@
       <created>1403179108301</created>
       <updated>1403179108301</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added taskitem - represents selected entry in drawer">
+      <created>1403179655759</created>
+      <updated>1403179655759</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactoring; pulling classes into own files">
+      <created>1403191174835</created>
+      <updated>1403191174835</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1575,10 +1620,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2736" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1597,8 +1644,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1624,59 +1669,14 @@
     <MESSAGE value="update to current build-tools version" />
     <MESSAGE value="switched to basic navigation drawer" />
     <MESSAGE value="removed menus" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed menus" />
+    <MESSAGE value="added taskitem - represents selected entry in drawer" />
+    <MESSAGE value="refactoring; pulling classes into own files" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring; pulling classes into own files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1316" max-vertical-offset="2178">
-          <caret line="109" column="76" selection-start-line="109" selection-start-column="76" selection-end-line="109" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1899" max-vertical-offset="4968">
-          <caret line="121" column="27" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1403179628978" expanded="false" signature="1975:2014" placeholder="&quot;Number counter&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2008:2039" placeholder="&quot;Euclid iterative and recursive&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2015:2052" placeholder="&quot;Speed of Euclid's algorithm&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2055:2086" placeholder="&quot;Bezout iterative and recursive&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2118:2167" placeholder="&quot;Speed of slow exponentation&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2152:2195" placeholder="&quot;Fast exponentation and comparison&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2146:2182" placeholder="&quot;Fermat test&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2192:2234" placeholder="&quot;Miller-Rabin test&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2202:2248" placeholder="&quot;RSA and the chinese remainder&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2197:2237" placeholder="&quot;Primitive root finder&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="702">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="486">
@@ -1977,17 +1977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="834">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
@@ -1996,32 +1985,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/app/Fragment.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.52792794" vertical-offset="535" max-vertical-offset="3150">
+          <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java">
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1611" max-vertical-offset="4680">
-          <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1403179628978" expanded="false" signature="1975:2014" placeholder="&quot;Number counter&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2008:2039" placeholder="&quot;Euclid iterative and recursive&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2015:2052" placeholder="&quot;Speed of Euclid's algorithm&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2055:2086" placeholder="&quot;Bezout iterative and recursive&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2118:2167" placeholder="&quot;Speed of slow exponentation&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2152:2195" placeholder="&quot;Fast exponentation and comparison&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2146:2182" placeholder="&quot;Fermat test&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2192:2234" placeholder="&quot;Miller-Rabin test&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2202:2248" placeholder="&quot;RSA and the chinese remainder&quot;" />
-            <marker date="1403179628978" expanded="false" signature="2197:2237" placeholder="&quot;Primitive root finder&quot;" />
-          </folding>
+        <state vertical-scroll-proportion="0.30215827" vertical-offset="0" max-vertical-offset="834">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/values/strings.xml">
@@ -2032,19 +2012,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/PlaceholderFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1098">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1262" max-vertical-offset="2376">
-          <caret line="125" column="56" selection-start-line="125" selection-start-column="56" selection-end-line="125" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1602">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+            <element signature="e#1808#1809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/SectionAttachable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85413" vertical-offset="0" max-vertical-offset="594">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33410674" vertical-offset="0" max-vertical-offset="4842">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#11072#11089#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

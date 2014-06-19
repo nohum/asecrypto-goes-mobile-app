@@ -1,7 +1,7 @@
 package at.fhj.gaar.asecrypto.mobile.ui;
 
 /**
- * A dummy item representing a piece of content.
+ * Represents a user-chooseable task.
  */
 public class TaskItem {
 
