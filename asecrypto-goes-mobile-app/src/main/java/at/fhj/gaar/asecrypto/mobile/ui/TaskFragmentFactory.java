@@ -4,7 +4,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.ui.apptasks.NumberCounterFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterFragment;
 
 /**
  * Creates the corresponding Fragments when given the task id.
