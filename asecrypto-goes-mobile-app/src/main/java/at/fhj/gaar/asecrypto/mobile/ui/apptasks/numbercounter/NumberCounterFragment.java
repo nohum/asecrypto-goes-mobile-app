@@ -1,5 +1,6 @@
 package at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,14 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.math.BigInteger;
 
 import at.fhj.gaar.asecrypto.mobile.R;
+import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 
 /**
  * Implements a number counter (Lab1_Task1)
  */
-public class NumberCounterFragment extends BaseFragment {
+public class NumberCounterFragment extends BaseFragment
+        implements View.OnClickListener, TaskFinishedCallable<Long> {
 
     private static final String ARG_BIT_NUMBER = "bit_number";
 
@@ -33,6 +39,7 @@ public class NumberCounterFragment extends BaseFragment {
     private TextView lblResultNumber;
 
     private TextView lblTimeMeasurement;
+    private NumberCounterTask numberCounterTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +52,8 @@ public class NumberCounterFragment extends BaseFragment {
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblResultNumber = (TextView) viewRoot.findViewById(R.id.lblResultNumber);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
+
+        btnCount.setOnClickListener(this);
 
         return viewRoot;
     }
@@ -72,12 +81,56 @@ public class NumberCounterFragment extends BaseFragment {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onPause() {
+        super.onPause();
+        if (numberCounterTask != null && numberCounterTask.isCancelled()) {
+            numberCounterTask.cancel(true);
+        }
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
+    public void onClick(View view) {
+        if (btnCount.equals(view)) {
+            startCounting();
+        }
+    }
+
+    private void startCounting() {
+        String concreteNumber = txtConcreteNumber.getText().toString();
+
+        BigInteger targetNumber;
+        if (txtBitNumber.getText().toString().length() > 0) {
+            int bits = Integer.valueOf(txtBitNumber.getText().toString());
+            targetNumber = new BigInteger("2");
+            targetNumber = targetNumber.pow(bits).subtract(BigInteger.ONE);
+        } else if (concreteNumber.length() > 0) {
+            targetNumber = new BigInteger(concreteNumber);
+        } else {
+            Toast.makeText(getActivity(), "You have to input either bits or a target number!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        numberCounterTask = new NumberCounterTask(this);
+        numberCounterTask.execute(targetNumber);
+
+        progressBar.setVisibility(View.VISIBLE);
+        lblResultNumber.setVisibility(View.VISIBLE);
+        lblTimeMeasurement.setVisibility(View.INVISIBLE);
+        btnCount.setEnabled(false);
+
+        lblResultNumber.setText("Target number: " + targetNumber); // TODO use StringBuilder
+
+        Toast.makeText(getActivity(), "Counting has been started", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onAsyncTaskFinished(AsyncTask task, Long elapsedTime) {
+        Toast.makeText(getActivity(), "Counting has been finished", Toast.LENGTH_SHORT).show();
+
+        progressBar.setVisibility(View.INVISIBLE);
+        lblTimeMeasurement.setVisibility(View.VISIBLE);
+        btnCount.setEnabled(true);
+
+        lblTimeMeasurement.setText("Time taken: " + elapsedTime + "ms"); // TODO use StringBuilder
     }
 }

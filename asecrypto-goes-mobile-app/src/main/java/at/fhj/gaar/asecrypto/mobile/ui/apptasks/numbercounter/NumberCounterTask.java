@@ -2,22 +2,46 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter;
 
 import android.os.AsyncTask;
 
-public class NumberCounterTask extends AsyncTask<NumberCounterTask.Parameters, Void, Integer> {
+import java.math.BigInteger;
 
-    @Override
-    protected Integer doInBackground(Parameters... parameters) {
-        return null;
+import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
+import at.fhj.gaar.asecrypto.mobile.util.StopWatch;
+
+public class NumberCounterTask extends AsyncTask<BigInteger, Void, Long> {
+
+    private final TaskFinishedCallable<Long> callable;
+
+    public NumberCounterTask(TaskFinishedCallable<Long> callable) {
+        this.callable = callable;
     }
 
-    public static class Parameters {
-
-        public Parameters(int bits) {
-
+    @Override
+    protected Long doInBackground(BigInteger... numbers) {
+        if (numbers.length > 1) {
+            throw new RuntimeException("only supply one BigInteger at a time");
         }
 
-        public Parameters(String targetNumber) {
+        BigInteger target = numbers[0];
 
+        StopWatch watch = new StopWatch();
+        watch.start();
+
+        BigInteger counter = BigInteger.ZERO;
+        while (target.compareTo(counter) > 0) {
+            counter = counter.add(BigInteger.ONE);
+
+            if (isCancelled()) {
+                break;
+            }
         }
 
+        watch.stop();
+        return watch.getElapsedTime();
+    }
+
+    @Override
+    protected void onPostExecute(Long elapsedTime) {
+        super.onPostExecute(elapsedTime);
+        callable.onAsyncTaskFinished(this, elapsedTime);
     }
 }
