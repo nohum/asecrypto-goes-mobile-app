@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.euclid.EuclidFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterFragment;
 
 /**
@@ -20,7 +21,7 @@ public class TaskFragmentFactory {
                 break;
 
             case TaskItemIdentifiers.TASK_EUCLID:
-                createdFragment = new BaseFragment();
+                createdFragment = new EuclidFragment();
                 break;
 
             case TaskItemIdentifiers.TASK_EUCLID_SPEED:
