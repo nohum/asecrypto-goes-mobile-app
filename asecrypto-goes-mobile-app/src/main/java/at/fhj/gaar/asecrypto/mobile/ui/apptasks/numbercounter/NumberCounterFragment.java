@@ -101,7 +101,7 @@ public class NumberCounterFragment extends BaseFragment
         String concreteNumber = txtConcreteNumber.getText().toString();
 
         BigInteger targetNumber;
-        if (txtBitNumber.getText().toString().length() > 0) {
+        if (txtBitNumber.getText().toString().length() > 0 && Integer.valueOf(txtBitNumber.getText().toString()) > 0) {
             int bits = Integer.valueOf(txtBitNumber.getText().toString());
             targetNumber = new BigInteger("2");
             targetNumber = targetNumber.pow(bits).subtract(BigInteger.ONE);

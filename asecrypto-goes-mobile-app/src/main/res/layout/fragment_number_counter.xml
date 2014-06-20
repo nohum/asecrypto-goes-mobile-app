@@ -18,7 +18,7 @@
 
     <Space
         android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_height="10dp"
         android:id="@+id/space1" />
 
     <EditText
@@ -44,7 +44,7 @@
 
     <Space
         android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_height="10dp"
         android:id="@+id/space3" />
 
     <EditText
