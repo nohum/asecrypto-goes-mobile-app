@@ -76,7 +76,9 @@ public class NumberCounterFragment extends BaseFragment
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putInt(ARG_BIT_NUMBER, Integer.valueOf(txtBitNumber.getText().toString()));
+        if (txtBitNumber.getText().toString().length() > 0) {
+            outState.putInt(ARG_BIT_NUMBER, Integer.valueOf(txtBitNumber.getText().toString()));
+        }
         outState.putString(ARG_CONCRETE_NUMBER, txtConcreteNumber.getText().toString());
     }
 
