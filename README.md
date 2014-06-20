@@ -15,3 +15,8 @@ Provided examples
 * Lab3_Task2: Miller-Rabin test
 * Exercise 15: RSA speed up with chinese remainder
 * Exercise 18: Primitive root finder
+
+Used resources
+--------------
+
+* Application icon: https://www.iconfinder.com/icons/2033/security_unlock_icon#size=128
