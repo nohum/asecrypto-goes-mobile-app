@@ -47,6 +47,8 @@ public class EuclidFragment extends BaseFragment
 
     private Button btnRecursive;
 
+    private Button btnFactorial;
+
     private ProgressBar progressBar;
 
     private TextView lblResultNumber;
@@ -66,6 +68,7 @@ public class EuclidFragment extends BaseFragment
         txtSecondBits = (EditText) viewRoot.findViewById(R.id.txtSecondBits);
         btnIterative = (Button) viewRoot.findViewById(R.id.btnIterative);
         btnRecursive = (Button) viewRoot.findViewById(R.id.btnRecursive);
+        btnFactorial = (Button) viewRoot.findViewById(R.id.btnFactorial);
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblResultNumber = (TextView) viewRoot.findViewById(R.id.lblResultNumber);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
@@ -127,6 +130,8 @@ public class EuclidFragment extends BaseFragment
             startEuclidIterative();
         } else if (btnRecursive.equals(view)) {
             startEuclidRecursive();
+        } else if (btnFactorial.equals(view)) {
+            startEuclidFactorial();
         }
     }
 
@@ -176,6 +181,27 @@ public class EuclidFragment extends BaseFragment
 
         doPostCalculationStartSetup();
         Toast.makeText(getActivity(), "Recursive calculation of the GCD has been started",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void startEuclidFactorial() {
+        AseInteger firstNumber = retrieveAndDisplayNumber(txtFirstBits, txtFirstNumber,
+                "First number");
+        if (firstNumber == null) {
+            return;
+        }
+
+        AseInteger secondNumber = retrieveAndDisplayNumber(txtSecondBits, txtSecondNumber,
+                "Second number");
+        if (secondNumber == null) {
+            return;
+        }
+
+        euclidTask = new EuclidFactorialTask(this);
+        euclidTask.execute(firstNumber, secondNumber);
+
+        doPostCalculationStartSetup();
+        Toast.makeText(getActivity(), "Factorial calculation of the GCD has been started",
                 Toast.LENGTH_SHORT).show();
     }
 

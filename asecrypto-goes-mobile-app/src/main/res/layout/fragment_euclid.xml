@@ -144,14 +144,20 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GCD iterative"
+            android:text="Iterative"
             android:id="@+id/btnIterative" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GCD recursive"
+            android:text="Recursive"
             android:id="@+id/btnRecursive" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Factorial"
+            android:id="@+id/btnFactorial" />
     </LinearLayout>
 
     <Space

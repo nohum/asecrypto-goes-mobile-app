@@ -24,10 +24,6 @@ public class TaskFragmentFactory {
                 createdFragment = new EuclidFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_EUCLID_SPEED:
-                createdFragment = new BaseFragment();
-                break;
-
             case TaskItemIdentifiers.TASK_BEZOUT:
                 createdFragment = new BaseFragment();
                 break;
