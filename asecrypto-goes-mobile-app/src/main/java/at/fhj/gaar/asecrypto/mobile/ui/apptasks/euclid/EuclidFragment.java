@@ -238,6 +238,7 @@ public class EuclidFragment extends BaseFragment
         lblTimeMeasurement.setVisibility(View.INVISIBLE);
         btnIterative.setEnabled(false);
         btnRecursive.setEnabled(false);
+        btnFactorial.setEnabled(false);
     }
 
     @Override
@@ -250,6 +251,7 @@ public class EuclidFragment extends BaseFragment
 
         btnIterative.setEnabled(true);
         btnRecursive.setEnabled(true);
+        btnFactorial.setEnabled(true);
 
         if (result.getGcd().equals(AseInteger.ZERO)) {
             lblResultNumber.setText("Greatest common divisor: Stack overflow error");
