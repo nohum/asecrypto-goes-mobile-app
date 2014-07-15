@@ -23,9 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/slowexponentiation/ExponentiationResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/slowexponentiation/SlowExponentiationFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_slowexponentiation.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_slowexponentiation.xml" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_slowexponentiation.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AseCrypto goes mobile.iws" />
@@ -125,8 +123,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39568347" vertical-offset="1560" max-vertical-offset="3600">
-              <caret line="105" column="55" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.5467626" vertical-offset="1668" max-vertical-offset="3600">
+              <caret line="118" column="48" selection-start-line="118" selection-start-column="48" selection-end-line="118" selection-end-column="48" />
               <folding>
                 <element signature="e#401#436#0" expanded="true" />
                 <element signature="e#464#497#0" expanded="true" />
@@ -1720,7 +1718,11 @@
       <created>1405446011669</created>
       <updated>1405446011669</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="finished layout and copied basic classes for slow exponentiation example">
+      <created>1405446653191</created>
+      <updated>1405446653191</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1795,7 +1797,8 @@
     <MESSAGE value="bezout calculation example" />
     <MESSAGE value="small fix for number counter task" />
     <MESSAGE value="moved margin definitions to scrollview for a nicer look" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved margin definitions to scrollview for a nicer look" />
+    <MESSAGE value="finished layout and copied basic classes for slow exponentiation example" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished layout and copied basic classes for slow exponentiation example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2199,8 +2202,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39568347" vertical-offset="1560" max-vertical-offset="3600">
-          <caret line="105" column="55" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.5467626" vertical-offset="1668" max-vertical-offset="3600">
+          <caret line="118" column="48" selection-start-line="118" selection-start-column="48" selection-end-line="118" selection-end-column="48" />
           <folding>
             <element signature="e#401#436#0" expanded="true" />
             <element signature="e#464#497#0" expanded="true" />
