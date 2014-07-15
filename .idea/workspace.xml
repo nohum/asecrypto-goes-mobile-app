@@ -22,14 +22,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: at.fhj.gaar.asecrypto.mobile" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="fix for euclid example: forgot to en/disable factorial buttion">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutIterativeTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutRecursiveTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_bezout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFragmentFactory.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFragmentFactory.java" />
+    <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AseCrypto goes mobile.iws" />
@@ -84,8 +78,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -93,116 +87,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EuclidFactorialTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFactorialTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
-              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskItemIdentifiers.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TaskFragmentFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFragmentFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1404">
-              <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1404">
+              <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BezoutFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java">
+      <file leaf-file-name="NumberCounterTask.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4057" max-vertical-offset="4734">
-              <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
-              <folding>
-                <element signature="e#9104#9260#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavigationDrawerFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.1370826" vertical-offset="1808" max-vertical-offset="5310">
-              <caret line="168" column="55" selection-start-line="168" selection-start-column="55" selection-end-line="168" selection-end-column="55" />
-              <folding>
-                <element signature="e#3053#3092#0" expanded="true" />
-                <element signature="e#3157#3188#0" expanded="true" />
-                <element signature="e#3253#3284#0" expanded="true" />
-                <element signature="e#3367#3416#0" expanded="true" />
-                <element signature="e#3493#3536#0" expanded="true" />
-                <element signature="e#3606#3642#0" expanded="true" />
-                <element signature="e#3718#3760#0" expanded="true" />
-                <element signature="e#3840#3886#0" expanded="true" />
-                <element signature="e#3960#4000#0" expanded="true" />
-                <element signature="e#4629#4847#0" expanded="true" />
-                <element signature="e#6885#6916#0" expanded="true" />
-                <element signature="e#6985#7017#0" expanded="true" />
-                <element signature="e#8645#8781#0" expanded="true" />
-                <element signature="e#10964#10981#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_bezout.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_bezout.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3383" max-vertical-offset="4086">
-              <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
-              <folding>
-                <element signature="e#254#289#0" expanded="true" />
-                <element signature="e#313#346#0" expanded="true" />
-                <element signature="e#372#407#0" expanded="true" />
-                <element signature="e#434#467#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BezoutResult.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BezoutRecursiveTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutRecursiveTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
-              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BezoutIterativeTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutIterativeTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.39443156" vertical-offset="38" max-vertical-offset="954">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -920,7 +819,6 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/async/NumberCounterTask.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_base.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFinishedCallable.java" />
-        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidResult.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_number_counter.xml" />
@@ -939,6 +837,7 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFragmentFactory.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_bezout.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java" />
       </list>
     </option>
   </component>
@@ -993,7 +892,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -1249,6 +1147,48 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="numbercounter" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AseCrypto goes mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asecrypto-goes-mobile-app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asecrypto-goes-mobile-app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apptasks" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="euclid" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1327,6 +1267,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1411,19 +1352,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1449,6 +1377,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1625,17 +1566,20 @@
       <created>1404751131669</created>
       <updated>1404751131669</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="bezout calculation example">
+      <created>1404752541849</created>
+      <updated>1404752541849</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="30" width="1922" height="1051" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27985075" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849163" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1644,21 +1588,22 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32772166" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2750533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2750533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884398" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27985075" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32772166" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1697,7 +1642,8 @@
     <MESSAGE value="small fixes and ui changes of number counting example" />
     <MESSAGE value="updated prject files to support version 0.8.1 of android studio" />
     <MESSAGE value="fix for euclid example: forgot to en/disable factorial buttion" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for euclid example: forgot to en/disable factorial buttion" />
+    <MESSAGE value="bezout calculation example" />
+    <option name="LAST_COMMIT_MESSAGE" value="bezout calculation example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1845,21 +1791,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="821">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37587008" vertical-offset="0" max-vertical-offset="862">
           <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1871,14 +1816,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_base.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38848922" vertical-offset="0" max-vertical-offset="834">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFinishedCallable.java">
@@ -1913,10 +1858,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/drawable-mdpi/drawer_shadow.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
@@ -1928,27 +1873,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_number_counter.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44418052" vertical-offset="184" max-vertical-offset="2106">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7417103" vertical-offset="403" max-vertical-offset="2592">
           <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52879584" vertical-offset="165" max-vertical-offset="954">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1964,7 +1901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="846">
           <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1972,26 +1908,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="846">
           <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5714285" vertical-offset="0" max-vertical-offset="486">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutIterativeTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
           <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1999,7 +1932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52088165" vertical-offset="6931" max-vertical-offset="8946">
           <caret line="410" column="24" selection-start-line="410" selection-start-column="24" selection-end-line="410" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2011,70 +1943,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFactorialTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8057554" vertical-offset="2622" max-vertical-offset="3780">
-          <caret line="183" column="13" selection-start-line="183" selection-start-column="13" selection-end-line="183" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFragmentFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1404">
-          <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_bezout.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3383" max-vertical-offset="4086">
-          <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
-          <folding>
-            <element signature="e#254#289#0" expanded="true" />
-            <element signature="e#313#346#0" expanded="true" />
-            <element signature="e#372#407#0" expanded="true" />
-            <element signature="e#434#467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutRecursiveTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
+        <state vertical-scroll-proportion="0.8057554" vertical-offset="2622" max-vertical-offset="3780">
+          <caret line="183" column="13" selection-start-line="183" selection-start-column="13" selection-end-line="183" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2082,40 +1957,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3327338" vertical-offset="895" max-vertical-offset="1926">
           <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4057" max-vertical-offset="4734">
-          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
-          <folding>
-            <element signature="e#9104#9260#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/NavigationDrawerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1370826" vertical-offset="1808" max-vertical-offset="5310">
+        <state vertical-scroll-proportion="0.09512761" vertical-offset="2942" max-vertical-offset="5310">
           <caret line="168" column="55" selection-start-line="168" selection-start-column="55" selection-end-line="168" selection-end-column="55" />
-          <folding>
-            <element signature="e#3053#3092#0" expanded="true" />
-            <element signature="e#3157#3188#0" expanded="true" />
-            <element signature="e#3253#3284#0" expanded="true" />
-            <element signature="e#3367#3416#0" expanded="true" />
-            <element signature="e#3493#3536#0" expanded="true" />
-            <element signature="e#3606#3642#0" expanded="true" />
-            <element signature="e#3718#3760#0" expanded="true" />
-            <element signature="e#3840#3886#0" expanded="true" />
-            <element signature="e#3960#4000#0" expanded="true" />
-            <element signature="e#4629#4847#0" expanded="true" />
-            <element signature="e#6885#6916#0" expanded="true" />
-            <element signature="e#6985#7017#0" expanded="true" />
-            <element signature="e#8645#8781#0" expanded="true" />
-            <element signature="e#10964#10981#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66589326" vertical-offset="3872" max-vertical-offset="4734">
+          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutRecursiveTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60556847" vertical-offset="0" max-vertical-offset="862">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10440835" vertical-offset="0" max-vertical-offset="862">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_bezout.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3383" max-vertical-offset="4086">
+          <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFactorialTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60556847" vertical-offset="0" max-vertical-offset="862">
+          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskItemIdentifiers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48027843" vertical-offset="0" max-vertical-offset="862">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/TaskFragmentFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1404">
+          <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39443156" vertical-offset="38" max-vertical-offset="954">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

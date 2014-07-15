@@ -17,8 +17,8 @@ public class NumberCounterTask extends AsyncTask<BigInteger, Void, Long> {
 
     @Override
     protected Long doInBackground(BigInteger... numbers) {
-        if (numbers.length > 1) {
-            throw new RuntimeException("only supply one BigInteger at a time");
+        if (numbers.length > 1 || numbers.length == 0) {
+            throw new RuntimeException("supply one BigInteger at a time");
         }
 
         BigInteger target = numbers[0];
