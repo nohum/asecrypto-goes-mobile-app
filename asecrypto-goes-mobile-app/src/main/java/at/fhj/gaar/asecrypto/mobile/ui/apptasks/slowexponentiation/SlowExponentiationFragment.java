@@ -74,16 +74,15 @@ public class SlowExponentiationFragment extends BaseFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null) {
-            int bits = savedInstanceState.getInt(ARG_BIT_NUMBER);
-            if (bits > 0) {
-                txtBitsOfNumber.setText(bits);
-            }
-
-            txtBasisNumber.setText(savedInstanceState.getString(ARG_BASIS_NUMBER));
-            txtExponentNumber.setText(savedInstanceState.getString(ARG_EXPONENT_NUMBER));
-            txtModulusNumber.setText(savedInstanceState.getString(ARG_MODULUS_NUMBER));
+        if (savedInstanceState == null) {
+            return;
         }
+
+        restoreTextFieldString(savedInstanceState, ARG_BIT_NUMBER, txtBitsOfNumber);
+
+        restoreTextFieldInteger(savedInstanceState, ARG_BASIS_NUMBER, txtBasisNumber);
+        restoreTextFieldInteger(savedInstanceState, ARG_EXPONENT_NUMBER, txtExponentNumber);
+        restoreTextFieldInteger(savedInstanceState, ARG_MODULUS_NUMBER, txtModulusNumber);
     }
 
     @Override

@@ -63,14 +63,12 @@ public class NumberCounterFragment extends BaseFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null) {
-            int bits = savedInstanceState.getInt(ARG_BIT_NUMBER);
-            if (bits > 0) {
-                txtBitNumber.setText(bits);
-            }
-
-            txtConcreteNumber.setText(savedInstanceState.getString(ARG_CONCRETE_NUMBER));
+        if (savedInstanceState == null) {
+            return;
         }
+
+        restoreTextFieldString(savedInstanceState, ARG_BIT_NUMBER, txtBitNumber);
+        restoreTextFieldInteger(savedInstanceState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
     }
 
     @Override
@@ -107,7 +105,8 @@ public class NumberCounterFragment extends BaseFragment
         } else if (concreteNumber.length() > 0) {
             targetNumber = new BigInteger(concreteNumber);
         } else {
-            Toast.makeText(getActivity(), "You have to input either bits or a target number!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "You have to input either bits or a target number!",
+                    Toast.LENGTH_LONG).show();
             return;
         }
 

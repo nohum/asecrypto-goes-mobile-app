@@ -12,9 +12,10 @@ import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.ui.SectionAttachable;
 
 /**
- * Base fragment
+ * Base fragment.
  */
 public class BaseFragment extends Fragment {
+
     /**
      * The fragment argument representing the section number for this fragment.
      */
@@ -42,13 +43,58 @@ public class BaseFragment extends Fragment {
                 .getString(ARG_SECTION_TITLE));
     }
 
+    /**
+     * Attention: The bundle is not checked for being null.
+     *
+     * @param bundle
+     * @param identifier
+     * @param textView
+     */
     protected void saveTextFieldString(Bundle bundle, String identifier, TextView textView) {
         bundle.putString(identifier, textView.getText().toString());
     }
 
+    /**
+     * Attention: The bundle is not checked for being null.
+     *
+     * @param bundle
+     * @param identifier
+     * @param textView
+     */
     protected void saveTextFieldInteger(Bundle bundle, String identifier, TextView textView) {
         if (textView.getText().toString().length() > 0) {
             bundle.putInt(identifier, Integer.valueOf(textView.getText().toString()));
+        }
+    }
+
+    /**
+     * Attention: The bundle is not checked for being null.
+     *
+     * @param bundle
+     * @param identifier
+     * @param textView
+     */
+    protected void restoreTextFieldString(Bundle bundle, String identifier, TextView textView) {
+        String data = bundle.getString(identifier);
+        if (data == null) {
+            return;
+        }
+
+        textView.setText(data);
+    }
+
+    /**
+     * Attention: Zero is not treated as number but rather as "no number available".
+     * Also the bundle is not checked for being null!
+     *
+     * @param bundle The Bundle
+     * @param identifier The identifier to look for in the Bundle
+     * @param textView the TextView on which the data should be applied to
+     */
+    protected void restoreTextFieldInteger(Bundle bundle, String identifier, TextView textView) {
+        int number = bundle.getInt(identifier);
+        if (number != 0) {
+            textView.setText(number);
         }
     }
 }
