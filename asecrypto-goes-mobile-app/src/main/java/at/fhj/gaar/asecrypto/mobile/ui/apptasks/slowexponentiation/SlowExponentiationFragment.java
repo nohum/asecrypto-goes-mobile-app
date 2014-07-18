@@ -12,8 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.math.BigInteger;
+import java.util.Random;
 
 import at.fhj.gaar.asecrypto.mobile.R;
+import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterTask;
@@ -22,17 +24,25 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterTask;
  * Implements a slow exponentation (Lab2_Task1)
  */
 public class SlowExponentiationFragment extends BaseFragment
-        implements View.OnClickListener, TaskFinishedCallable<Long> {
+        implements View.OnClickListener, TaskFinishedCallable<ExponentiationResult> {
 
     private static final String ARG_BIT_NUMBER = "bit_number";
 
-    private static final String ARG_CONCRETE_NUMBER = "concrete_number";
+    private static final String ARG_BASIS_NUMBER = "concrete_number";
 
-    private EditText txtBitNumber;
+    private static final String ARG_EXPONENT_NUMBER = "exponent_number";
 
-    private EditText txtConcreteNumber;
+    private static final String ARG_MODULUS_NUMBER = "modulus_number";
 
-    private Button btnCount;
+    private EditText txtBitsOfNumber;
+
+    private EditText txtBasisNumber;
+
+    private EditText txtExponentNumber;
+
+    private EditText txtModulusNumber;
+
+    private Button btnCalculate;
 
     private ProgressBar progressBar;
 
@@ -40,21 +50,23 @@ public class SlowExponentiationFragment extends BaseFragment
 
     private TextView lblTimeMeasurement;
 
-    private NumberCounterTask numberCounterTask;
+    private SlowExponentiationTask exponentiationTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_number_counter, container, false);
 
-        txtBitNumber = (EditText) viewRoot.findViewById(R.id.txtBitNumber);
-        txtConcreteNumber = (EditText) viewRoot.findViewById(R.id.txtConcreteNumber);
-        btnCount = (Button) viewRoot.findViewById(R.id.btnCount);
+        txtBitsOfNumber = (EditText) viewRoot.findViewById(R.id.txtBitsOfNumber);
+        txtBasisNumber = (EditText) viewRoot.findViewById(R.id.txtBasisNumber);
+        txtExponentNumber = (EditText) viewRoot.findViewById(R.id.txtExponentNumber);
+        txtModulusNumber = (EditText) viewRoot.findViewById(R.id.txtModulusNumber);
+        btnCalculate = (Button) viewRoot.findViewById(R.id.btnCalculate);
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblResultNumber = (TextView) viewRoot.findViewById(R.id.lblResultNumber);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
 
-        btnCount.setOnClickListener(this);
+        btnCalculate.setOnClickListener(this);
 
         return viewRoot;
     }
@@ -66,10 +78,12 @@ public class SlowExponentiationFragment extends BaseFragment
         if (savedInstanceState != null) {
             int bits = savedInstanceState.getInt(ARG_BIT_NUMBER);
             if (bits > 0) {
-                txtBitNumber.setText(bits);
+                txtBitsOfNumber.setText(bits);
             }
 
-            txtConcreteNumber.setText(savedInstanceState.getString(ARG_CONCRETE_NUMBER));
+            txtBasisNumber.setText(savedInstanceState.getString(ARG_BASIS_NUMBER));
+            txtExponentNumber.setText(savedInstanceState.getString(ARG_EXPONENT_NUMBER));
+            txtModulusNumber.setText(savedInstanceState.getString(ARG_MODULUS_NUMBER));
         }
     }
 
@@ -77,63 +91,95 @@ public class SlowExponentiationFragment extends BaseFragment
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        if (txtBitNumber.getText().toString().length() > 0) {
-            outState.putInt(ARG_BIT_NUMBER, Integer.valueOf(txtBitNumber.getText().toString()));
+        if (txtBitsOfNumber.getText().toString().length() > 0) {
+            outState.putInt(ARG_BIT_NUMBER, Integer.valueOf(txtBitsOfNumber.getText().toString()));
         }
-        outState.putString(ARG_CONCRETE_NUMBER, txtConcreteNumber.getText().toString());
+
+        outState.putString(ARG_BASIS_NUMBER, txtBasisNumber.getText().toString());
+        outState.putString(ARG_EXPONENT_NUMBER, txtExponentNumber.getText().toString());
+        outState.putString(ARG_MODULUS_NUMBER, txtModulusNumber.getText().toString());
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (numberCounterTask != null && numberCounterTask.isCancelled()) {
-            numberCounterTask.cancel(true);
+        if (exponentiationTask != null && exponentiationTask.isCancelled()) {
+            exponentiationTask.cancel(true);
         }
     }
 
     @Override
     public void onClick(View view) {
-        if (btnCount.equals(view)) {
-            startCounting();
+        if (btnCalculate.equals(view)) {
+            startExponentiation();
         }
     }
 
-    private void startCounting() {
-        String concreteNumber = txtConcreteNumber.getText().toString();
+    private void startExponentiation() {
+        String basisNumberAsText = txtBasisNumber.getText().toString();
+        String exponentNumberAsText = txtExponentNumber.getText().toString();
+        String modulusNumberAsText = txtModulusNumber.getText().toString();
+
+        AseInteger basisNumber;
+        AseInteger exponentNumber;
+        AseInteger modulusNumber;
 
         BigInteger targetNumber;
-        if (txtBitNumber.getText().toString().length() > 0 && Integer.valueOf(txtBitNumber.getText().toString()) > 0) {
-            int bits = Integer.valueOf(txtBitNumber.getText().toString());
-            targetNumber = new BigInteger("2");
-            targetNumber = targetNumber.pow(bits).subtract(BigInteger.ONE);
-        } else if (concreteNumber.length() > 0) {
-            targetNumber = new BigInteger(concreteNumber);
+        if (txtBitsOfNumber.getText().toString().length() > 0 && Integer.valueOf(
+                txtBitsOfNumber.getText().toString()) > 0) {
+            int bits = Integer.valueOf(txtBitsOfNumber.getText().toString());
+
+            basisNumber = new AseInteger(bits, new Random());
+            basisNumber = basisNumber.setBit(bits - 1); // assure it is a high number
+
+            // exponent is 2^n-1
+            exponentNumber = new AseInteger("2");
+            exponentNumber = exponentNumber.pow(bits).subtract(AseInteger.ONE);
+
+            // generate a random modulus
+            modulusNumber = new AseInteger(bits, new Random());
+            modulusNumber = modulusNumber.setBit(bits - 1); // assure it is a high number
+
+            // show the numbers on the UI
+            txtBasisNumber.setText(basisNumber.toString());
+            txtExponentNumber.setText(exponentNumber.toString());
+            txtModulusNumber.setText(modulusNumber.toString());
+        } else if (basisNumberAsText.length() > 0 && exponentNumberAsText.length() > 0
+                && modulusNumberAsText.length() > 0) {
+            basisNumber = new AseInteger(basisNumberAsText);
+            exponentNumber = new AseInteger(exponentNumberAsText);
+            modulusNumber = new AseInteger(modulusNumberAsText);
+
+            // TODO sanity checks?
         } else {
-            Toast.makeText(getActivity(), "You have to input either bits or a target number!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),
+                    "You have to input either a bit number or your desired numbers!",
+                    Toast.LENGTH_LONG).show();
             return;
         }
 
-        numberCounterTask = new NumberCounterTask(this);
-        numberCounterTask.execute(targetNumber);
+        exponentiationTask = new SlowExponentiationTask(this);
+        exponentiationTask.execute(basisNumber, exponentNumber, modulusNumber);
 
         progressBar.setVisibility(View.VISIBLE);
-        lblResultNumber.setVisibility(View.VISIBLE);
+        lblResultNumber.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.INVISIBLE);
-        btnCount.setEnabled(false);
+        btnCalculate.setEnabled(false);
 
-        lblResultNumber.setText("Target number: " + targetNumber); // TODO use StringBuilder
-
-        Toast.makeText(getActivity(), "Counting has been started", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Exponentiation has been started", Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onAsyncTaskFinished(AsyncTask task, Long elapsedTime) {
-        Toast.makeText(getActivity(), "Counting has been finished", Toast.LENGTH_SHORT).show();
+    public void onAsyncTaskFinished(AsyncTask task, ExponentiationResult exponentiationResult) {
+        Toast.makeText(getActivity(), "Exponentiation has been finished",
+                Toast.LENGTH_SHORT).show();
 
         progressBar.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
-        btnCount.setEnabled(true);
+        lblResultNumber.setVisibility(View.VISIBLE);
+        btnCalculate.setEnabled(true);
 
-        lblTimeMeasurement.setText("Time taken: " + elapsedTime + "ms"); // TODO use StringBuilder
+        lblResultNumber.setText("Result: " + exponentiationResult.getExponentiationResult()); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Time taken: " + exponentiationResult.getWatchTime() + "ms"); // TODO use StringBuilder
     }
 }

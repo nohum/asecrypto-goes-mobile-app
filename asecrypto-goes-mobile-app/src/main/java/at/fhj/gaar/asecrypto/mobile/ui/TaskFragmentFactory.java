@@ -7,6 +7,7 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.bezout.BezoutFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.euclid.EuclidFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.slowexponentiation.SlowExponentiationFragment;
 
 /**
  * Creates the corresponding Fragments when given the task id.
@@ -29,8 +30,8 @@ public class TaskFragmentFactory {
                 createdFragment = new BezoutFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_SLOW_EXPONENTATION_SPEED:
-                createdFragment = new BaseFragment();
+            case TaskItemIdentifiers.TASK_SLOW_EXPONENTATION:
+                createdFragment = new SlowExponentiationFragment();
                 break;
 
             case TaskItemIdentifiers.TASK_FAST_EXPONENTATION:

@@ -87,7 +87,7 @@ public class NavigationDrawerFragment extends Fragment {
                 new TaskItem(TaskItemIdentifiers.TASK_NUMBER_COUNTER, getString(R.string.task_number_counter)),
                 new TaskItem(TaskItemIdentifiers.TASK_EUCLID, getString(R.string.task_euclid)),
                 new TaskItem(TaskItemIdentifiers.TASK_BEZOUT, getString(R.string.task_bezout)),
-                new TaskItem(TaskItemIdentifiers.TASK_SLOW_EXPONENTATION_SPEED, getString(R.string.task_slow_exponentation_speed)),
+                new TaskItem(TaskItemIdentifiers.TASK_SLOW_EXPONENTATION, getString(R.string.task_slow_exponentation_speed)),
                 new TaskItem(TaskItemIdentifiers.TASK_FAST_EXPONENTATION, getString(R.string.task_fast_exponentation)),
                 new TaskItem(TaskItemIdentifiers.TASK_FERMAT_TEST, getString(R.string.task_fermat_test)),
                 new TaskItem(TaskItemIdentifiers.TASK_MILLER_RABIN_TEST, getString(R.string.task_miller_rabin_test)),

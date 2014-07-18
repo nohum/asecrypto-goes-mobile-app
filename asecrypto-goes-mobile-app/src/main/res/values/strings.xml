@@ -10,8 +10,8 @@
     <string name="task_euclid">Euclid iterative and recursive</string>
     <string name="task_euclid_speed">Speed of Euclid\'s algorithm</string>
     <string name="task_bezout">Bezout iterative and recursive</string>
-    <string name="task_slow_exponentation_speed">Speed of slow exponentation</string>
-    <string name="task_fast_exponentation">Fast exponentation and comparison</string>
+    <string name="task_slow_exponentation_speed">Slow exponentation</string>
+    <string name="task_fast_exponentation">Fast exponentation</string>
     <string name="task_fermat_test">Fermat test</string>
     <string name="task_miller_rabin_test">Miller-Rabin test</string>
     <string name="task_rsa_chinese_remainder">RSA and the chinese remainder</string>

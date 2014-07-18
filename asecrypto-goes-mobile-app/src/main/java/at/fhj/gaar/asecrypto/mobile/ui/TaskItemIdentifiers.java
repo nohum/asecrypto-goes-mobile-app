@@ -11,7 +11,7 @@ public class TaskItemIdentifiers {
 
     public static final int TASK_BEZOUT = 3;
 
-    public static final int TASK_SLOW_EXPONENTATION_SPEED = 4;
+    public static final int TASK_SLOW_EXPONENTATION = 4;
 
     public static final int TASK_FAST_EXPONENTATION = 5;
 
