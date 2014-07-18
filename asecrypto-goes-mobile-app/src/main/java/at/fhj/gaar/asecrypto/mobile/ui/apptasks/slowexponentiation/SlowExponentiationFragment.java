@@ -18,7 +18,6 @@ import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterTask;
 
 /**
  * Implements a slow exponentation (Lab2_Task1)
@@ -50,7 +49,7 @@ public class SlowExponentiationFragment extends BaseFragment
 
     private TextView lblTimeMeasurement;
 
-    private SlowExponentiationTask exponentiationTask;
+    private AsyncTask<AseInteger, Void, ExponentiationResult> exponentiationTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -91,13 +90,11 @@ public class SlowExponentiationFragment extends BaseFragment
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        if (txtBitsOfNumber.getText().toString().length() > 0) {
-            outState.putInt(ARG_BIT_NUMBER, Integer.valueOf(txtBitsOfNumber.getText().toString()));
-        }
+        saveTextFieldInteger(outState, ARG_BIT_NUMBER, txtBitsOfNumber);
 
-        outState.putString(ARG_BASIS_NUMBER, txtBasisNumber.getText().toString());
-        outState.putString(ARG_EXPONENT_NUMBER, txtExponentNumber.getText().toString());
-        outState.putString(ARG_MODULUS_NUMBER, txtModulusNumber.getText().toString());
+        saveTextFieldString(outState, ARG_BASIS_NUMBER, txtBasisNumber);
+        saveTextFieldString(outState, ARG_EXPONENT_NUMBER, txtExponentNumber);
+        saveTextFieldString(outState, ARG_MODULUS_NUMBER, txtModulusNumber);
     }
 
     @Override
@@ -124,7 +121,6 @@ public class SlowExponentiationFragment extends BaseFragment
         AseInteger exponentNumber;
         AseInteger modulusNumber;
 
-        BigInteger targetNumber;
         if (txtBitsOfNumber.getText().toString().length() > 0 && Integer.valueOf(
                 txtBitsOfNumber.getText().toString()) > 0) {
             int bits = Integer.valueOf(txtBitsOfNumber.getText().toString());

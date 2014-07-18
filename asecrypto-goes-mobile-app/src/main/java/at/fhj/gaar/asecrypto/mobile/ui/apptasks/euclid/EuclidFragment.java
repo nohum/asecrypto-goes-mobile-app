@@ -103,16 +103,10 @@ public class EuclidFragment extends BaseFragment
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putString(ARG_FIRST_NUMBER, txtFirstNumber.getText().toString());
-        outState.putString(ARG_SECOND_NUMBER, txtSecondNumber.getText().toString());
-
-        if (txtFirstBits.getText().toString().length() > 0) {
-            outState.putInt(ARG_FIRST_BITS, Integer.valueOf(txtFirstBits.getText().toString()));
-        }
-
-        if (txtSecondBits.getText().toString().length() > 0) {
-            outState.putInt(ARG_SECOND_BITS, Integer.valueOf(txtSecondBits.getText().toString()));
-        }
+        saveTextFieldString(outState, ARG_FIRST_NUMBER, txtFirstNumber);
+        saveTextFieldString(outState, ARG_SECOND_NUMBER, txtSecondNumber);
+        saveTextFieldInteger(outState, ARG_FIRST_BITS, txtFirstBits);
+        saveTextFieldInteger(outState, ARG_SECOND_BITS, txtSecondBits);
     }
 
     @Override

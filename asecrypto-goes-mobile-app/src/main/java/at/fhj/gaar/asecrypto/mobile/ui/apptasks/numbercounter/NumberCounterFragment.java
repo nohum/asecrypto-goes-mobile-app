@@ -39,7 +39,8 @@ public class NumberCounterFragment extends BaseFragment
     private TextView lblResultNumber;
 
     private TextView lblTimeMeasurement;
-    private NumberCounterTask numberCounterTask;
+
+    private AsyncTask<BigInteger, Void, Long> numberCounterTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,10 +77,8 @@ public class NumberCounterFragment extends BaseFragment
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        if (txtBitNumber.getText().toString().length() > 0) {
-            outState.putInt(ARG_BIT_NUMBER, Integer.valueOf(txtBitNumber.getText().toString()));
-        }
-        outState.putString(ARG_CONCRETE_NUMBER, txtConcreteNumber.getText().toString());
+        saveTextFieldInteger(outState, ARG_BIT_NUMBER, txtBitNumber);
+        saveTextFieldString(outState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
     }
 
     @Override

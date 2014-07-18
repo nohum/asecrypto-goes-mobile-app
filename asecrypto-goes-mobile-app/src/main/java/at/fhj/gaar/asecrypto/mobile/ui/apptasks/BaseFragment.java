@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.ui.SectionAttachable;
@@ -37,6 +38,17 @@ public class BaseFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
-        ((SectionAttachable) activity).onSectionAttached(getArguments().getString(ARG_SECTION_TITLE));
+        ((SectionAttachable) activity).onSectionAttached(getArguments()
+                .getString(ARG_SECTION_TITLE));
+    }
+
+    protected void saveTextFieldString(Bundle bundle, String identifier, TextView textView) {
+        bundle.putString(identifier, textView.getText().toString());
+    }
+
+    protected void saveTextFieldInteger(Bundle bundle, String identifier, TextView textView) {
+        if (textView.getText().toString().length() > 0) {
+            bundle.putInt(identifier, Integer.valueOf(textView.getText().toString()));
+        }
     }
 }
