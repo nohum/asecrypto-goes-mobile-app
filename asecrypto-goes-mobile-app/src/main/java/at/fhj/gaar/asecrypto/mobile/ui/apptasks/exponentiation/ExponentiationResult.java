@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile.ui.apptasks.slowexponentiation;
+package at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation;
 
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 

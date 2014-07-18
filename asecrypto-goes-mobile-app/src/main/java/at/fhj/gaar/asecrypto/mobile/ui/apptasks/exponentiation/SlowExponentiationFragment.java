@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile.ui.apptasks.slowexponentiation;
+package at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.math.BigInteger;
 import java.util.Random;
 
 import at.fhj.gaar.asecrypto.mobile.R;
@@ -21,7 +20,7 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
- * Implements a slow exponentation (Lab2_Task1)
+ * Implements a slow exponentation (Lab2_Task1).
  */
 public class SlowExponentiationFragment extends BaseFragment
         implements View.OnClickListener, TaskFinishedCallable<ExponentiationResult> {
@@ -34,13 +33,13 @@ public class SlowExponentiationFragment extends BaseFragment
 
     private static final String ARG_MODULUS_NUMBER = "modulus_number";
 
-    private EditText txtBitsOfNumber;
+    protected EditText txtBitsOfNumber;
 
-    private EditText txtBasisNumber;
+    protected EditText txtBasisNumber;
 
-    private EditText txtExponentNumber;
+    protected EditText txtExponentNumber;
 
-    private EditText txtModulusNumber;
+    protected EditText txtModulusNumber;
 
     private Button btnCalculate;
 
@@ -50,7 +49,7 @@ public class SlowExponentiationFragment extends BaseFragment
 
     private TextView lblTimeMeasurement;
 
-    private AsyncTask<AseInteger, Void, ExponentiationResult> exponentiationTask;
+    protected AsyncTask<AseInteger, Void, ExponentiationResult> exponentiationTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -112,7 +111,7 @@ public class SlowExponentiationFragment extends BaseFragment
         }
     }
 
-    private void startExponentiation() {
+    protected void startExponentiation() {
         String basisNumberAsText = txtBasisNumber.getText().toString();
         String exponentNumberAsText = txtExponentNumber.getText().toString();
         String modulusNumberAsText = txtModulusNumber.getText().toString();
@@ -156,12 +155,16 @@ public class SlowExponentiationFragment extends BaseFragment
         exponentiationTask = new SlowExponentiationTask(this);
         exponentiationTask.execute(basisNumber, exponentNumber, modulusNumber);
 
+        putUIInWorkingState();
+
+        Toast.makeText(getActivity(), "Exponentiation has been started", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void putUIInWorkingState() {
         progressBar.setVisibility(View.VISIBLE);
         lblResultNumber.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.INVISIBLE);
         btnCalculate.setEnabled(false);
-
-        Toast.makeText(getActivity(), "Exponentiation has been started", Toast.LENGTH_SHORT).show();
     }
 
     @Override

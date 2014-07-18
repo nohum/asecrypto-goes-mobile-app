@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile.ui.apptasks.slowexponentiation;
+package at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation;
 
 import android.os.AsyncTask;
 
@@ -6,11 +6,11 @@ import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.util.StopWatch;
 
-public class SlowExponentiationTask extends AsyncTask<AseInteger, Void, ExponentiationResult> {
+public class FastExponentiationTask extends AsyncTask<AseInteger, Void, ExponentiationResult> {
 
     private final TaskFinishedCallable<ExponentiationResult> callable;
 
-    public SlowExponentiationTask(TaskFinishedCallable<ExponentiationResult> callable) {
+    public FastExponentiationTask(TaskFinishedCallable<ExponentiationResult> callable) {
         this.callable = callable;
     }
 
@@ -30,6 +30,17 @@ public class SlowExponentiationTask extends AsyncTask<AseInteger, Void, Exponent
         watch.start();
 
         result = basis.modPow(exponent, modulus);
+
+        /*	public AseInteger modPow(AseInteger exponent, AseInteger mod){
+		AseInteger result = AseInteger.ONE;
+
+		for(AseInteger counter = AseInteger.ONE; counter.compareTo(exponent)<=0 ;counter = counter.add(AseInteger.ONE) )	{
+			result = result.multiply(this);
+			result = result.mod(mod);
+		}
+
+		return result;
+	}*/
 
         watch.stop();
         return new ExponentiationResult(watch.getElapsedTime(), result);
