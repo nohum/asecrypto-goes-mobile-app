@@ -18,6 +18,7 @@ import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
+import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Implements the bezout algorithm iterative and recursive (Lab1_Task4)
@@ -177,11 +178,10 @@ public class BezoutFragment extends BaseFragment
     private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,
                                                 String whichNumberField) {
         String concreteNumber = numberField.getText().toString();
-        String bitFieldText = bitField.getText().toString();
 
         AseInteger targetNumber;
-        if (bitFieldText.length() > 0 && Integer.valueOf(bitFieldText) > 0) {
-            int bits = Integer.valueOf(bitFieldText);
+        if (NumberHelper.isValidBitNumberInTextView(bitField)) {
+            int bits = Integer.valueOf(bitField.getText().toString());
 
             targetNumber = new AseInteger(bits, new Random());
             targetNumber = targetNumber.setBit(bits - 1);

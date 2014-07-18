@@ -18,6 +18,7 @@ import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
+import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Implements a slow exponentation (Lab2_Task1)
@@ -120,8 +121,7 @@ public class SlowExponentiationFragment extends BaseFragment
         AseInteger exponentNumber;
         AseInteger modulusNumber;
 
-        if (txtBitsOfNumber.getText().toString().length() > 0 && Integer.valueOf(
-                txtBitsOfNumber.getText().toString()) > 0) {
+        if (NumberHelper.isValidBitNumberInTextView(txtBitsOfNumber)) {
             int bits = Integer.valueOf(txtBitsOfNumber.getText().toString());
 
             basisNumber = new AseInteger(bits, new Random());

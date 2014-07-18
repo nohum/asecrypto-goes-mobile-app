@@ -1,7 +1,5 @@
 package at.fhj.gaar.asecrypto.mobile.ui.apptasks.euclid;
 
-import java.math.BigInteger;
-
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 
 /**

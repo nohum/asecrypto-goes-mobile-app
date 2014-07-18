@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import at.fhj.gaar.asecrypto.mobile.R;
-import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 
 public class MainActivity extends Activity implements NavigationDrawerCallable, SectionAttachable {
 
@@ -57,6 +56,10 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
 
     public void restoreActionBar() {
         ActionBar actionBar = getActionBar();
+        if (actionBar == null) {
+            return;
+        }
+
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(currentScreenTitle);
@@ -75,7 +78,7 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Open navigation drawer if the user clicks on the app icon button
+        // open navigation drawer if the user clicks on the app icon button
         if (item.getItemId() == android.R.id.home) {
             navigationDrawerFragment.toggleDrawer();
         }

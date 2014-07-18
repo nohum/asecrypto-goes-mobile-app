@@ -2,7 +2,6 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import java.math.BigInteger;
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
+import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Implements a number counter (Lab1_Task1)
@@ -98,7 +98,7 @@ public class NumberCounterFragment extends BaseFragment
         String concreteNumber = txtConcreteNumber.getText().toString();
 
         BigInteger targetNumber;
-        if (txtBitNumber.getText().toString().length() > 0 && Integer.valueOf(txtBitNumber.getText().toString()) > 0) {
+        if (NumberHelper.isValidBitNumberInTextView(txtBitNumber)) {
             int bits = Integer.valueOf(txtBitNumber.getText().toString());
             targetNumber = new BigInteger("2");
             targetNumber = targetNumber.pow(bits).subtract(BigInteger.ONE);

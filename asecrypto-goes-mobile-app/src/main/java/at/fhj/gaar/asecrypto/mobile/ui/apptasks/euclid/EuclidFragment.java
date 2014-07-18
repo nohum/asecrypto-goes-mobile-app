@@ -2,7 +2,6 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.euclid;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +11,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.math.BigInteger;
 import java.util.Random;
 
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterTask;
+import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Implements the euclidean algorithm iterative and recursive (Lab1_Task2)
@@ -199,7 +197,7 @@ public class EuclidFragment extends BaseFragment
         String bitFieldText = bitField.getText().toString();
 
         AseInteger targetNumber;
-        if (bitFieldText.length() > 0 && Integer.valueOf(bitFieldText) > 0) {
+        if (NumberHelper.isValidBitNumberInTextView(bitField)) {
             int bits = Integer.valueOf(bitFieldText);
 
             targetNumber = new AseInteger(bits, new Random());

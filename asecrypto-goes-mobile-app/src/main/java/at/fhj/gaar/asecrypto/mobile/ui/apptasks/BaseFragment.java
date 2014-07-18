@@ -39,6 +39,7 @@ public class BaseFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
+        // sets the title of the fragment on the activity
         ((SectionAttachable) activity).onSectionAttached(getArguments()
                 .getString(ARG_SECTION_TITLE));
     }
@@ -46,9 +47,9 @@ public class BaseFragment extends Fragment {
     /**
      * Attention: The bundle is not checked for being null.
      *
-     * @param bundle
-     * @param identifier
-     * @param textView
+     * @param bundle The Bundle
+     * @param identifier The identifier for saving the data into the Bundle
+     * @param textView the TextView which should be used as data source
      */
     protected void saveTextFieldString(Bundle bundle, String identifier, TextView textView) {
         bundle.putString(identifier, textView.getText().toString());
@@ -57,9 +58,9 @@ public class BaseFragment extends Fragment {
     /**
      * Attention: The bundle is not checked for being null.
      *
-     * @param bundle
-     * @param identifier
-     * @param textView
+     * @param bundle The Bundle
+     * @param identifier The identifier for saving the data into the Bundle
+     * @param textView the TextView which should be used as data source
      */
     protected void saveTextFieldInteger(Bundle bundle, String identifier, TextView textView) {
         if (textView.getText().toString().length() > 0) {
@@ -70,9 +71,9 @@ public class BaseFragment extends Fragment {
     /**
      * Attention: The bundle is not checked for being null.
      *
-     * @param bundle
-     * @param identifier
-     * @param textView
+     * @param bundle The Bundle
+     * @param identifier The identifier to look for in the Bundle
+     * @param textView the TextView on which the data should be applied to
      */
     protected void restoreTextFieldString(Bundle bundle, String identifier, TextView textView) {
         String data = bundle.getString(identifier);

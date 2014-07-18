@@ -2,8 +2,6 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.slowexponentiation;
 
 import android.os.AsyncTask;
 
-import java.math.BigInteger;
-
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.util.StopWatch;
