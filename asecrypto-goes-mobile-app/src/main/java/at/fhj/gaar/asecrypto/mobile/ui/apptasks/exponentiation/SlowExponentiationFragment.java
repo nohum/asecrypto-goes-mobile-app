@@ -54,7 +54,7 @@ public class SlowExponentiationFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View viewRoot = inflater.inflate(R.layout.fragment_number_counter, container, false);
+        View viewRoot = inflater.inflate(R.layout.fragment_exponentiation, container, false);
 
         txtBitsOfNumber = (EditText) viewRoot.findViewById(R.id.txtBitsOfNumber);
         txtBasisNumber = (EditText) viewRoot.findViewById(R.id.txtBasisNumber);
