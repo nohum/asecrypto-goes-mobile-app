@@ -156,8 +156,6 @@ public class SlowExponentiationFragment extends BaseFragment
         exponentiationTask.execute(basisNumber, exponentNumber, modulusNumber);
 
         putUIInWorkingState();
-
-        Toast.makeText(getActivity(), "Exponentiation has been started", Toast.LENGTH_SHORT).show();
     }
 
     protected void putUIInWorkingState() {

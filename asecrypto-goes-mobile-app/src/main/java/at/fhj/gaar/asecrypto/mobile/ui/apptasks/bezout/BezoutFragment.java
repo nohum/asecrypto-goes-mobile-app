@@ -143,8 +143,6 @@ public class BezoutFragment extends BaseFragment
         bezoutTask.execute(firstNumber, secondNumber);
 
         doPostCalculationStartSetup();
-        Toast.makeText(getActivity(), "Iterative calculation of Bezout has been started",
-                Toast.LENGTH_SHORT).show();
     }
 
     private void startBezoutRecursive() {
@@ -171,8 +169,6 @@ public class BezoutFragment extends BaseFragment
         bezoutTask.execute(firstNumber, secondNumber);
 
         doPostCalculationStartSetup();
-        Toast.makeText(getActivity(), "Recursive calculation of Bezout has been started",
-                Toast.LENGTH_SHORT).show();
     }
 
     private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,

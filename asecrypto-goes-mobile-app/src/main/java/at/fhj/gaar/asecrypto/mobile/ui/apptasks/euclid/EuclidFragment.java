@@ -138,8 +138,6 @@ public class EuclidFragment extends BaseFragment
         euclidTask.execute(firstNumber, secondNumber);
 
         doPostCalculationStartSetup();
-        Toast.makeText(getActivity(), "Iterative calculation of the GCD has been started",
-                Toast.LENGTH_SHORT).show();
     }
 
     private void startEuclidRecursive() {
@@ -166,8 +164,6 @@ public class EuclidFragment extends BaseFragment
         euclidTask.execute(firstNumber, secondNumber);
 
         doPostCalculationStartSetup();
-        Toast.makeText(getActivity(), "Recursive calculation of the GCD has been started",
-                Toast.LENGTH_SHORT).show();
     }
 
     private void startEuclidFactorial() {
@@ -187,8 +183,6 @@ public class EuclidFragment extends BaseFragment
         euclidTask.execute(firstNumber, secondNumber);
 
         doPostCalculationStartSetup();
-        Toast.makeText(getActivity(), "Factorial calculation of the GCD has been started",
-                Toast.LENGTH_SHORT).show();
     }
 
     private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,

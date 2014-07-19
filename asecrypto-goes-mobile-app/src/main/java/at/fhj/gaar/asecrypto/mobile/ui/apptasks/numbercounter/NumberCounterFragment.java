@@ -119,8 +119,6 @@ public class NumberCounterFragment extends BaseFragment
         btnCount.setEnabled(false);
 
         lblResultNumber.setText("Target number: " + targetNumber); // TODO use StringBuilder
-
-        Toast.makeText(getActivity(), "Counting has been started", Toast.LENGTH_SHORT).show();
     }
 
     @Override
