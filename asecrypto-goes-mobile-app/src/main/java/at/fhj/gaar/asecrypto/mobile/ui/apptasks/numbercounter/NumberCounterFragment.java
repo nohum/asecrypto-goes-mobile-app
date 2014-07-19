@@ -110,6 +110,8 @@ public class NumberCounterFragment extends BaseFragment
             return;
         }
 
+        closeSoftKeyboard();
+
         numberCounterTask = new NumberCounterTask(this);
         numberCounterTask.execute(targetNumber);
 

@@ -1,11 +1,13 @@
 package at.fhj.gaar.asecrypto.mobile.ui.apptasks;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.app.Fragment;
+import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import at.fhj.gaar.asecrypto.mobile.R;
@@ -42,6 +44,22 @@ public class BaseFragment extends Fragment {
         // sets the title of the fragment on the activity
         ((SectionAttachable) activity).onSectionAttached(getArguments()
                 .getString(ARG_SECTION_TITLE));
+    }
+
+    /**
+     * @link http://stackoverflow.com/a/7696791
+     */
+    protected void closeSoftKeyboard() {
+        InputMethodManager inputManager = (InputMethodManager) getActivity()
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        //check if no view has focus:
+        View v = getActivity().getCurrentFocus();
+        if(v == null) {
+            return;
+        }
+
+        inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     /**

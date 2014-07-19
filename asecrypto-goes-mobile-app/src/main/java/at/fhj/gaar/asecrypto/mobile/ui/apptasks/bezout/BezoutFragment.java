@@ -139,10 +139,11 @@ public class BezoutFragment extends BaseFragment
             return;
         }
 
+        closeSoftKeyboard();
+        doPostCalculationStartSetup();
+
         bezoutTask = new BezoutIterativeTask(this);
         bezoutTask.execute(firstNumber, secondNumber);
-
-        doPostCalculationStartSetup();
     }
 
     private void startBezoutRecursive() {
@@ -165,10 +166,11 @@ public class BezoutFragment extends BaseFragment
             return;
         }
 
+        closeSoftKeyboard();
+        doPostCalculationStartSetup();
+
         bezoutTask = new BezoutRecursiveTask(this);
         bezoutTask.execute(firstNumber, secondNumber);
-
-        doPostCalculationStartSetup();
     }
 
     private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,

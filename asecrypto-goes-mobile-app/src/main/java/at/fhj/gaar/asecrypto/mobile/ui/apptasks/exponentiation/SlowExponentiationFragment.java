@@ -155,6 +155,7 @@ public class SlowExponentiationFragment extends BaseFragment
         exponentiationTask = new SlowExponentiationTask(this);
         exponentiationTask.execute(basisNumber, exponentNumber, modulusNumber);
 
+        closeSoftKeyboard();
         putUIInWorkingState();
     }
 

@@ -59,6 +59,7 @@ public class FastExponentiationFragment extends SlowExponentiationFragment {
         exponentiationTask = new FastExponentiationTask(this);
         exponentiationTask.execute(basisNumber, exponentNumber, modulusNumber);
 
+        closeSoftKeyboard();
         putUIInWorkingState();
     }
 

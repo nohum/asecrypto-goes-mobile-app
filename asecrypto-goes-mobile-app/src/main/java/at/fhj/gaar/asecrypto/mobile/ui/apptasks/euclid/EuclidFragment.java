@@ -134,10 +134,11 @@ public class EuclidFragment extends BaseFragment
             return;
         }
 
+        closeSoftKeyboard();
+        doPostCalculationStartSetup();
+
         euclidTask = new EuclidIterativeTask(this);
         euclidTask.execute(firstNumber, secondNumber);
-
-        doPostCalculationStartSetup();
     }
 
     private void startEuclidRecursive() {
@@ -160,10 +161,11 @@ public class EuclidFragment extends BaseFragment
             return;
         }
 
+        closeSoftKeyboard();
+        doPostCalculationStartSetup();
+
         euclidTask = new EuclidRecursiveTask(this);
         euclidTask.execute(firstNumber, secondNumber);
-
-        doPostCalculationStartSetup();
     }
 
     private void startEuclidFactorial() {
@@ -179,10 +181,11 @@ public class EuclidFragment extends BaseFragment
             return;
         }
 
+        closeSoftKeyboard();
+        doPostCalculationStartSetup();
+
         euclidTask = new EuclidFactorialTask(this);
         euclidTask.execute(firstNumber, secondNumber);
-
-        doPostCalculationStartSetup();
     }
 
     private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,
