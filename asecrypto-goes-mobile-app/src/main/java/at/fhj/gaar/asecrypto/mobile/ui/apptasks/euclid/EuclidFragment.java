@@ -189,7 +189,7 @@ public class EuclidFragment extends BaseFragment
     }
 
     private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,
-                                                String whichNumberField) {
+                                                String nameOfNumberField) {
         String concreteNumber = numberField.getText().toString();
         String bitFieldText = bitField.getText().toString();
 
@@ -206,7 +206,7 @@ public class EuclidFragment extends BaseFragment
             targetNumber = new AseInteger(concreteNumber);
         } else {
 
-            Toast.makeText(getActivity(), whichNumberField
+            Toast.makeText(getActivity(), nameOfNumberField
                     + ": You have to input either bits or a target number!", Toast.LENGTH_LONG)
                     .show(); // TODO use StringBuilder
             return null;
@@ -219,6 +219,7 @@ public class EuclidFragment extends BaseFragment
         progressBar.setVisibility(View.VISIBLE);
         lblResultNumber.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.INVISIBLE);
+
         btnIterative.setEnabled(false);
         btnRecursive.setEnabled(false);
         btnFactorial.setEnabled(false);
@@ -236,11 +237,7 @@ public class EuclidFragment extends BaseFragment
         btnRecursive.setEnabled(true);
         btnFactorial.setEnabled(true);
 
-        if (result.getGcd().equals(AseInteger.ZERO)) {
-            lblResultNumber.setText("Greatest common divisor: Stack overflow error");
-        } else {
-            lblResultNumber.setText("Greatest common divisor: " + result.getGcd().toString()); // TODO use StringBuilder
-        }
+        lblResultNumber.setText("Greatest common divisor: " + result.getGcd().toString()); // TODO use StringBuilder
         lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() + "ms"); // TODO use StringBuilder
     }
 }
