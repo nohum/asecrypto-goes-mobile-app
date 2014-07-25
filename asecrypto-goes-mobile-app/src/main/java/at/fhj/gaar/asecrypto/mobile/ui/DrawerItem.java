@@ -3,13 +3,13 @@ package at.fhj.gaar.asecrypto.mobile.ui;
 /**
  * Represents a user-chooseable task.
  */
-public class TaskItem {
+public class DrawerItem {
 
     private int id;
 
     private String title;
 
-    public TaskItem(int id, final String title) {
+    public DrawerItem(int id, final String title) {
         this.id = id;
         this.title = title;
     }

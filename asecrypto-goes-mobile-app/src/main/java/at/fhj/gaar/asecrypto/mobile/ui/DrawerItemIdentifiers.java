@@ -3,7 +3,7 @@ package at.fhj.gaar.asecrypto.mobile.ui;
 /**
  * Identifies every task by number.
  */
-public class TaskItemIdentifiers {
+public class DrawerItemIdentifiers {
 
     public static final int TASK_NUMBER_COUNTER = 1;
 

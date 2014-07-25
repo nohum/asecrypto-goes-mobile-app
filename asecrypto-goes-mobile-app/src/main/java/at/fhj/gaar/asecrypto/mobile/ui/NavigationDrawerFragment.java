@@ -58,7 +58,7 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean isDataFromSavedInstanceState;
     private boolean hasUserLearnedAboutDrawer;
 
-    private TaskItem[] drawerItems;
+    private DrawerItem[] drawerItems;
 
     public NavigationDrawerFragment() {
     }
@@ -83,16 +83,16 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     private void initDrawerItems() {
-        drawerItems = new TaskItem[] {
-                new TaskItem(TaskItemIdentifiers.TASK_NUMBER_COUNTER, getString(R.string.task_number_counter)),
-                new TaskItem(TaskItemIdentifiers.TASK_EUCLID, getString(R.string.task_euclid)),
-                new TaskItem(TaskItemIdentifiers.TASK_BEZOUT, getString(R.string.task_bezout)),
-                new TaskItem(TaskItemIdentifiers.TASK_SLOW_EXPONENTATION, getString(R.string.task_slow_exponentation_speed)),
-                new TaskItem(TaskItemIdentifiers.TASK_FAST_EXPONENTATION, getString(R.string.task_fast_exponentation)),
-                new TaskItem(TaskItemIdentifiers.TASK_FERMAT_TEST, getString(R.string.task_fermat_test)),
-                new TaskItem(TaskItemIdentifiers.TASK_MILLER_RABIN_TEST, getString(R.string.task_miller_rabin_test)),
-                new TaskItem(TaskItemIdentifiers.TASK_RSA_CHINESE_REMAINDER, getString(R.string.task_rsa_chinese_remainder)),
-                new TaskItem(TaskItemIdentifiers.TASK_PRIMITIVE_ROOTS, getString(R.string.task_primitive_roots))
+        drawerItems = new DrawerItem[] {
+                new DrawerItem(DrawerItemIdentifiers.TASK_NUMBER_COUNTER, getString(R.string.task_number_counter)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_EUCLID, getString(R.string.task_euclid)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_BEZOUT, getString(R.string.task_bezout)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_SLOW_EXPONENTATION, getString(R.string.task_slow_exponentation_speed)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_FAST_EXPONENTATION, getString(R.string.task_fast_exponentation)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_FERMAT_TEST, getString(R.string.task_fermat_test)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST, getString(R.string.task_miller_rabin_test)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_RSA_CHINESE_REMAINDER, getString(R.string.task_rsa_chinese_remainder)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_PRIMITIVE_ROOTS, getString(R.string.task_primitive_roots))
         };
     }
 
@@ -116,7 +116,7 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        drawerListView.setAdapter(new ArrayAdapter<TaskItem>(
+        drawerListView.setAdapter(new ArrayAdapter<DrawerItem>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,

@@ -14,45 +14,45 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterFragm
 /**
  * Creates the corresponding Fragments when given the task id.
  */
-public class TaskFragmentFactory {
+public class FragmentFactory {
 
     public static Fragment getFragment(int taskId, String taskName) {
         BaseFragment createdFragment;
 
         switch (taskId) {
-            case TaskItemIdentifiers.TASK_NUMBER_COUNTER:
+            case DrawerItemIdentifiers.TASK_NUMBER_COUNTER:
                 createdFragment = new NumberCounterFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_EUCLID:
+            case DrawerItemIdentifiers.TASK_EUCLID:
                 createdFragment = new EuclidFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_BEZOUT:
+            case DrawerItemIdentifiers.TASK_BEZOUT:
                 createdFragment = new BezoutFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_SLOW_EXPONENTATION:
+            case DrawerItemIdentifiers.TASK_SLOW_EXPONENTATION:
                 createdFragment = new SlowExponentiationFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_FAST_EXPONENTATION:
+            case DrawerItemIdentifiers.TASK_FAST_EXPONENTATION:
                 createdFragment = new FastExponentiationFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_FERMAT_TEST:
+            case DrawerItemIdentifiers.TASK_FERMAT_TEST:
                 createdFragment = new FermatTestFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_MILLER_RABIN_TEST:
+            case DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST:
                 createdFragment = new BaseFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_RSA_CHINESE_REMAINDER:
+            case DrawerItemIdentifiers.TASK_RSA_CHINESE_REMAINDER:
                 createdFragment = new BaseFragment();
                 break;
 
-            case TaskItemIdentifiers.TASK_PRIMITIVE_ROOTS:
+            case DrawerItemIdentifiers.TASK_PRIMITIVE_ROOTS:
                 createdFragment = new BaseFragment();
                 break;
 

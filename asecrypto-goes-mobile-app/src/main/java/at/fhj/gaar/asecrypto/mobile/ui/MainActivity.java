@@ -40,7 +40,7 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
 
     @Override
     public void onTaskItemSelected(int taskId, String taskName) {
-        Fragment currentTask = TaskFragmentFactory.getFragment(taskId, taskName);
+        Fragment currentTask = FragmentFactory.getFragment(taskId, taskName);
 
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
