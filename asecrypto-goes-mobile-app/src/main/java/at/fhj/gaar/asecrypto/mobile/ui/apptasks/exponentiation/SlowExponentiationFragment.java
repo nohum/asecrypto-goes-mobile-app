@@ -99,7 +99,7 @@ public class SlowExponentiationFragment extends BaseFragment
     @Override
     public void onPause() {
         super.onPause();
-        if (exponentiationTask != null && exponentiationTask.isCancelled()) {
+        if (exponentiationTask != null && !exponentiationTask.isCancelled()) {
             exponentiationTask.cancel(true);
         }
     }

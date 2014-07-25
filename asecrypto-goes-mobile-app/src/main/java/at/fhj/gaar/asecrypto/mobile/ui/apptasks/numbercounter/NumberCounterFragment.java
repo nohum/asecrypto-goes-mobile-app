@@ -82,7 +82,7 @@ public class NumberCounterFragment extends BaseFragment
     @Override
     public void onPause() {
         super.onPause();
-        if (numberCounterTask != null && numberCounterTask.isCancelled()) {
+        if (numberCounterTask != null && !numberCounterTask.isCancelled()) {
             numberCounterTask.cancel(true);
         }
     }

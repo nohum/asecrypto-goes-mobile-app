@@ -112,7 +112,7 @@ public class BezoutFragment extends BaseFragment
     public void onPause() {
         super.onPause();
 
-        if (bezoutTask != null && bezoutTask.isCancelled()) {
+        if (bezoutTask != null && !bezoutTask.isCancelled()) {
             bezoutTask.cancel(true);
         }
     }

@@ -105,7 +105,7 @@ public class EuclidFragment extends BaseFragment
     public void onPause() {
         super.onPause();
 
-        if (euclidTask != null && euclidTask.isCancelled()) {
+        if (euclidTask != null && !euclidTask.isCancelled()) {
             euclidTask.cancel(true);
         }
     }
