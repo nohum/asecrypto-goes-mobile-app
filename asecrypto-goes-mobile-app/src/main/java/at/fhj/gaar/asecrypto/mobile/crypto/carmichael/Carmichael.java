@@ -4,6 +4,7 @@ package at.fhj.gaar.asecrypto.mobile.crypto.carmichael;
 import java.util.Scanner;
 
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
+import at.fhj.gaar.asecrypto.mobile.crypto.millerrabin.FermatTest;
 
 public class Carmichael {
 	private static int minBits = 4;

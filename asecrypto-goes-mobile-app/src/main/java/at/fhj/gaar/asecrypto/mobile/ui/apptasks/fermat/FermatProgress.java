@@ -7,9 +7,9 @@ public class FermatProgress {
 
     private long currentMilliseconds;
 
-    private int currentTestCount;
+    private long currentTestCount;
 
-    public FermatProgress(long currentMilliseconds, int currentTestCount) {
+    public FermatProgress(long currentMilliseconds, long currentTestCount) {
         this.currentMilliseconds = currentMilliseconds;
         this.currentTestCount = currentTestCount;
     }
@@ -18,7 +18,7 @@ public class FermatProgress {
         return currentMilliseconds;
     }
 
-    public int getCurrentTestCount() {
+    public long getCurrentTestCount() {
         return currentTestCount;
     }
 }

@@ -94,7 +94,7 @@
                     android:id="@+id/lblBitsSecondNumber" />
 
                 <EditText
-                    android:layout_width="110dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:id="@+id/txtNumberOfRuns"
@@ -141,6 +141,19 @@
                 android:id="@+id/progressBar"
                 android:indeterminate="true"
                 android:indeterminateOnly="true"
+                android:visibility="invisible" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/space9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text=""
+                android:id="@+id/lblTestNumber"
                 android:visibility="invisible" />
 
             <TextView

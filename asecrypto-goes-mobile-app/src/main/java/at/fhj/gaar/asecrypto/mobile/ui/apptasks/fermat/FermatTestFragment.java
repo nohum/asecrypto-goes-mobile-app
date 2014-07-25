@@ -49,6 +49,8 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
 
     private TextView lblTimeMeasurement;
 
+    private TextView lblTestNumber;
+
     private AsyncTask<FermatTaskArguments, FermatProgress, FermatResult> fermatTask;
 
     @Override
@@ -64,6 +66,7 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblTestResult = (TextView) viewRoot.findViewById(R.id.lblTestResult);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
+        lblTestNumber = (TextView) viewRoot.findViewById(R.id.lblTestNumber);
 
         btnStartTest.setOnClickListener(this);
 
@@ -129,7 +132,7 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
         }
 
         closeSoftKeyboard();
-        doPostCalculationStartSetup();
+        doPostCalculationStartSetup(numberToTest);
 
         fermatTask = new FermatTask(this, this);
         fermatTask.execute(new FermatTaskArguments(numberToTest, numberOfRuns));
@@ -162,11 +165,14 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
         return targetNumber;
     }
 
-    private void doPostCalculationStartSetup() {
+    private void doPostCalculationStartSetup(AseInteger testNumber) {
         progressBar.setVisibility(View.VISIBLE);
         lblTestResult.setVisibility(View.INVISIBLE);
+        lblTestResult.setText("");
         lblTimeMeasurement.setVisibility(View.VISIBLE);
         lblTimeMeasurement.setText("");
+        lblTestNumber.setVisibility(View.VISIBLE);
+        lblTestNumber.setText("Number to test: " + testNumber.toString()); // TODO use StringBuilder
 
         btnStartTest.setEnabled(false);
         btnCancel.setVisibility(View.VISIBLE);
@@ -174,21 +180,21 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void onAsyncTaskFinished(AsyncTask task, FermatResult fermatResult) {
-        Toast.makeText(getActivity(), "The Fermat test has finished", Toast.LENGTH_SHORT).show();
-
         progressBar.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
         lblTestResult.setVisibility(View.VISIBLE);
 
         btnStartTest.setEnabled(true);
+        btnCancel.setVisibility(View.INVISIBLE);
 
-        //lblTestResult.setText("Greatest common divisor: " + result.getGcd().toString()); // TODO use StringBuilder
-        //lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() + "ms"); // TODO use StringBuilder
-
+        lblTestResult.setText("Final result: "
+                + (fermatResult.hasTestSucceeded() ? "Number is prime" : "Number is composite")); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Total milliseconds: " + fermatResult.getMilliseconds()); // TODO use StringBuilder
     }
 
     @Override
     public void onAsyncTaskUpdate(AsyncTask task, FermatProgress fermatProgress) {
-
+        lblTestResult.setText("Current test count:" + fermatProgress.getCurrentTestCount()); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Current milliseconds: " + fermatProgress.getCurrentMilliseconds()); // TODO use StringBuilder
     }
 }
