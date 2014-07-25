@@ -2,6 +2,7 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,6 +70,7 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
         lblTestNumber = (TextView) viewRoot.findViewById(R.id.lblTestNumber);
 
         btnStartTest.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
 
         return viewRoot;
     }
@@ -99,7 +101,11 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
     public void onPause() {
         super.onPause();
 
-        if (fermatTask != null && fermatTask.isCancelled()) {
+        cancelTesting();
+    }
+
+    private void cancelTesting() {
+        if (fermatTask != null && !fermatTask.isCancelled()) {
             fermatTask.cancel(true);
         }
     }
@@ -108,6 +114,8 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
     public void onClick(View view) {
         if (btnStartTest.equals(view)) {
             startTesting();
+        } else if (btnCancel.equals(view)) {
+            cancelTesting();
         }
     }
 
@@ -118,9 +126,9 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
             return;
         }
 
-        int numberOfRuns;
+        long numberOfRuns;
         try {
-            numberOfRuns = Integer.parseInt(txtNumberOfRuns.getText().toString());
+            numberOfRuns = Long.parseLong(txtNumberOfRuns.getText().toString());
             if (numberOfRuns <= 0) {
                 throw new IllegalArgumentException();
             }
@@ -130,6 +138,8 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
                     .show(); // TODO use StringBuilder
             return;
         }
+
+        Log.i("AseCrypto", "Fermat: number of runs = " + numberOfRuns);
 
         closeSoftKeyboard();
         doPostCalculationStartSetup(numberToTest);
@@ -167,7 +177,7 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
 
     private void doPostCalculationStartSetup(AseInteger testNumber) {
         progressBar.setVisibility(View.VISIBLE);
-        lblTestResult.setVisibility(View.INVISIBLE);
+        lblTestResult.setVisibility(View.VISIBLE);
         lblTestResult.setText("");
         lblTimeMeasurement.setVisibility(View.VISIBLE);
         lblTimeMeasurement.setText("");
@@ -182,10 +192,16 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
     public void onAsyncTaskFinished(AsyncTask task, FermatResult fermatResult) {
         progressBar.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
-        lblTestResult.setVisibility(View.VISIBLE);
 
         btnStartTest.setEnabled(true);
         btnCancel.setVisibility(View.INVISIBLE);
+
+        if (fermatResult == null) { // Cancelled?
+            lblTestResult.setText("Final result: Test cancelled");
+            lblTimeMeasurement.setText("");
+
+            return;
+        }
 
         lblTestResult.setText("Final result: "
                 + (fermatResult.hasTestSucceeded() ? "Number is prime" : "Number is composite")); // TODO use StringBuilder
@@ -194,7 +210,7 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void onAsyncTaskUpdate(AsyncTask task, FermatProgress fermatProgress) {
-        lblTestResult.setText("Current test count:" + fermatProgress.getCurrentTestCount()); // TODO use StringBuilder
+        lblTestResult.setText("Current test count: " + fermatProgress.getCurrentTestCount()); // TODO use StringBuilder
         lblTimeMeasurement.setText("Current milliseconds: " + fermatProgress.getCurrentMilliseconds()); // TODO use StringBuilder
     }
 }

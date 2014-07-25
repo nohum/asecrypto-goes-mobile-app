@@ -9,9 +9,9 @@ public class FermatTaskArguments {
 
     private AseInteger numberToTest;
 
-    private int numberOfTestRuns;
+    private long numberOfTestRuns;
 
-    public FermatTaskArguments(AseInteger numberToTest, int numberOfTestRuns) {
+    public FermatTaskArguments(AseInteger numberToTest, long numberOfTestRuns) {
         this.numberToTest = numberToTest;
         this.numberOfTestRuns = numberOfTestRuns;
     }
@@ -20,7 +20,7 @@ public class FermatTaskArguments {
         return numberToTest;
     }
 
-    public int getNumberOfTestRuns() {
+    public long getNumberOfTestRuns() {
         return numberOfTestRuns;
     }
 }

@@ -14,7 +14,7 @@ import at.fhj.gaar.asecrypto.mobile.util.StopWatch;
  */
 public class FermatTask extends AsyncTask<FermatTaskArguments, FermatProgress, FermatResult> {
 
-    private static long informUserAfterNTests = 10000;
+    private static long informUserAfterNTests = 5000;
 
     private final TaskFinishedCallable<FermatResult> finishedCallable;
 
@@ -84,11 +84,16 @@ public class FermatTask extends AsyncTask<FermatTaskArguments, FermatProgress, F
         // if possiblePrime is really prime, its phi is its value-1
         AseInteger exponent = possiblePrime.subtract(AseInteger.ONE);
 
+        publishProgress(new FermatProgress(watch.getElapsedTime(), 0));
+
         ////////////////////////////////////////////////////////////////////
         // start a series of numOfTests FermatTests
         // that is exponentiate a test number
         long counter;
         for (counter = 1; counter <= numOfTests; counter++) {
+            if (isCancelled()) {
+                break; // handle like success
+            }
 
             // create a random AseInteger as witness
             AseInteger a = createRandomTestNumber(possiblePrime);
@@ -106,9 +111,7 @@ public class FermatTask extends AsyncTask<FermatTaskArguments, FermatProgress, F
                 publishProgress(new FermatProgress(watch.getElapsedTime(), counter));
             }
 
-            if (isCancelled()) {
-                break; // handle like success
-            }
+
         }
 
         // adjust counter to the number of tests actually done for correct output
@@ -140,4 +143,9 @@ public class FermatTask extends AsyncTask<FermatTaskArguments, FermatProgress, F
         this.finishedCallable.onAsyncTaskFinished(this, fermatResult);
     }
 
+    @Override
+    protected void onCancelled(FermatResult fermatResult) {
+        super.onCancelled(fermatResult);
+        this.finishedCallable.onAsyncTaskFinished(this, null);
+    }
 }
