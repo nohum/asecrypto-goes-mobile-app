@@ -6,4 +6,4 @@
     android:divider="@android:color/transparent"
     android:dividerHeight="0dp"
     android:background="#cccc"
-    tools:context="at.fhj.gaar.asecrypto.mobile.ui.NavigationDrawerFragment" />
+    tools:context="at.fhj.gaar.asecrypto.mobile.ui.navigation.NavigationDrawerFragment" />

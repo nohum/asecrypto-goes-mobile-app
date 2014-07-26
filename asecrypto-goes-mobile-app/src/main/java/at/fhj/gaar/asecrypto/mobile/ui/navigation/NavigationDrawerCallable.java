@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile.ui;
+package at.fhj.gaar.asecrypto.mobile.ui.navigation;
 
 /**
  * Callbacks interface that all activities using this fragment must implement.

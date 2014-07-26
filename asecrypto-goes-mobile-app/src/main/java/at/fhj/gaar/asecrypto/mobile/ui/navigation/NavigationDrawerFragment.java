@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile.ui;
+package at.fhj.gaar.asecrypto.mobile.ui.navigation;
 
 
 import android.app.Activity;

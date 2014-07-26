@@ -1,4 +1,4 @@
-package at.fhj.gaar.asecrypto.mobile.ui;
+package at.fhj.gaar.asecrypto.mobile.ui.navigation;
 
 /**
  * Represents a user-chooseable task.

@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import at.fhj.gaar.asecrypto.mobile.R;
+import at.fhj.gaar.asecrypto.mobile.ui.navigation.NavigationDrawerCallable;
+import at.fhj.gaar.asecrypto.mobile.ui.navigation.NavigationDrawerFragment;
 
 public class MainActivity extends Activity implements NavigationDrawerCallable, SectionAttachable {
 

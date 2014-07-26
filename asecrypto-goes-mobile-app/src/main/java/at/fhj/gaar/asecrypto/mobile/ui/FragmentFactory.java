@@ -10,6 +10,7 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation.FastExponentiatio
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation.SlowExponentiationFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat.FermatTestFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.navigation.DrawerItemIdentifiers;
 
 /**
  * Creates the corresponding Fragments when given the task id.
