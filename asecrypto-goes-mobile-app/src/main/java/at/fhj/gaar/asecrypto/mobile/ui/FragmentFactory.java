@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.bezout.BezoutFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.carmichael.CarmichaelGeneratorFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.euclid.EuclidFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation.FastExponentiationFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation.SlowExponentiationFragment;
@@ -43,6 +44,10 @@ public class FragmentFactory {
 
             case DrawerItemIdentifiers.TASK_FERMAT_TEST:
                 createdFragment = new FermatTestFragment();
+                break;
+
+            case DrawerItemIdentifiers.TASK_CARMICHAEL_NUMBERS:
+                createdFragment = new CarmichaelGeneratorFragment();
                 break;
 
             case DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST:

@@ -17,9 +17,11 @@ public class DrawerItemIdentifiers {
 
     public static final int TASK_FERMAT_TEST = 6;
 
-    public static final int TASK_MILLER_RABIN_TEST = 7;
+    public static final int TASK_CARMICHAEL_NUMBERS = 7;
 
-    public static final int TASK_RSA_CHINESE_REMAINDER = 8;
+    public static final int TASK_MILLER_RABIN_TEST = 8;
 
-    public static final int TASK_PRIMITIVE_ROOTS = 9;
+    public static final int TASK_RSA_CHINESE_REMAINDER = 9;
+
+    public static final int TASK_PRIMITIVE_ROOTS = 10;
 }

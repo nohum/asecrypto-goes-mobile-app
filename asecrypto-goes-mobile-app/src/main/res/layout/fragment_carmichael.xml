@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Fermat - number to test:"
+                android:text="Bits of the three prime factors (minimum 4):"
                 android:id="@+id/lblFirstNumber" />
 
             <Space
@@ -48,7 +48,7 @@
                     android:layout_width="116dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:id="@+id/txtBitsForNumber"
+                    android:id="@+id/txtBitsForNumbers"
                     android:numeric="integer"
                     android:singleLine="true"
                     android:inputType="number" />
@@ -59,55 +59,6 @@
                 android:layout_height="10dp"
                 android:id="@+id/space2" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Alternatively: Specify a concrete number: " />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:id="@+id/txtConcreteNumber"
-                android:numeric="integer"
-                android:singleLine="true"
-                android:inputType="number" />
-
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:id="@+id/space3" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Number of test runs: "
-                    android:id="@+id/lblBitsSecondNumber" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:id="@+id/txtNumberOfRuns"
-                    android:numeric="integer"
-                    android:singleLine="true"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/space4" />
-
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -117,8 +68,8 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Start Fermat test"
-                    android:id="@+id/btnStartTest" />
+                    android:text="Generate Carmichael"
+                    android:id="@+id/btnStartGeneration" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -131,7 +82,7 @@
             <Space
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:id="@+id/space5"
+                android:id="@+id/space3"
                 android:focusableInTouchMode="false" />
 
             <ProgressBar
@@ -146,22 +97,15 @@
             <Space
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:id="@+id/space9" />
+                android:id="@+id/space4" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
-                android:id="@+id/lblTestNumber"
-                android:visibility="invisible" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=""
-                android:id="@+id/lblTestResult"
+                android:id="@+id/lblResultNumber"
+                android:textIsSelectable="true"
                 android:visibility="invisible" />
 
             <TextView
@@ -170,6 +114,18 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Taken time: ..."
                 android:id="@+id/lblTimeMeasurement"
+                android:visibility="invisible" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/space5" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Fermat test with this number"
+                android:id="@+id/btnDoFermatTest"
                 android:visibility="invisible" />
 
             </LinearLayout>

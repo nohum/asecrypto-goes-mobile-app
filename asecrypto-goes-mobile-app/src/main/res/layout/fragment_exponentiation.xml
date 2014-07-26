@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Bits: "
-                    android:id="@+id/lblBitsFirstNumber" />
+                    android:id="@+id/lblBitsForNumbers" />
 
                 <EditText
                     android:layout_width="116dp"
