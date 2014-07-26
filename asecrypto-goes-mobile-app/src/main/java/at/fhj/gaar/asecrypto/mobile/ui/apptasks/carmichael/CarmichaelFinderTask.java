@@ -9,9 +9,11 @@ import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.util.StopWatch;
 
 /**
- * Executes the Carmichael generation.
+ * Executes the Carmichael number generation.
  */
 public class CarmichaelFinderTask extends AsyncTask<Integer, Void, CarmichaelResult> {
+
+    private static int numOfPrimeTests = 40; // how often the primality test has to be passed in order to be accepted as a prime
 
     private final TaskFinishedCallable<CarmichaelResult> finishedCallable;
 
@@ -23,38 +25,79 @@ public class CarmichaelFinderTask extends AsyncTask<Integer, Void, CarmichaelRes
         watch = new StopWatch();
     }
 
-    /**
-     * This function creates a random AseInteger between 0 and modulus
-     * You can use this number as a witness in a Fermat test to check the primality of modulus
-     *
-     * @param modulus is an upper bound for your test number
-     * @return a random AseInteger guaranteed to be >0 and <modulus
-     */
-    private AseInteger createRandomTestNumber(AseInteger modulus) {
-
-        // get a random number
-        AseInteger testNumber = new AseInteger(modulus.bitLength(), new Random());
-
-        // assure that it is positive and smaller modulus
-        testNumber = testNumber.mod(modulus);
-
-        // assure that it is non zero
-        if (testNumber.compareTo(AseInteger.ZERO) == 0) {
-            testNumber = modulus.subtract(AseInteger.ONE);
-        }
-        return testNumber;
-    }
-
     @Override
     protected CarmichaelResult doInBackground(Integer... numbers) {
         if (numbers.length != 1) {
             throw new RuntimeException("supply only one Integer for the bit number");
         }
 
+        if (numbers[0] == null) {
+            throw new NullPointerException("numbers[0] must be non-null");
+        }
+
         watch.start();
+        AseInteger[] result = createCMNumber(numbers[0]);
 
         watch.stop();
-        return new CarmichaelResult(watch.getElapsedTime(), null);
+
+        if (result == null) { // only if cancelled
+            return null;
+        }
+
+        return new CarmichaelResult(watch.getElapsedTime(), result[0], result[1], result[2], result[3]);
+    }
+
+    public AseInteger[] createCMNumber(int bits) {
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // How to produce a Carmichael Number?
+        // Use the method of Chernick:
+        //
+        // If 6m + 1, 12m + 1 und 18m + 1 are prime numbers, then (6m + 1)(12m + 1)(18m + 1) is a Carmichael-Number!
+        //
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        AseInteger six = AseInteger.valueOf(6);
+        AseInteger twelve = AseInteger.valueOf(12);
+        AseInteger eighteen = AseInteger.valueOf(18);
+
+        AseInteger m = new AseInteger(bits, new Random());
+        AseInteger counter = AseInteger.ZERO; // used to determine when to output information
+        AseInteger p1, p2, p3, phiCm;
+
+        // increase m by one until all terms are prime
+        do {
+            counter = counter.add(AseInteger.ONE);
+            m = m.add(AseInteger.ONE);
+
+            p1 = six.multiply(m).add(AseInteger.ONE);
+            p2 = twelve.multiply(m).add(AseInteger.ONE);
+            p3 = eighteen.multiply(m).add(AseInteger.ONE);
+
+            if (isCancelled()) {
+                return null; // get out straight away
+            }
+
+        } while (!(
+                p1.isProbablePrime(numOfPrimeTests) && p2.isProbablePrime(numOfPrimeTests)
+                        && p3.isProbablePrime(numOfPrimeTests)
+        ));
+
+        // the carmichael number is found!
+        AseInteger carmichael = p1.multiply(p2).multiply(p3);
+        watch.stop();
+
+        // calculate phi(carmichael) and charmichael-phi to output probability information
+        phiCm = p1.subtract(AseInteger.ONE).multiply(p2.subtract(AseInteger.ONE))
+                .multiply(p3.subtract(AseInteger.ONE));
+        AseInteger antiPhiCm = carmichael.subtract(AseInteger.ONE).subtract(phiCm);
+
+        return new AseInteger[] {
+                carmichael,
+                antiPhiCm,
+                phiCm,
+                carmichael.subtract(AseInteger.ONE).divide(antiPhiCm)
+        };
     }
 
     @Override

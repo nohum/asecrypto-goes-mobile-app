@@ -13,12 +13,13 @@ import android.widget.Toast;
 
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
+import at.fhj.gaar.asecrypto.mobile.ui.MainActivity;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
- * Implements: Lab3_Task1 - Fermat test
+ * Lab3_Task1: Carmichaal number generation
  */
 public class CarmichaelGeneratorFragment extends BaseFragment implements View.OnClickListener,
         TaskFinishedCallable<CarmichaelResult> {
@@ -37,6 +38,12 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
 
     private TextView lblResultNumber;
 
+    private TextView lblFailNumbersCount;
+
+    private TextView lblSuccessNumbersCount;
+
+    private TextView lblFailChance;
+
     private TextView lblTimeMeasurement;
 
     private AsyncTask<Integer, Void, CarmichaelResult> carmichaelTask;
@@ -54,6 +61,9 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
         btnDoFermatTest = (Button) viewRoot.findViewById(R.id.btnDoFermatTest);
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblResultNumber = (TextView) viewRoot.findViewById(R.id.lblResultNumber);
+        lblFailNumbersCount = (TextView) viewRoot.findViewById(R.id.lblFailNumbersCount);
+        lblSuccessNumbersCount = (TextView) viewRoot.findViewById(R.id.lblSuccessNumbersCount);
+        lblFailChance = (TextView) viewRoot.findViewById(R.id.lblFailChance);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
 
         btnStartGeneration.setOnClickListener(this);
@@ -101,18 +111,32 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
         } else if (btnCancel.equals(view)) {
             cancelGeneration();
         } else if (btnDoFermatTest.equals(view)) {
-
+            switchToFermatTest();
         }
     }
 
+    private void switchToFermatTest() {
+        Toast.makeText(getActivity(),
+                "Switching now to Fermat example with your desired Carmichal number",
+                Toast.LENGTH_SHORT).show();
+
+        ((MainActivity) getActivity()).openFermatTest(generatedCarmichaelNumber.toString());
+    }
+
     private void startGeneration() {
-        int bits = 0;
+        int bits;
 
         if (NumberHelper.isValidBitNumberInTextView(txtBitsForNumbers)) {
             bits = Integer.valueOf(txtBitsForNumbers.getText().toString());
         } else {
             Toast.makeText(getActivity(),
                     "You have to input a valid bit number!", Toast.LENGTH_LONG).show(); // TODO use StringBuilder
+            return;
+        }
+
+        if (bits < 4) {
+            Toast.makeText(getActivity(),
+                    "You have to input a bit number greater than 4!", Toast.LENGTH_LONG).show(); // TODO use StringBuilder
             return;
         }
 
@@ -125,10 +149,12 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
 
     private void doPostCalculationStartSetup() {
         progressBar.setVisibility(View.VISIBLE);
-        lblResultNumber.setVisibility(View.VISIBLE);
-        lblResultNumber.setText("");
-        lblTimeMeasurement.setVisibility(View.VISIBLE);
-        lblTimeMeasurement.setText("");
+
+        lblResultNumber.setVisibility(View.INVISIBLE);
+        lblTimeMeasurement.setVisibility(View.INVISIBLE);
+        lblFailNumbersCount.setVisibility(View.INVISIBLE);
+        lblSuccessNumbersCount.setVisibility(View.INVISIBLE);
+        lblFailChance.setVisibility(View.INVISIBLE);
 
         btnStartGeneration.setEnabled(false);
         btnCancel.setVisibility(View.VISIBLE);
@@ -138,20 +164,37 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
     @Override
     public void onAsyncTaskFinished(AsyncTask task, CarmichaelResult carmichaelResult) {
         progressBar.setVisibility(View.INVISIBLE);
+
+        lblResultNumber.setVisibility(View.VISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
+        lblFailNumbersCount.setVisibility(View.VISIBLE);
+        lblSuccessNumbersCount.setVisibility(View.VISIBLE);
+        lblFailChance.setVisibility(View.VISIBLE);
 
         btnStartGeneration.setEnabled(true);
         btnCancel.setVisibility(View.INVISIBLE);
 
+        handleResultDisplay(carmichaelResult);
+    }
+
+    private void handleResultDisplay(CarmichaelResult carmichaelResult) {
         if (carmichaelResult == null) { // Cancelled?
             lblResultNumber.setText("Generated number: Generation cancelled");
             lblTimeMeasurement.setText("");
+            lblFailNumbersCount.setText("");
+            lblSuccessNumbersCount.setText("");
+            lblFailChance.setText("");
 
             return;
         }
 
         lblResultNumber.setText("Generated number: " + carmichaelResult.getCarmichaelNumber()); // TODO use StringBuilder
-        lblTimeMeasurement.setText("Taken time: " + carmichaelResult.getMilliseconds()); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Taken milliseconds: " + carmichaelResult.getMilliseconds()); // TODO use StringBuilder
+        lblFailNumbersCount.setText("Numbers for which Fermat will fail: "
+                + carmichaelResult.getFailNumbersCount()); // TODO use StringBuilder
+        lblSuccessNumbersCount.setText("Numbers for which Fermat will succeed: "
+                + carmichaelResult.getSuccessNumbersCount()); // TODO use StringBuilder
+        lblFailChance.setText("Fail chance: 1/" + carmichaelResult.getFailChance()); // TODO use StringBuilder
 
         btnDoFermatTest.setVisibility(View.VISIBLE);
         generatedCarmichaelNumber = carmichaelResult.getCarmichaelNumber();

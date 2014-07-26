@@ -8,9 +8,20 @@ public class CarmichaelResult {
 
     private AseInteger carmichaelNumber;
 
-    public CarmichaelResult(long milliseconds, AseInteger carmichaelNumber) {
+    private AseInteger failNumbersCount;
+
+    private AseInteger successNumbersCount;
+
+    private AseInteger failChance;
+
+    public CarmichaelResult(long milliseconds, AseInteger carmichaelNumber,
+                            AseInteger failNumbersCount, AseInteger successNumbersCount,
+                            AseInteger failChance) {
         this.milliseconds = milliseconds;
         this.carmichaelNumber = carmichaelNumber;
+        this.failNumbersCount = failNumbersCount;
+        this.successNumbersCount = successNumbersCount;
+        this.failChance = failChance;
     }
 
     public long getMilliseconds() {
@@ -19,5 +30,17 @@ public class CarmichaelResult {
 
     public AseInteger getCarmichaelNumber() {
         return carmichaelNumber;
+    }
+
+    public AseInteger getFailNumbersCount() {
+        return failNumbersCount;
+    }
+
+    public AseInteger getSuccessNumbersCount() {
+        return successNumbersCount;
+    }
+
+    public AseInteger getFailChance() {
+        return failChance;
     }
 }

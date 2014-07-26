@@ -90,6 +90,7 @@ public class NavigationDrawerFragment extends Fragment {
                 new DrawerItem(DrawerItemIdentifiers.TASK_SLOW_EXPONENTATION, getString(R.string.task_slow_exponentation_speed)),
                 new DrawerItem(DrawerItemIdentifiers.TASK_FAST_EXPONENTATION, getString(R.string.task_fast_exponentation)),
                 new DrawerItem(DrawerItemIdentifiers.TASK_FERMAT_TEST, getString(R.string.task_fermat_test)),
+                new DrawerItem(DrawerItemIdentifiers.TASK_CARMICHAEL_NUMBERS, getString(R.string.task_carmichael)),
                 new DrawerItem(DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST, getString(R.string.task_miller_rabin_test)),
                 new DrawerItem(DrawerItemIdentifiers.TASK_RSA_CHINESE_REMAINDER, getString(R.string.task_rsa_chinese_remainder)),
                 new DrawerItem(DrawerItemIdentifiers.TASK_PRIMITIVE_ROOTS, getString(R.string.task_primitive_roots))
@@ -225,8 +226,14 @@ public class NavigationDrawerFragment extends Fragment {
 
         if (drawerCallback != null) {
             // TODO: range check of array element index before access
-            drawerCallback.onTaskItemSelected(drawerItems[position].getId(), drawerItems[position].getTitle());
+            drawerCallback.onTaskItemSelected(drawerItems[position].getId(),
+                    drawerItems[position].getTitle());
         }
+    }
+
+    public void openItem(int position) {
+        // TODO check if valid value (of DrawerItemIdentifiers)
+        selectItem(position - 1);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,7 @@ import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskIntermediateCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.ui.apptasks.euclid.EuclidResult;
+import at.fhj.gaar.asecrypto.mobile.ui.navigation.DrawerItemIdentifiers;
 import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
@@ -33,6 +34,13 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
     private static final String ARG_CONCRETE_NUMBER = "concrete_number";
 
     private static final String ARG_NUMBER_OF_RUNS = "number_of_runs";
+
+    /**
+     * Externally given number to test (by Intent).
+     */
+    public static final String ARG_INTENT_TEST_NUMBER = "fermat_test_number";
+
+    private String defaultConcreteTestNumber;
 
     private EditText txtBitsForNumber;
 
@@ -86,6 +94,17 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
         restoreTextFieldString(savedInstanceState, ARG_BITS, txtBitsForNumber);
         restoreTextFieldString(savedInstanceState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
         restoreTextFieldInteger(savedInstanceState, ARG_NUMBER_OF_RUNS, txtNumberOfRuns);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // insert a specified test number (if given by MainActivity or any other caller)
+        if (defaultConcreteTestNumber != null) {
+            txtConcreteNumber.setText(defaultConcreteTestNumber);
+            defaultConcreteTestNumber = null;
+        }
     }
 
     @Override
@@ -212,5 +231,14 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
     public void onAsyncTaskUpdate(AsyncTask task, FermatProgress fermatProgress) {
         lblTestResult.setText("Current test count: " + fermatProgress.getCurrentTestCount()); // TODO use StringBuilder
         lblTimeMeasurement.setText("Current milliseconds: " + fermatProgress.getCurrentMilliseconds()); // TODO use StringBuilder
+    }
+
+    public void setConcreteTestNumber(String number) {
+        if (txtConcreteNumber != null) {
+            txtConcreteNumber.setText(number);
+            return;
+        }
+
+        defaultConcreteTestNumber = number;
     }
 }
