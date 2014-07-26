@@ -14,7 +14,7 @@ import at.fhj.gaar.asecrypto.mobile.util.StopWatch;
  */
 public class FermatTask extends AsyncTask<FermatTaskArguments, FermatProgress, FermatResult> {
 
-    private static long informUserAfterNTests = 5000;
+    private static long informUserAfterNTests = 3000;
 
     private final TaskFinishedCallable<FermatResult> finishedCallable;
 

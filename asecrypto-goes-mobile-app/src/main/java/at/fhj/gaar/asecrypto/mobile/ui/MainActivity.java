@@ -15,6 +15,7 @@ import android.widget.Toast;
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat.FermatTestFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.millerrabin.MillerRabinTestFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.navigation.DrawerItemIdentifiers;
 import at.fhj.gaar.asecrypto.mobile.ui.navigation.NavigationDrawerCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.navigation.NavigationDrawerFragment;
@@ -83,7 +84,11 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
                 && expectedFragmentTaskId == DrawerItemIdentifiers.TASK_FERMAT_TEST) {
             // set default number for Fermat test - given by Carmichael number generator
             ((FermatTestFragment) currentTask).setConcreteTestNumber((String) fragmentParameter);
-            //onSectionAttached(currentTask);
+        } else if (expectedFragmentTaskId == taskId
+                && expectedFragmentTaskId == DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST) {
+            // set default number for Miller-Rabin test - given by Carmichael number generator
+            ((MillerRabinTestFragment) currentTask)
+                    .setConcreteTestNumber((String) fragmentParameter);
         }
 
         // reset
@@ -98,6 +103,7 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
         if (getActionBar() == null) {
             return;
         }
+
         getActionBar().setTitle(title);
     }
 
@@ -139,5 +145,13 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
         expectedFragmentTaskId = DrawerItemIdentifiers.TASK_FERMAT_TEST;
         // after the fragment has been openen, onTaskItemSelected is called
         navigationDrawerFragment.openItem(DrawerItemIdentifiers.TASK_FERMAT_TEST);
+    }
+
+    public void openMillerRabinTest(String number) {
+        // is given to the Fragment in onTaskItemSelected
+        fragmentParameter = number;
+        expectedFragmentTaskId = DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST;
+        // after the fragment has been openen, onTaskItemSelected is called
+        navigationDrawerFragment.openItem(DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST);
     }
 }

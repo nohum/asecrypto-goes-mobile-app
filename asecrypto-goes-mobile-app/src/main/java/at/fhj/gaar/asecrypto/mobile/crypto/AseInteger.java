@@ -17,6 +17,7 @@ public class AseInteger implements Comparable<AseInteger> {
 
     public static final AseInteger ZERO = new AseInteger(BigInteger.ZERO);
     public static final AseInteger ONE = new AseInteger(BigInteger.ONE);
+    public static final AseInteger TWO = new AseInteger("2");
     public static final AseInteger TEN = new AseInteger(BigInteger.TEN);
 
     private BigInteger myValue;

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,8 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
 
     private Button btnDoFermatTest;
 
+    private Button btnDoMillerRabinTest;
+
     private ProgressBar progressBar;
 
     private TextView lblResultNumber;
@@ -45,6 +48,8 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
     private TextView lblFailChance;
 
     private TextView lblTimeMeasurement;
+
+    private ScrollView scrollView;
 
     private AsyncTask<Integer, Void, CarmichaelResult> carmichaelTask;
 
@@ -59,16 +64,19 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
         btnStartGeneration = (Button) viewRoot.findViewById(R.id.btnStartGeneration);
         btnCancel = (Button) viewRoot.findViewById(R.id.btnCancel);
         btnDoFermatTest = (Button) viewRoot.findViewById(R.id.btnDoFermatTest);
+        btnDoMillerRabinTest = (Button) viewRoot.findViewById(R.id.btnDoMillerRabinTest);
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblResultNumber = (TextView) viewRoot.findViewById(R.id.lblResultNumber);
         lblFailNumbersCount = (TextView) viewRoot.findViewById(R.id.lblFailNumbersCount);
         lblSuccessNumbersCount = (TextView) viewRoot.findViewById(R.id.lblSuccessNumbersCount);
         lblFailChance = (TextView) viewRoot.findViewById(R.id.lblFailChance);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
+        scrollView = (ScrollView) viewRoot.findViewById(R.id.scrollView);
 
         btnStartGeneration.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
         btnDoFermatTest.setOnClickListener(this);
+        btnDoMillerRabinTest.setOnClickListener(this);
 
         return viewRoot;
     }
@@ -112,6 +120,8 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
             cancelGeneration();
         } else if (btnDoFermatTest.equals(view)) {
             switchToFermatTest();
+        } else if (btnDoMillerRabinTest.equals(view)) {
+            switchToMillerRabinTest();
         }
     }
 
@@ -121,6 +131,14 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
                 Toast.LENGTH_SHORT).show();
 
         ((MainActivity) getActivity()).openFermatTest(generatedCarmichaelNumber.toString());
+    }
+
+    private void switchToMillerRabinTest() {
+        Toast.makeText(getActivity(),
+                "Switching now to Miller-Rabin example with your desired Carmichal number",
+                Toast.LENGTH_SHORT).show();
+
+        ((MainActivity) getActivity()).openMillerRabinTest(generatedCarmichaelNumber.toString());
     }
 
     private void startGeneration() {
@@ -159,6 +177,7 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
         btnStartGeneration.setEnabled(false);
         btnCancel.setVisibility(View.VISIBLE);
         btnDoFermatTest.setVisibility(View.INVISIBLE);
+        btnDoMillerRabinTest.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -197,6 +216,15 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
         lblFailChance.setText("Fail chance: 1/" + carmichaelResult.getFailChance()); // TODO use StringBuilder
 
         btnDoFermatTest.setVisibility(View.VISIBLE);
+        btnDoMillerRabinTest.setVisibility(View.VISIBLE);
         generatedCarmichaelNumber = carmichaelResult.getCarmichaelNumber();
+
+        // scroll to bottom
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        });
     }
 }
