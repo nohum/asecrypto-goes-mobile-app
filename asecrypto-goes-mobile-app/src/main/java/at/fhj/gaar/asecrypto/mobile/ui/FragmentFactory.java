@@ -12,6 +12,7 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation.SlowExponentiatio
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat.FermatTestFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.millerrabin.MillerRabinTestFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.rsa.RSACalculationFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.navigation.DrawerItemIdentifiers;
 
 /**
@@ -22,7 +23,7 @@ public class FragmentFactory {
     public static Fragment getFragment(int taskId, String taskName) {
         BaseFragment createdFragment;
 
-        switch (taskId) {
+        switch (taskId) { // TODO code style: use enum?!
             case DrawerItemIdentifiers.TASK_NUMBER_COUNTER:
                 createdFragment = new NumberCounterFragment();
                 break;
@@ -56,7 +57,7 @@ public class FragmentFactory {
                 break;
 
             case DrawerItemIdentifiers.TASK_RSA_CHINESE_REMAINDER:
-                createdFragment = new BaseFragment();
+                createdFragment = new RSACalculationFragment();
                 break;
 
             case DrawerItemIdentifiers.TASK_PRIMITIVE_ROOTS:
