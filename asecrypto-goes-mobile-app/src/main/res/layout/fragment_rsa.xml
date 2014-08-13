@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="RSA general parameters:"
-                android:id="@+id/lblRSA" />
+                android:focusable="false" />
 
             <Space
                 android:layout_width="20dp"
@@ -41,8 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="p: "
-                    android:id="@+id/lblFirstPrime" />
+                    android:text="p: " />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -63,8 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="q: "
-                    android:id="@+id/lblSecondPrime" />
+                    android:text="q: " />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -74,6 +72,11 @@
                     android:singleLine="true"
                     android:inputType="number" />
             </LinearLayout>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="10dp"
+                android:id="@+id/space3" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,81 +95,98 @@
             <Space
                 android:layout_width="20dp"
                 android:layout_height="10dp"
-                android:id="@+id/space3" />
+                android:id="@+id/space4" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="#c7222525" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="10dp"
+                android:id="@+id/space5" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Encryption: " />
+                android:text="Number to decrypt: " />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:id="@+id/txtConcreteNumber"
-                android:numeric="integer"
+                android:id="@+id/txtNumberToDecrypt"
                 android:singleLine="true"
                 android:inputType="number" />
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Decrypt normal"
+                    android:id="@+id/btnDecryptNormal" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Decrypt (CRT)"
+                    android:id="@+id/btnDecryptCRT" />
+            </LinearLayout>
 
             <Space
                 android:layout_width="20dp"
                 android:layout_height="10dp"
-                android:id="@+id/space4" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Number of test runs: "
-                    android:id="@+id/lblBitsSecondNumber" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:id="@+id/txtNumberOfRuns"
-                    android:numeric="integer"
-                    android:singleLine="true"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/space5" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Start Miller-Rabin test"
-                    android:id="@+id/btnStartTest" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cancel"
-                    android:id="@+id/btnCancel"
-                    android:visibility="invisible" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp"
                 android:id="@+id/space6"
+                android:focusableInTouchMode="false" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="#c7222525" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="10dp"
+                android:id="@+id/space7" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Number to encrypt: " />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/txtNumberToEncrypt"
+                android:singleLine="true"
+                android:inputType="number" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Encrypt"
+                    android:id="@+id/btnEncrypt" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/space8"
                 android:focusableInTouchMode="false" />
 
             <ProgressBar
@@ -188,15 +208,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
-                android:id="@+id/lblTestNumber"
-                android:visibility="invisible" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text=""
-                android:id="@+id/lblTestResult"
+                android:id="@+id/lblResult"
                 android:visibility="invisible" />
 
             <TextView
