@@ -3,6 +3,7 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.rsa;
 import android.os.AsyncTask;
 
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
+import at.fhj.gaar.asecrypto.mobile.crypto.RSAHelper;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 
 /**
@@ -32,16 +33,9 @@ public class ParameterCalculationHelperTask extends AsyncTask<AseInteger, Void, 
             throw new IllegalStateException("AseInteger q is null");
         }
 
-        return new CalculationResult(calculateN(p, q), calculatePhiOfN(p, q));
+        return new CalculationResult(RSAHelper.calculateN(p, q), RSAHelper.calculatePhiOfN(p, q));
     }
 
-    private AseInteger calculateN(AseInteger p, AseInteger q) {
-        return p.multiply(q);
-    }
-
-    private AseInteger calculatePhiOfN(AseInteger p, AseInteger q) {
-        return p.subtract(AseInteger.ONE).multiply(q.subtract(AseInteger.ONE));
-    }
 
     @Override
     protected void onPostExecute(CalculationResult calculationResult) {
