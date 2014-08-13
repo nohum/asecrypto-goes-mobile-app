@@ -11,61 +11,81 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
-
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
+import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Exercise 15: RSA speed up with chinse remainder
  */
-public class RSACalculationFragment extends BaseFragment implements View.OnClickListener {
+public class RSACalculationFragment extends BaseFragment implements View.OnClickListener, TaskFinishedCallable<ParameterCalculationHelperTask.CalculationResult> {
 
-    private static final String ARG_BITS = "bits";
+    private static final String ARG_PRIME_P = "p";
 
-    private static final String ARG_CONCRETE_NUMBER = "concrete_number";
+    private static final String ARG_PRIME_Q = "q";
 
-    private static final String ARG_NUMBER_OF_RUNS = "number_of_runs";
+    private static final String ARG_DECRYPT_NUMBER = "decrypt_number";
 
-    private EditText txtBitsForNumber;
+    private static final String ARG_ENCRYPT_NUMBER = "encrypt_number";
 
-    private EditText txtConcreteNumber;
+    // General
+    private EditText txtPrimeP;
 
-    private EditText txtNumberOfRuns;
+    private EditText txtPrimeQ;
 
-    private Button btnStartTest;
+    private TextView lblCalculatedN;
 
-    private Button btnCancel;
+    private TextView lblCalculatedPhiOfN;
 
+    // Decryption
+    private EditText txtNumberToDecrypt;
+
+    private Button btnDecryptNormal;
+
+    private Button btnDecryptCRT;
+
+
+    // Encryption
+    private EditText txtNumberToEncrypt;
+
+    private Button btnEncrypt;
+
+
+    // Again, general
     private ProgressBar progressBar;
 
-    private TextView lblTestResult;
+    private TextView lblResult;
 
     private TextView lblTimeMeasurement;
 
-    private TextView lblTestNumber;
 
-    private AsyncTask<RSAAlgorithmArguments, Void, Void> millerrabinTask;
+    private AsyncTask<RSAAlgorithmArguments, Void, Void> rsaTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View viewRoot = inflater.inflate(R.layout.fragment_millerrabin, container, false);
+        View viewRoot = inflater.inflate(R.layout.fragment_rsa, container, false);
 
-        txtBitsForNumber = (EditText) viewRoot.findViewById(R.id.txtBitsForNumber);
-        txtNumberOfRuns = (EditText) viewRoot.findViewById(R.id.txtNumberOfRuns);
-        txtConcreteNumber = (EditText) viewRoot.findViewById(R.id.txtConcreteNumber);
-        btnStartTest = (Button) viewRoot.findViewById(R.id.btnStartTest);
-        btnCancel = (Button) viewRoot.findViewById(R.id.btnCancel);
+        txtPrimeP = (EditText) viewRoot.findViewById(R.id.txtPrimeP);
+        txtPrimeQ = (EditText) viewRoot.findViewById(R.id.txtPrimeQ);
+        lblCalculatedN = (TextView) viewRoot.findViewById(R.id.lblCalculatedN);
+        lblCalculatedPhiOfN = (TextView) viewRoot.findViewById(R.id.lblCalculatedPhiOfN);
+
+        txtNumberToDecrypt = (EditText) viewRoot.findViewById(R.id.txtNumberToDecrypt);
+        btnDecryptNormal = (Button) viewRoot.findViewById(R.id.btnDecryptNormal);
+        btnDecryptCRT = (Button) viewRoot.findViewById(R.id.btnDecryptCRT);
+
+        txtNumberToEncrypt = (EditText) viewRoot.findViewById(R.id.txtNumberToEncrypt);
+        btnEncrypt = (Button) viewRoot.findViewById(R.id.btnEncrypt);
+
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
-        lblTestResult = (TextView) viewRoot.findViewById(R.id.lblTestResult);
+        lblResult = (TextView) viewRoot.findViewById(R.id.lblResult);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
-        lblTestNumber = (TextView) viewRoot.findViewById(R.id.lblTestNumber);
 
-        btnStartTest.setOnClickListener(this);
-        btnCancel.setOnClickListener(this);
+        btnDecryptNormal.setOnClickListener(this);
+        btnDecryptCRT.setOnClickListener(this);
+        btnEncrypt.setOnClickListener(this);
 
         return viewRoot;
     }
@@ -78,105 +98,73 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
             return;
         }
 
-        restoreTextFieldString(savedInstanceState, ARG_BITS, txtBitsForNumber);
-        restoreTextFieldString(savedInstanceState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
-        restoreTextFieldInteger(savedInstanceState, ARG_NUMBER_OF_RUNS, txtNumberOfRuns);
+        restoreTextFieldString(savedInstanceState, ARG_PRIME_P, txtPrimeP);
+        restoreTextFieldString(savedInstanceState, ARG_PRIME_Q, txtPrimeQ);
+        restoreTextFieldInteger(savedInstanceState, ARG_DECRYPT_NUMBER, txtNumberToDecrypt);
+        restoreTextFieldInteger(savedInstanceState, ARG_ENCRYPT_NUMBER, txtNumberToEncrypt);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // as the fragment becomes visible, calculate n and phi(n)
+        // always to this in a seperate task as with very high numbers the UI thread is disturbed
+
+        if (hasValidCryptoPrimes()) {
+            AseInteger p = new AseInteger(txtPrimeP.getText().toString());
+            AseInteger q = new AseInteger(txtPrimeQ.getText().toString());
+
+            // result is obtained in onAsyncTaskFinished(AsyncTask task, CalculationResult calculationResult)
+            new ParameterCalculationHelperTask(this).execute(p, q);
+        }
+    }
+
+    private boolean hasValidCryptoPrimes() {
+        // just simple checks if there is something inputted into the fields
+        // as the fields by themselves are constrained to "only-numbers", a non-zero length
+        // indicates a valid number
+        return txtPrimeP.getText().length() > 0 && txtPrimeQ.getText().length() > 0;
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        saveTextFieldString(outState, ARG_BITS, txtBitsForNumber);
-        saveTextFieldString(outState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
-        saveTextFieldInteger(outState, ARG_NUMBER_OF_RUNS, txtNumberOfRuns);
+        saveTextFieldString(outState, ARG_PRIME_P, txtPrimeP);
+        saveTextFieldString(outState, ARG_PRIME_Q, txtPrimeQ);
+        saveTextFieldInteger(outState, ARG_DECRYPT_NUMBER, txtNumberToDecrypt);
+        saveTextFieldInteger(outState, ARG_ENCRYPT_NUMBER, txtNumberToEncrypt);
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        cancelTesting();
-    }
-
-    private void cancelTesting() {
-        if (millerrabinTask != null && !millerrabinTask.isCancelled()) {
-            millerrabinTask.cancel(true);
-        }
-    }
 
     @Override
     public void onClick(View view) {
-        if (btnStartTest.equals(view)) {
-            startTesting();
-        } else if (btnCancel.equals(view)) {
-            cancelTesting();
-        }
-    }
-
-    private void startTesting() {
-        AseInteger numberToTest = retrieveAndDisplayNumber(txtBitsForNumber, txtConcreteNumber,
-                "Target number");
-        if (numberToTest == null) {
-            return;
-        }
-
-        long numberOfRuns;
-        try {
-            numberOfRuns = Long.parseLong(txtNumberOfRuns.getText().toString());
-            if (numberOfRuns <= 0) {
-                throw new IllegalArgumentException();
-            }
-        } catch (IllegalArgumentException e) { // also catches NumberFormatException
-            Toast.makeText(getActivity(), "Number of runs"
-                    + ": You have to input a valid number larger than zero!", Toast.LENGTH_LONG)
-                    .show(); // TODO use StringBuilder
-            return;
-        }
-
+        // Always get rid of the soft keyboard
         closeSoftKeyboard();
-        doPostCalculationStartSetup(numberToTest);
 
-    }
+        if (btnDecryptNormal.equals(view)) {
 
-    private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,
-                                                String nameOfNumberField) {
-        String concreteNumber = numberField.getText().toString();
-        String bitFieldText = bitField.getText().toString();
+        } else if (btnDecryptCRT.equals(view)) {
 
-        AseInteger targetNumber;
-        if (NumberHelper.isValidBitNumberInTextView(bitField)) {
-            int bits = Integer.valueOf(bitFieldText);
+        } else if (btnEncrypt.equals(view)) {
 
-            targetNumber = new AseInteger(bits, new Random());
-            targetNumber = targetNumber.setBit(bits - 1);
-
-            // Display number for the user in the edit element
-            numberField.setText(targetNumber.toString());
-        } else if (concreteNumber.length() > 0) {
-            targetNumber = new AseInteger(concreteNumber);
-        } else {
-
-            Toast.makeText(getActivity(), nameOfNumberField
-                    + ": You have to input either bits or a target number!", Toast.LENGTH_LONG)
-                    .show(); // TODO use StringBuilder
-            return null;
         }
-
-        return targetNumber;
     }
 
-    private void doPostCalculationStartSetup(AseInteger testNumber) {
+    private void prepareViewForResults() {
         progressBar.setVisibility(View.VISIBLE);
-        lblTestResult.setVisibility(View.VISIBLE);
-        lblTestResult.setText("");
+
+        lblResult.setVisibility(View.VISIBLE);
+        lblResult.setText("");
+
         lblTimeMeasurement.setVisibility(View.VISIBLE);
         lblTimeMeasurement.setText("");
-        lblTestNumber.setVisibility(View.VISIBLE);
-        lblTestNumber.setText("Number to test: " + testNumber.toString()); // TODO use StringBuilder
-
-        btnStartTest.setEnabled(false);
-        btnCancel.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public void onAsyncTaskFinished(AsyncTask task, ParameterCalculationHelperTask.CalculationResult calculationResult) {
+        lblCalculatedN.setText("n: " + calculationResult.getN());// TODO use StringBuilder
+        lblCalculatedPhiOfN.setText("phi(n): " + calculationResult.getPhiOfN());// TODO use StringBuilder
+    }
 }
