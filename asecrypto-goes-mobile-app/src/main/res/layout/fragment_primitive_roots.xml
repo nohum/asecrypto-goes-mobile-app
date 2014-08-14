@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
-                android:id="@+id/lblPrimeQ"
+                android:id="@+id/lblPrime"
                 android:visibility="invisible" />
 
             <TextView

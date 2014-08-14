@@ -12,6 +12,7 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.exponentiation.SlowExponentiatio
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat.FermatTestFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.millerrabin.MillerRabinTestFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.numbercounter.NumberCounterFragment;
+import at.fhj.gaar.asecrypto.mobile.ui.apptasks.primitiveroots.PrimitiveRootFinderFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.rsa.RSACalculationFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.navigation.DrawerItemIdentifiers;
 
@@ -61,7 +62,7 @@ public class FragmentFactory {
                 break;
 
             case DrawerItemIdentifiers.TASK_PRIMITIVE_ROOTS:
-                createdFragment = new BaseFragment();
+                createdFragment = new PrimitiveRootFinderFragment();
                 break;
 
             default:
