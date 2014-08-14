@@ -45,7 +45,7 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
 
     private TextView lblTimeMeasurement;
 
-    private AsyncTask<Long, Void, PrimitiveRootResult> finderTask;
+    private AsyncTask<FinderArguments, Void, PrimitiveRootResult> finderTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -122,11 +122,11 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
             return;
         }
 
-        long bits = Long.valueOf(txtBits.getText().toString());
+        int bits = Integer.valueOf(txtBits.getText().toString());
 
-        long numberOfRuns;
+        int numberOfRuns;
         try {
-            numberOfRuns = Long.parseLong(txtNumberOfRuns.getText().toString());
+            numberOfRuns = Integer.parseInt(txtNumberOfRuns.getText().toString());
             if (numberOfRuns <= 0) {
                 throw new IllegalArgumentException();
             }
@@ -141,7 +141,7 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
         doPostCalculationStartSetup();
 
         finderTask = new PrimitiveRootLookupTask(this);
-        finderTask.execute(bits, numberOfRuns);
+        finderTask.execute(new FinderArguments(bits, numberOfRuns));
     }
 
     private void doPostCalculationStartSetup() {
