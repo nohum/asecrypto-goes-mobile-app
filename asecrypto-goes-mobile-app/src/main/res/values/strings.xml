@@ -15,7 +15,7 @@
     <string name="task_fermat_test">Fermat test</string>
     <string name="task_carmichael">Carmichael number generation</string>
     <string name="task_miller_rabin_test">Miller-Rabin test</string>
-    <string name="task_rsa_chinese_remainder">RSA and the chinese remainder</string>
+    <string name="task_rsa_chinese_remainder">RSA and the Chinese remainder</string>
     <string name="task_primitive_roots">Primitive root finder</string>
 
 </resources>

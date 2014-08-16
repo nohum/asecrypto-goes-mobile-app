@@ -28,7 +28,7 @@
 
             <Space
                 android:layout_width="20dp"
-                android:layout_height="10dp"
+                android:layout_height="5dp"
                 android:id="@+id/space1" />
 
             <LinearLayout
@@ -93,6 +93,35 @@
                 android:text="phi(n): will be calculated"
                 android:freezesText="true"
                 android:id="@+id/lblCalculatedPhiOfN" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="e: " />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/txtNumberE"
+                    android:singleLine="true"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="d: will be calculated"
+                android:freezesText="true"
+                android:id="@+id/lblCalculatedNumberD" />
 
             <Space
                 android:layout_width="20dp"

@@ -2,6 +2,8 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.rsa;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,15 +21,12 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 /**
  * Exercise 15: RSA speed up with chinse remainder
  */
-public class RSACalculationFragment extends BaseFragment implements View.OnClickListener, TaskFinishedCallable<ParameterCalculationHelperTask.CalculationResult> {
+public class RSACalculationFragment extends BaseFragment implements View.OnClickListener,
+        TaskFinishedCallable<ParameterCalculationHelperTask.CalculationResult>, TextWatcher {
 
-    private static final String ARG_PRIME_P = "p";
+    private static final String ARG_PRIME_N = "n";
 
-    private static final String ARG_PRIME_Q = "q";
-
-    private static final String ARG_DECRYPT_NUMBER = "decrypt_number";
-
-    private static final String ARG_ENCRYPT_NUMBER = "encrypt_number";
+    private static final String ARG_PRIME_PHI_OF_N = "phi_of_n";
 
     // General
     private EditText txtPrimeP;
@@ -37,6 +36,10 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
     private TextView lblCalculatedN;
 
     private TextView lblCalculatedPhiOfN;
+
+    private EditText txtNumberE;
+
+    private TextView lblCalculatedNumberD;
 
     // Decryption
     private EditText txtNumberToDecrypt;
@@ -60,7 +63,13 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
     private TextView lblTimeMeasurement;
 
 
-    private AsyncTask<RSAAlgorithmArguments, Void, Void> rsaTask;
+    private AseInteger n;
+
+    private AseInteger phiOfN;
+
+    private AseInteger d;
+
+    private AsyncTask rsaTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,6 +80,8 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
         txtPrimeQ = (EditText) viewRoot.findViewById(R.id.txtPrimeQ);
         lblCalculatedN = (TextView) viewRoot.findViewById(R.id.lblCalculatedN);
         lblCalculatedPhiOfN = (TextView) viewRoot.findViewById(R.id.lblCalculatedPhiOfN);
+        txtNumberE = (EditText) viewRoot.findViewById(R.id.txtNumberE);
+        lblCalculatedNumberD = (TextView) viewRoot.findViewById(R.id.lblCalculatedNumberD);
 
         txtNumberToDecrypt = (EditText) viewRoot.findViewById(R.id.txtNumberToDecrypt);
         btnDecryptNormal = (Button) viewRoot.findViewById(R.id.btnDecryptNormal);
@@ -83,6 +94,10 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
         lblResult = (TextView) viewRoot.findViewById(R.id.lblResult);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
 
+        txtPrimeP.addTextChangedListener(this);
+        txtPrimeQ.addTextChangedListener(this);
+        txtNumberE.addTextChangedListener(this);
+
         btnDecryptNormal.setOnClickListener(this);
         btnDecryptCRT.setOnClickListener(this);
         btnEncrypt.setOnClickListener(this);
@@ -90,33 +105,33 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
         return viewRoot;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            return;
-        }
-
-        restoreTextFieldString(savedInstanceState, ARG_PRIME_P, txtPrimeP);
-        restoreTextFieldString(savedInstanceState, ARG_PRIME_Q, txtPrimeQ);
-        restoreTextFieldInteger(savedInstanceState, ARG_DECRYPT_NUMBER, txtNumberToDecrypt);
-        restoreTextFieldInteger(savedInstanceState, ARG_ENCRYPT_NUMBER, txtNumberToEncrypt);
-    }
 
     @Override
     public void onStart() {
         super.onStart();
 
         // as the fragment becomes visible, calculate n and phi(n)
+        calculateAdditionalParameters();
+    }
+
+    private void calculateAdditionalParameters() {
+        lblCalculatedN.setText("n: will be calculated");
+        lblCalculatedPhiOfN.setText("phi(n): will be calculated");
+        lblCalculatedNumberD.setText("phi(n): will be calculated");
+
         // always to this in a seperate task as with very high numbers the UI thread is disturbed
 
         if (hasValidCryptoPrimes()) {
             AseInteger p = new AseInteger(txtPrimeP.getText().toString());
             AseInteger q = new AseInteger(txtPrimeQ.getText().toString());
+            AseInteger e = null;
+
+            if (txtNumberE.getText().length() > 0) {
+                e = new AseInteger(txtNumberE.getText().toString());
+            }
 
             // result is obtained in onAsyncTaskFinished(AsyncTask task, CalculationResult calculationResult)
-            new ParameterCalculationHelperTask(this).execute(p, q);
+            new ParameterCalculationHelperTask(this).execute(p, q, e);
         }
     }
 
@@ -128,28 +143,76 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        saveTextFieldString(outState, ARG_PRIME_P, txtPrimeP);
-        saveTextFieldString(outState, ARG_PRIME_Q, txtPrimeQ);
-        saveTextFieldInteger(outState, ARG_DECRYPT_NUMBER, txtNumberToDecrypt);
-        saveTextFieldInteger(outState, ARG_ENCRYPT_NUMBER, txtNumberToEncrypt);
-    }
-
-
-    @Override
     public void onClick(View view) {
         // Always get rid of the soft keyboard
         closeSoftKeyboard();
 
         if (btnDecryptNormal.equals(view)) {
-
+            doDecryption(false);
         } else if (btnDecryptCRT.equals(view)) {
-
+            doDecryption(true);
         } else if (btnEncrypt.equals(view)) {
-
+            doEncryption();
         }
+    }
+
+    private void doEncryption() {
+        if (!validateGeneralParameters()) {
+            return;
+        }
+
+        AseInteger message = checkAndGetNumber(txtNumberToEncrypt, "Number to encrypt");
+        if (message == null) {
+            return;
+        }
+
+        prepareViewForResults();
+
+        rsaTask = new RSAEncryptionTask(new TaskFinishedCallable<RSAEncryptionResult>() {
+            @Override
+            public void onAsyncTaskFinished(AsyncTask task, RSAEncryptionResult result) {
+
+            }
+        });
+
+        //rsaTask.execute(new RSAEncryptionParameters(p, q, e, d));
+    }
+
+    private AseInteger checkAndGetNumber(EditText field, String fieldName) {
+        try {
+            return new AseInteger(field.getText().toString());
+        } catch (NumberFormatException e) {
+            Toast.makeText(getActivity(), fieldName + ": invalid number", Toast.LENGTH_LONG)
+                    .show(); // TODO: use StringBuilder
+            return null;
+        }
+    }
+
+    private boolean validateGeneralParameters() {
+        if (txtPrimeP.getText().length() == 0 || txtPrimeQ.getText().length() == 0) {
+            Toast.makeText(getActivity(), "Please fill in all RSA general parameters",
+                    Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        if (txtPrimeP.getText().toString().equals(txtPrimeQ.getText().toString())) {
+            Toast.makeText(getActivity(), "Nice try, but p and q should be different",
+                    Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        // these parameters are set in onAsyncTaskFinished(AsyncTask task, CalculationResult calculationResult)
+        if (n == null || phiOfN == null || d == null) {
+            Toast.makeText(getActivity(), "Please check all the RSA general parameters",
+                    Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    private void doDecryption(boolean useChineseRemainderTheorem) {
+
     }
 
     private void prepareViewForResults() {
@@ -163,8 +226,70 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
     }
 
     @Override
-    public void onAsyncTaskFinished(AsyncTask task, ParameterCalculationHelperTask.CalculationResult calculationResult) {
+    public void onAsyncTaskFinished(AsyncTask task,
+                                    ParameterCalculationHelperTask.CalculationResult calculationResult) {
+        // if p or q is not prime, the results are totally invalid
+        // therefore display that to the user
+        if (!calculationResult.isPPrime() || !calculationResult.isQPrime()) {
+            String errorData = getPrimeErrorString(calculationResult.isPPrime(),
+                    calculationResult.isQPrime());
+
+            lblCalculatedPhiOfN.setText("phi(n): " + errorData);// TODO use StringBuilder
+            lblCalculatedN.setText("n: " + errorData);// TODO use StringBuilder
+            return;
+        }
+
         lblCalculatedN.setText("n: " + calculationResult.getN());// TODO use StringBuilder
         lblCalculatedPhiOfN.setText("phi(n): " + calculationResult.getPhiOfN());// TODO use StringBuilder
+
+        n = calculationResult.getN();
+        phiOfN = calculationResult.getPhiOfN();
+
+        if (calculationResult.isETooBig()) {
+            lblCalculatedNumberD.setText("d: e must be smaller than phi(n)");
+        } else if (!calculationResult.isGcdOfEAndPhiOfNEqualsOne()) {
+            lblCalculatedNumberD.setText("d: gcd(e, phi(n)) is not 1");
+        } else if (calculationResult.getDecryptionNumber() != null) {
+            lblCalculatedNumberD.setText("d: " + calculationResult.getDecryptionNumber() +
+                    " mod " + n); // TODO use StringBuilder
+
+            d = calculationResult.getDecryptionNumber();
+        }
+    }
+
+    private String getPrimeErrorString(boolean pPrime, boolean qPrime) {
+        if (!pPrime && !qPrime) {
+            return "p and q are composite numbers";
+        }
+
+        if (!pPrime) {
+            return "p is a composite number";
+        }
+
+        return "q is a composite number";
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+        n = null;
+        phiOfN = null;
+        d = null;
+
+        if (txtPrimeP.getText().length() == 0 || txtPrimeQ.getText().length() == 0) {
+            return;
+        }
+
+        // recalculate n and phi(n)
+        calculateAdditionalParameters();
     }
 }
