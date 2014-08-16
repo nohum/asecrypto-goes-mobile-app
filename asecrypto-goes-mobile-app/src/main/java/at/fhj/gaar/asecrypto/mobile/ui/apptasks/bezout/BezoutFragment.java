@@ -85,20 +85,6 @@ public class BezoutFragment extends BaseFragment
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            return;
-        }
-
-        restoreTextFieldString(savedInstanceState, ARG_FIRST_NUMBER, txtFirstNumber);
-        restoreTextFieldString(savedInstanceState, ARG_SECOND_NUMBER, txtSecondNumber);
-        restoreTextFieldInteger(savedInstanceState, ARG_FIRST_BITS, txtFirstBits);
-        restoreTextFieldInteger(savedInstanceState, ARG_SECOND_BITS, txtSecondBits);
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 

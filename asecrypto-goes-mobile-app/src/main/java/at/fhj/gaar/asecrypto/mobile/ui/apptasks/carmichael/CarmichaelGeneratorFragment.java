@@ -82,17 +82,6 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            return;
-        }
-
-        restoreTextFieldString(savedInstanceState, ARG_BITS, txtBitsForNumbers);
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 

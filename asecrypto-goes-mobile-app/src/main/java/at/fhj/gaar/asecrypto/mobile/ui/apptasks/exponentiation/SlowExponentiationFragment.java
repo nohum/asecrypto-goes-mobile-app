@@ -71,21 +71,6 @@ public class SlowExponentiationFragment extends BaseFragment
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            return;
-        }
-
-        restoreTextFieldString(savedInstanceState, ARG_BIT_NUMBER, txtBitsOfNumber);
-
-        restoreTextFieldInteger(savedInstanceState, ARG_BASIS_NUMBER, txtBasisNumber);
-        restoreTextFieldInteger(savedInstanceState, ARG_EXPONENT_NUMBER, txtExponentNumber);
-        restoreTextFieldInteger(savedInstanceState, ARG_MODULUS_NUMBER, txtModulusNumber);
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 

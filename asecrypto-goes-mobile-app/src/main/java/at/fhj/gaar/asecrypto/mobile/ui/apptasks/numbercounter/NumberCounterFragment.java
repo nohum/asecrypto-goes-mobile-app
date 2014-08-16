@@ -60,22 +60,10 @@ public class NumberCounterFragment extends BaseFragment
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            return;
-        }
-
-        restoreTextFieldString(savedInstanceState, ARG_BIT_NUMBER, txtBitNumber);
-        restoreTextFieldInteger(savedInstanceState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        saveTextFieldInteger(outState, ARG_BIT_NUMBER, txtBitNumber);
+        saveTextFieldString(outState, ARG_BIT_NUMBER, txtBitNumber);
         saveTextFieldString(outState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
     }
 

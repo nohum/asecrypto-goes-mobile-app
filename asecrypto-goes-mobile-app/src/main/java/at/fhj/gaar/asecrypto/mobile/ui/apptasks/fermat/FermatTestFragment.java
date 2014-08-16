@@ -84,19 +84,6 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            return;
-        }
-
-        restoreTextFieldString(savedInstanceState, ARG_BITS, txtBitsForNumber);
-        restoreTextFieldString(savedInstanceState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
-        restoreTextFieldInteger(savedInstanceState, ARG_NUMBER_OF_RUNS, txtNumberOfRuns);
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
 

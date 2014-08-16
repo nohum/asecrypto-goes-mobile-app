@@ -83,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="n: will be calculated"
+                android:freezesText="true"
                 android:id="@+id/lblCalculatedN" />
 
             <TextView
@@ -90,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="phi(n): will be calculated"
+                android:freezesText="true"
                 android:id="@+id/lblCalculatedPhiOfN" />
 
             <Space
