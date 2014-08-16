@@ -25,14 +25,6 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 public class SlowExponentiationFragment extends BaseFragment
         implements View.OnClickListener, TaskFinishedCallable<ExponentiationResult> {
 
-    private static final String ARG_BIT_NUMBER = "bit_number";
-
-    private static final String ARG_BASIS_NUMBER = "concrete_number";
-
-    private static final String ARG_EXPONENT_NUMBER = "exponent_number";
-
-    private static final String ARG_MODULUS_NUMBER = "modulus_number";
-
     protected EditText txtBitsOfNumber;
 
     protected EditText txtBasisNumber;
@@ -68,17 +60,6 @@ public class SlowExponentiationFragment extends BaseFragment
         btnCalculate.setOnClickListener(this);
 
         return viewRoot;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        saveTextFieldInteger(outState, ARG_BIT_NUMBER, txtBitsOfNumber);
-
-        saveTextFieldString(outState, ARG_BASIS_NUMBER, txtBasisNumber);
-        saveTextFieldString(outState, ARG_EXPONENT_NUMBER, txtExponentNumber);
-        saveTextFieldString(outState, ARG_MODULUS_NUMBER, txtModulusNumber);
     }
 
     @Override

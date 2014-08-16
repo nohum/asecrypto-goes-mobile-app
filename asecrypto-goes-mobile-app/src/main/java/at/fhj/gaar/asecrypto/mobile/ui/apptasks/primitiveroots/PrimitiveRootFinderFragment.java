@@ -1,9 +1,7 @@
 package at.fhj.gaar.asecrypto.mobile.ui.apptasks.primitiveroots;
 
-import android.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
-
 import at.fhj.gaar.asecrypto.mobile.R;
-import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
@@ -26,10 +21,6 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
  */
 public class PrimitiveRootFinderFragment extends BaseFragment implements View.OnClickListener,
         TaskFinishedCallable<PrimitiveRootResult> {
-
-    private static final String ARG_BITS = "bits";
-
-    private static final String ARG_NUMBER_OF_RUNS = "number_of_runs";
 
     private EditText txtBits;
 

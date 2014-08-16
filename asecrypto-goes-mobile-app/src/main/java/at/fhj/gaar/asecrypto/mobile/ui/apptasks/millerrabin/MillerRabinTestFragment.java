@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,17 +27,6 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
  */
 public class MillerRabinTestFragment extends BaseFragment implements View.OnClickListener,
         TaskFinishedCallable<MillerRabinResult>, TaskIntermediateCallable<MillerRabinProgress> {
-
-    private static final String ARG_BITS = "bits";
-
-    private static final String ARG_CONCRETE_NUMBER = "concrete_number";
-
-    private static final String ARG_NUMBER_OF_RUNS = "number_of_runs";
-
-    /**
-     * Externally given number to test (by Intent).
-     */
-    public static final String ARG_INTENT_TEST_NUMBER = "millerrabin_test_number";
 
     private String defaultConcreteTestNumber;
 
@@ -92,15 +80,6 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
             txtConcreteNumber.setText(defaultConcreteTestNumber);
             defaultConcreteTestNumber = null;
         }
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        saveTextFieldString(outState, ARG_BITS, txtBitsForNumber);
-        saveTextFieldString(outState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
-        saveTextFieldInteger(outState, ARG_NUMBER_OF_RUNS, txtNumberOfRuns);
     }
 
     @Override

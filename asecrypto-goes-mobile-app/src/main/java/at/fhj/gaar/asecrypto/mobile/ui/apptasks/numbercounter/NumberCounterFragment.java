@@ -24,10 +24,6 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 public class NumberCounterFragment extends BaseFragment
         implements View.OnClickListener, TaskFinishedCallable<Long> {
 
-    private static final String ARG_BIT_NUMBER = "bit_number";
-
-    private static final String ARG_CONCRETE_NUMBER = "concrete_number";
-
     private EditText txtBitNumber;
 
     private EditText txtConcreteNumber;
@@ -57,14 +53,6 @@ public class NumberCounterFragment extends BaseFragment
         btnCount.setOnClickListener(this);
 
         return viewRoot;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        saveTextFieldString(outState, ARG_BIT_NUMBER, txtBitNumber);
-        saveTextFieldString(outState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
     }
 
     @Override

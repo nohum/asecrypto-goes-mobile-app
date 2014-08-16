@@ -25,8 +25,6 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 public class CarmichaelGeneratorFragment extends BaseFragment implements View.OnClickListener,
         TaskFinishedCallable<CarmichaelResult> {
 
-    private static final String ARG_BITS = "bits";
-
     private EditText txtBitsForNumbers;
 
     private Button btnStartGeneration;
@@ -79,13 +77,6 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
         btnDoMillerRabinTest.setOnClickListener(this);
 
         return viewRoot;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        saveTextFieldString(outState, ARG_BITS, txtBitsForNumbers);
     }
 
     @Override

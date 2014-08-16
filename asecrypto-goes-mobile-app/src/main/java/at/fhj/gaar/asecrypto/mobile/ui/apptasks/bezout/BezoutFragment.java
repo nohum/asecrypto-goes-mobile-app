@@ -26,14 +26,6 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 public class BezoutFragment extends BaseFragment
         implements View.OnClickListener, TaskFinishedCallable<BezoutResult> {
 
-    private static final String ARG_FIRST_NUMBER = "first_number";
-
-    private static final String ARG_SECOND_NUMBER = "second_number";
-
-    private static final String ARG_FIRST_BITS = "first_bits";
-
-    private static final String ARG_SECOND_BITS = "second_bits";
-
     private EditText txtFirstNumber;
 
     private EditText txtFirstBits;
@@ -82,16 +74,6 @@ public class BezoutFragment extends BaseFragment
         btnRecursive.setOnClickListener(this);
 
         return viewRoot;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        saveTextFieldString(outState, ARG_FIRST_NUMBER, txtFirstNumber);
-        saveTextFieldString(outState, ARG_SECOND_NUMBER, txtSecondNumber);
-        saveTextFieldInteger(outState, ARG_FIRST_BITS, txtFirstBits);
-        saveTextFieldInteger(outState, ARG_SECOND_BITS, txtSecondBits);
     }
 
     @Override

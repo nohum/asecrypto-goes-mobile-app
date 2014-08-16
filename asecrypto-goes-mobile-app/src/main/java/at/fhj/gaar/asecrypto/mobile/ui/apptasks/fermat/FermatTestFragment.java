@@ -1,6 +1,5 @@
 package at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +19,6 @@ import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskIntermediateCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.ui.navigation.DrawerItemIdentifiers;
 import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
@@ -28,17 +26,6 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
  */
 public class FermatTestFragment extends BaseFragment implements View.OnClickListener,
         TaskFinishedCallable<FermatResult>, TaskIntermediateCallable<FermatProgress> {
-
-    private static final String ARG_BITS = "bits";
-
-    private static final String ARG_CONCRETE_NUMBER = "concrete_number";
-
-    private static final String ARG_NUMBER_OF_RUNS = "number_of_runs";
-
-    /**
-     * Externally given number to test (by Intent).
-     */
-    public static final String ARG_INTENT_TEST_NUMBER = "fermat_test_number";
 
     private String defaultConcreteTestNumber;
 
@@ -92,15 +79,6 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
             txtConcreteNumber.setText(defaultConcreteTestNumber);
             defaultConcreteTestNumber = null;
         }
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        saveTextFieldString(outState, ARG_BITS, txtBitsForNumber);
-        saveTextFieldString(outState, ARG_CONCRETE_NUMBER, txtConcreteNumber);
-        saveTextFieldInteger(outState, ARG_NUMBER_OF_RUNS, txtNumberOfRuns);
     }
 
     @Override
