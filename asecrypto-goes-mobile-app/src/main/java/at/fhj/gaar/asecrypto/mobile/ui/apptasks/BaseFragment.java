@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,12 +30,6 @@ public class BaseFragment extends Fragment {
     public static final String ARG_SECTION_TITLE = "section_title";
 
     public BaseFragment() {
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_base, container, false);
     }
 
     @Override
@@ -95,6 +90,10 @@ public class BaseFragment extends Fragment {
      */
     protected void restoreTextFieldString(Bundle bundle, String identifier, TextView textView) {
         String data = bundle.getString(identifier);
+        Log.d("AseCrypto", String.format(
+                "BaseFragment.restoreTextFieldString(): identifier = %s, data = %s", identifier,
+                data));
+
         if (data == null) {
             return;
         }
@@ -112,8 +111,12 @@ public class BaseFragment extends Fragment {
      */
     protected void restoreTextFieldInteger(Bundle bundle, String identifier, TextView textView) {
         int number = bundle.getInt(identifier);
+        Log.d("AseCrypto", String.format(
+                "BaseFragment.restoreTextFieldInteger(): identifier = %s, number = %d", identifier,
+                number));
+
         if (number != 0) {
-            textView.setText(number);
+            textView.setText(String.valueOf(number));
         }
     }
 }
