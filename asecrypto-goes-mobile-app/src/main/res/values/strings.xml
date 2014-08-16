@@ -7,7 +7,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="task_number_counter">Number counter</string>
-    <string name="task_euclid">Euclid iterative and recursive</string>
+    <string name="task_euclid">Euclid iterative, recursive and factorial</string>
     <string name="task_euclid_speed">Speed of Euclid\'s algorithm</string>
     <string name="task_bezout">Bezout iterative and recursive</string>
     <string name="task_slow_exponentation_speed">Slow exponentation</string>
