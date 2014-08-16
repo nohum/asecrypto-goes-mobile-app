@@ -46,20 +46,52 @@ public class PrimitiveRootLookupTask extends AsyncTask<FinderArguments, Void, Pr
         return new PrimitiveRootResult(watch.getElapsedTime(), result[0], result[1]);
     }
 
-    /**
-     * TODO: refactoring
-     *
-     * @param bits
-     * @param testRuns
-     * @return
-     */
     private AseInteger[] findPrimitiveRoot(int bits, int testRuns) {
-        AseInteger finalModulus;
-        AseInteger finalPrimeQ;
-        int candidateFoundCounter;
+        AseInteger[] result = findPrimeCandidate(bits, testRuns);
 
+        if (result == null) {
+            return null;
+        }
+
+        AseInteger finalModulus = result[0];
+        AseInteger finalPrimeQ = result[1];
+
+        return calculateFinalRoot(bits, finalModulus, finalPrimeQ);
+    }
+
+    private AseInteger[] calculateFinalRoot(int bits, AseInteger modulus, AseInteger prime) {
+        while (true) {
+            if (isCancelled()) {
+                return null;
+            }
+
+            // create a random AseInteger as a candidate
+            AseInteger r = new AseInteger(bits, new Random());
+
+            // make sure the candidate is smaller than the modulus number
+            if (r.compareTo(modulus) >= 0) {
+                continue;
+            }
+
+            // check the order of the candidate
+            if (r.modPow(AseInteger.TWO, modulus).compareTo(AseInteger.ONE) == 0) {
+                continue;
+            }
+
+            if (r.modPow(prime, modulus).compareTo(AseInteger.ONE) == 0) {
+                continue;
+            }
+
+            return new AseInteger[] {
+                    modulus,
+                    r
+            };
+        }
+    }
+
+    private AseInteger[] findPrimeCandidate(int bits, int testRuns) {
         // do until you found a matching prime
-        for (int i = 1; true; i++) {
+        while (true) {
             if (isCancelled()) {
                 return null;
             }
@@ -76,43 +108,11 @@ public class PrimitiveRootLookupTask extends AsyncTask<FinderArguments, Void, Pr
                             " \"modulus - 1 = 2*primeQ\"");
                 }
 
-                candidateFoundCounter = i;
-                finalModulus = mod;
-                finalPrimeQ = mod.subtract(AseInteger.ONE).divide(AseInteger.TWO);
-                break;
+                return new AseInteger[] {
+                        mod,
+                        mod.subtract(AseInteger.ONE).divide(AseInteger.TWO)
+                };
             }
-        }
-
-        int trails = 0;
-        while (true) {
-            if (isCancelled()) {
-                return null;
-            }
-
-            // create a random AseInteger as a candidate
-            AseInteger r = new AseInteger(bits, new Random());
-
-            // make sure the candidate is smaller than the modulus number
-            if (r.compareTo(finalModulus) >= 0) {
-                continue;
-            }
-
-            // only count trails with an suitable random candidate
-            trails++;
-
-            // check the order of the candidate
-            if (r.modPow(AseInteger.TWO, finalModulus).compareTo(AseInteger.ONE) == 0) {
-                continue;
-            }
-
-            if (r.modPow(finalPrimeQ, finalModulus).compareTo(AseInteger.ONE) == 0) {
-                continue;
-            }
-
-            return new AseInteger[] {
-                    finalModulus,
-                    r
-            };
         }
     }
 

@@ -111,6 +111,9 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
             lblTimeMeasurement.setVisibility(View.INVISIBLE);
             lblPrime.setVisibility(View.INVISIBLE);
             lblModulusNumber.setVisibility(View.INVISIBLE);
+
+            btnFindPrimitiveRoot.setEnabled(true);
+            btnCancel.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -152,6 +155,7 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
         lblTimeMeasurement.setVisibility(View.VISIBLE);
         lblTimeMeasurement.setText("");
         lblModulusNumber.setVisibility(View.VISIBLE);
+        lblModulusNumber.setText("");
 
         btnFindPrimitiveRoot.setEnabled(false);
         btnCancel.setVisibility(View.VISIBLE);
@@ -164,6 +168,10 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
 
         btnFindPrimitiveRoot.setEnabled(true);
         btnCancel.setVisibility(View.INVISIBLE);
+
+        if (primitiveRootResult == null) { // if task has been cancelled
+            return;
+        }
 
         lblPrime.setText("Found prime: " + primitiveRootResult.getPrime()); // TODO use StringBuilder
         lblModulusNumber.setText("Residue class: " + primitiveRootResult.getModulus()); // TODO use StringBuilder

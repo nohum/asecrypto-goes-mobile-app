@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import at.fhj.gaar.asecrypto.mobile.R;
@@ -50,10 +51,13 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
         currentScreenTitle = getTitle();
 
-        // Set up the drawer.
+        // Set up the drawer
         navigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        // Keep screen on for calculations
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     @Override
