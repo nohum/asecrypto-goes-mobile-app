@@ -110,6 +110,12 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
         cancelTesting();
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        cancelTesting();
+    }
+
     private void cancelTesting() {
         if (fermatTask != null && !fermatTask.isCancelled()) {
             fermatTask.cancel(true);

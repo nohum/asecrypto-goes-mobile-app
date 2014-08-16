@@ -70,9 +70,19 @@ public class NumberCounterFragment extends BaseFragment
     @Override
     public void onPause() {
         super.onPause();
+        cancelTask();
+    }
+
+    private void cancelTask() {
         if (numberCounterTask != null && !numberCounterTask.isCancelled()) {
             numberCounterTask.cancel(true);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        cancelTask();
     }
 
     @Override

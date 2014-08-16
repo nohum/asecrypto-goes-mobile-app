@@ -90,7 +90,16 @@ public class EuclidFragment extends BaseFragment
     @Override
     public void onPause() {
         super.onPause();
+        cancelTask();
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        cancelTask();
+    }
+
+    private void cancelTask() {
         if (euclidTask != null && !euclidTask.isCancelled()) {
             euclidTask.cancel(true);
         }

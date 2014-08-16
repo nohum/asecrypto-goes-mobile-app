@@ -106,7 +106,12 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
     @Override
     public void onPause() {
         super.onPause();
+        cancelTesting();
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
         cancelTesting();
     }
 

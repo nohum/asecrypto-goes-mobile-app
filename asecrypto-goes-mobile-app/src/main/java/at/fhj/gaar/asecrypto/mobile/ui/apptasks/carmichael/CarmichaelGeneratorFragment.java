@@ -91,7 +91,12 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
     @Override
     public void onPause() {
         super.onPause();
+        cancelGeneration();
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
         cancelGeneration();
     }
 

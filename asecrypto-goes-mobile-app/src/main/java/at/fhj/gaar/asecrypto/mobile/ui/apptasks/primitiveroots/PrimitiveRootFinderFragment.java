@@ -72,7 +72,12 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
     @Override
     public void onPause() {
         super.onPause();
+        cancelPrimitiveRootFinder();
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
         cancelPrimitiveRootFinder();
     }
 
