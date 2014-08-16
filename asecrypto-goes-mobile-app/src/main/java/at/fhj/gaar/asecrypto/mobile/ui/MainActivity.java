@@ -7,6 +7,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -55,6 +56,7 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
 
         // Keep screen on for calculations
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
     }
 
     @Override
@@ -73,22 +75,32 @@ public class MainActivity extends Activity implements NavigationDrawerCallable, 
 
     @Override
     public void onTaskItemSelected(int taskId, String taskName) {
-        Fragment currentTask = FragmentFactory.getFragment(taskId, taskName);
+        Fragment newFragment = FragmentFactory.getFragment(taskId, taskName);
+        Fragment foundFragment = getFragmentManager().findFragmentById(R.id.container);
+
+        // If the fragment class is the same, DO NOT replace it!
+        // Reason: if e.g. the user has rotated his device, putting in a new fragment of the
+        // same class will disturb the restoration of any saved instance state.
+        if (foundFragment != null && newFragment.getClass().equals(foundFragment.getClass())) {
+            Log.d("AseCrypto", String.format(
+                    "MainActivity.onTaskItemSelected: fragments equal, no replacement needed"));
+            return;
+        }
 
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, currentTask)
+                .replace(R.id.container, newFragment)
                 .commit();
 
         if (expectedFragmentTaskId == taskId
                 && expectedFragmentTaskId == DrawerItemIdentifiers.TASK_FERMAT_TEST) {
             // set default number for Fermat test - given by Carmichael number generator
-            ((FermatTestFragment) currentTask).setConcreteTestNumber((String) fragmentParameter);
+            ((FermatTestFragment) newFragment).setConcreteTestNumber((String) fragmentParameter);
         } else if (expectedFragmentTaskId == taskId
                 && expectedFragmentTaskId == DrawerItemIdentifiers.TASK_MILLER_RABIN_TEST) {
             // set default number for Miller-Rabin test - given by Carmichael number generator
-            ((MillerRabinTestFragment) currentTask)
+            ((MillerRabinTestFragment) newFragment)
                     .setConcreteTestNumber((String) fragmentParameter);
         }
 

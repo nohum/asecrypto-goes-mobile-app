@@ -3,6 +3,7 @@ package at.fhj.gaar.asecrypto.mobile.ui;
 import android.app.Fragment;
 import android.os.Bundle;
 
+import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.bezout.BezoutFragment;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.carmichael.CarmichaelGeneratorFragment;
