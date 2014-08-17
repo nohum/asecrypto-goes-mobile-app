@@ -93,13 +93,8 @@
                 android:focusableInTouchMode="false" />
 
             <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/progressBar"
-                android:indeterminate="true"
-                android:indeterminateOnly="true"
-                android:visibility="invisible" />
+                style="@style/task_progressbar"
+                android:id="@+id/progressBar" />
 
             <Space
                 android:layout_width="20dp"
@@ -107,28 +102,22 @@
                 android:id="@+id/space9" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
                 android:id="@+id/lblPrime"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
                 android:id="@+id/lblModulusNumber"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Taken time: ..."
                 android:id="@+id/lblTimeMeasurement"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
             </LinearLayout>
     </ScrollView>

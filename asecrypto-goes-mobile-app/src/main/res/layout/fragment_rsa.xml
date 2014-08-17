@@ -20,11 +20,9 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="RSA general parameters:"
-                android:focusable="false" />
+                android:focusable="false"
+                style="@style/wrapping_textview" />
 
             <Space
                 android:layout_width="20dp"
@@ -38,10 +36,8 @@
                 android:layout_gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="p: " />
+                    android:text="p: "
+                    style="@style/wrapping_textview" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -59,10 +55,8 @@
                 android:layout_gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="q: " />
+                    android:text="q: "
+                    style="@style/wrapping_textview" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -79,20 +73,16 @@
                 android:id="@+id/space3" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="n: will be calculated"
                 android:freezesText="true"
-                android:id="@+id/lblCalculatedN" />
+                android:id="@+id/lblCalculatedN"
+                style="@style/wrapping_textview" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="phi(n): will be calculated"
                 android:freezesText="true"
-                android:id="@+id/lblCalculatedPhiOfN" />
+                android:id="@+id/lblCalculatedPhiOfN"
+                style="@style/wrapping_textview" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -101,10 +91,8 @@
                 android:layout_gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="e: " />
+                    android:text="e: "
+                    style="@style/wrapping_textview" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -116,12 +104,10 @@
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="d: will be calculated"
                 android:freezesText="true"
-                android:id="@+id/lblCalculatedNumberD" />
+                android:id="@+id/lblCalculatedNumberD"
+                style="@style/wrapping_textview" />
 
             <Space
                 android:layout_width="20dp"
@@ -139,10 +125,8 @@
                 android:id="@+id/space5" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Number to decrypt: " />
+                android:text="Number to decrypt: "
+                style="@style/wrapping_textview" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -188,10 +172,8 @@
                 android:id="@+id/space7" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Number to encrypt: " />
+                android:text="Number to encrypt: "
+                style="@style/wrapping_textview" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -232,13 +214,8 @@
                 android:focusableInTouchMode="false" />
 
             <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/progressBar"
-                android:indeterminate="true"
-                android:indeterminateOnly="true"
-                android:visibility="invisible" />
+                style="@style/task_progressbar"
+                android:id="@+id/progressBar" />
 
             <Space
                 android:layout_width="20dp"
@@ -246,20 +223,16 @@
                 android:id="@+id/space10" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
                 android:id="@+id/lblResult"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Taken time: ..."
                 android:id="@+id/lblTimeMeasurement"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
             </LinearLayout>
     </ScrollView>

@@ -9,48 +9,69 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="How many bits should the number consist of?" />
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="10dp"
-        android:id="@+id/space1" />
+        <TextView
+            android:text="How many bits should the number consist of?"
+            style="@style/wrapping_textview" />
 
-    <EditText
-        android:layout_width="116dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/txtBitNumber"
-        android:singleLine="true"
-        android:inputType="number" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="10dp"
+            android:id="@+id/space1" />
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/space2" />
+        <RadioButton
+            android:id="@+id/rdbBits"
+            android:checked="true"
+            android:text="Input the bits for a number:"
+            style="@style/wrapping_textview" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Input your desired target number:" />
+        <LinearLayout style="@style/radiobutton_margin">
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="10dp"
-        android:id="@+id/space3" />
+            <TextView
+                android:text="Bits: "
+                style="@style/wrapping_textview" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/txtConcreteNumber"
-        android:singleLine="true" />
+            <EditText
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/txtBitNumber"
+                android:singleLine="true"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/radiobutton_margin">
+            <TextView
+                android:text="Number: "
+                android:id="@+id/lblBitNumberReal"
+                android:visibility="gone"
+                style="@style/wrapping_textview" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/space2" />
+
+        <RadioButton
+            android:id="@+id/rdbOwnNumber"
+            android:text="Specify a target number manually:"
+            style="@style/wrapping_textview" />
+
+        <LinearLayout style="@style/radiobutton_margin">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txtConcreteNumber"
+                android:singleLine="true" />
+        </LinearLayout>
+
+    </RadioGroup>
 
     <Space
         android:layout_width="20dp"
@@ -70,13 +91,8 @@
         android:focusableInTouchMode="false" />
 
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:indeterminate="true"
-        android:indeterminateOnly="true"
-        android:visibility="invisible" />
+        style="@style/task_progressbar"
+        android:id="@+id/progressBar" />
 
     <Space
         android:layout_width="20dp"
@@ -85,12 +101,10 @@
         android:clickable="false" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Target number:"
         android:id="@+id/lblResultNumber"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        style="@style/wrapping_textview" />
 
     <Space
         android:layout_width="20dp"
@@ -98,11 +112,9 @@
         android:id="@+id/space7" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Taken time: ..."
         android:id="@+id/lblTimeMeasurement"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        style="@style/wrapping_textview" />
 
 </LinearLayout>
