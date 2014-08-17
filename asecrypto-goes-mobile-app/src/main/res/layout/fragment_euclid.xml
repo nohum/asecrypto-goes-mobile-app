@@ -13,8 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="First number:"
-        android:id="@+id/lblFirstNumber" />
+        android:text="First number:" />
 
     <Space
         android:layout_width="20dp"
@@ -31,15 +30,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Bits: "
-            android:id="@+id/lblBitsForNumbers" />
+            android:text="Bits: " />
 
         <EditText
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/txtFirstBits"
-            android:numeric="integer"
             android:singleLine="true"
             android:inputType="number" />
     </LinearLayout>
@@ -54,15 +51,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="OR concrete number: "
-            android:id="@+id/lblConcreteFirstNumber" />
+            android:text="OR concrete number: " />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/txtFirstNumber"
-            android:numeric="integer"
             android:singleLine="true"
             android:inputType="number" />
     </LinearLayout>
@@ -76,8 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Second number:"
-        android:id="@+id/lblSecondNumber" />
+        android:text="Second number:" />
 
     <Space
         android:layout_width="20dp"
@@ -94,15 +88,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Bits: "
-            android:id="@+id/lblBitsSecondNumber" />
+            android:text="Bits: " />
 
         <EditText
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/txtSecondBits"
-            android:numeric="integer"
             android:singleLine="true"
             android:inputType="number" />
     </LinearLayout>
@@ -117,8 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="OR concrete number: "
-            android:id="@+id/lblConcreteSecondNumber" />
+            android:text="OR concrete number: " />
 
         <EditText
             android:layout_width="match_parent"
@@ -126,7 +117,6 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/txtSecondNumber"
-            android:numeric="integer"
             android:singleLine="true" />
     </LinearLayout>
 

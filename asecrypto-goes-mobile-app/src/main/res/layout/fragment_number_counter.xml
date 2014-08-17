@@ -13,8 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="How many bits should the number consist of?"
-        android:id="@+id/lblNumberOfBits" />
+        android:text="How many bits should the number consist of?" />
 
     <Space
         android:layout_width="20dp"
@@ -26,7 +25,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/txtBitNumber"
-        android:numeric="integer"
         android:singleLine="true"
         android:inputType="number" />
 
@@ -39,8 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="OR: Input your target number"
-        android:id="@+id/lblConcreteNumber" />
+        android:text="Input your desired target number:" />
 
     <Space
         android:layout_width="20dp"
@@ -53,7 +50,6 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/txtConcreteNumber"
-        android:numeric="integer"
         android:singleLine="true" />
 
     <Space

@@ -17,14 +17,13 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Miller-Rabin - number to test:"
-                android:id="@+id/lblFirstNumber" />
+                android:text="Miller-Rabin - number to test:" />
 
             <Space
                 android:layout_width="20dp"
@@ -41,15 +40,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Bits: "
-                    android:id="@+id/lblBitsForNumbers" />
+                    android:text="Bits: " />
 
                 <EditText
                     android:layout_width="116dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:id="@+id/txtBitsForNumber"
-                    android:numeric="integer"
                     android:singleLine="true"
                     android:inputType="number" />
             </LinearLayout>
@@ -70,7 +67,6 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/txtConcreteNumber"
-                android:numeric="integer"
                 android:singleLine="true"
                 android:inputType="number" />
 
@@ -90,15 +86,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Number of test runs: "
-                    android:id="@+id/lblBitsSecondNumber" />
+                    android:text="Number of test runs: " />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:id="@+id/txtNumberOfRuns"
-                    android:numeric="integer"
                     android:singleLine="true"
                     android:inputType="number" />
             </LinearLayout>
