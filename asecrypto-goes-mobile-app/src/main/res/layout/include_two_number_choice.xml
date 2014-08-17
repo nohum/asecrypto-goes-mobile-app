@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:showIn="@layout/fragment_bezout">
+
+    <TextView
+        android:text="First number:"
+        style="@style/wrapping_textview" />
+
+    <Space
+        android:id="@+id/space1"
+        style="@style/small_space" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:text="Input the bits for a number:"
+            android:id="@+id/rdbFirstBits"
+            style="@style/wrapping_textview"
+            android:checked="true"
+            android:singleLine="true" />
+
+        <LinearLayout style="@style/radiobutton_margin">
+
+            <TextView
+                android:text="Bits: "
+                style="@style/wrapping_textview" />
+
+            <EditText
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/txtFirstBits"
+                android:singleLine="true"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <RadioButton
+            android:text="Specify a concrete number:"
+            android:id="@+id/rdbFirstNumber"
+            style="@style/wrapping_textview"
+            android:singleLine="true" />
+
+        <LinearLayout style="@style/radiobutton_margin">
+
+            <TextView
+                android:text="Number: "
+                style="@style/wrapping_textview" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/txtFirstNumber"
+                android:singleLine="true"
+                android:inputType="number" />
+        </LinearLayout>
+
+    </RadioGroup>
+
+    <Space
+        android:id="@+id/space2"
+        style="@style/small_space" />
+
+    <TextView
+        android:text="Second number:"
+        style="@style/wrapping_textview" />
+
+    <Space
+        android:id="@+id/space3"
+        style="@style/small_space" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:text="Input the bits for a number:"
+            android:id="@+id/rdbSecondBits"
+            style="@style/wrapping_textview"
+            android:checked="true"
+            android:singleLine="true" />
+
+        <LinearLayout style="@style/radiobutton_margin">
+
+
+            <TextView
+                android:text="Bits: "
+                style="@style/wrapping_textview" />
+
+            <EditText
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/txtSecondBits"
+                android:singleLine="true"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <RadioButton
+            android:text="Specify a concrete number:"
+            android:id="@+id/rdbSecondNumber"
+            style="@style/wrapping_textview"
+            android:singleLine="true" />
+
+        <LinearLayout style="@style/radiobutton_margin">
+
+            <TextView
+                android:text="Number: "
+                style="@style/wrapping_textview" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txtSecondNumber"
+                android:singleLine="true" />
+        </LinearLayout>
+
+    </RadioGroup>
+
+
+</merge>

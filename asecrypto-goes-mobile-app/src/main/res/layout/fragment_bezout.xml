@@ -14,101 +14,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:text="First number:"
-                style="@style/wrapping_textview" />
-
-            <Space
-                android:id="@+id/space1"
-                style="@style/small_space" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="Bits: "
-                    style="@style/wrapping_textview" />
-
-                <EditText
-                    android:layout_width="116dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:id="@+id/txtFirstBits"
-                    android:singleLine="true"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="OR concrete number: "
-                    style="@style/wrapping_textview" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:id="@+id/txtFirstNumber"
-                    android:singleLine="true"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <Space
-                android:id="@+id/space2"
-                style="@style/big_space" />
-
-            <TextView
-                android:text="Second number:"
-                style="@style/wrapping_textview" />
-
-            <Space
-                android:id="@+id/space3"
-                style="@style/small_space" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="Bits: "
-                    style="@style/wrapping_textview" />
-
-                <EditText
-                    android:layout_width="116dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:id="@+id/txtSecondBits"
-                    android:singleLine="true"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <TextView
-                    android:text="OR concrete number: "
-                    style="@style/wrapping_textview" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
-                    android:id="@+id/txtSecondNumber"
-                    android:singleLine="true" />
-            </LinearLayout>
+            <include layout="@layout/include_two_number_choice" />
 
             <Space
                 android:id="@+id/space4"
@@ -135,7 +41,6 @@
 
             <Space
                 android:id="@+id/space5"
-                android:focusableInTouchMode="false"
                 style="@style/big_space" />
 
             <ProgressBar
@@ -170,7 +75,7 @@
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
-            </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>
