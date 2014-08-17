@@ -41,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="n: " />
+                    android:text="p: " />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -215,9 +215,20 @@
             </LinearLayout>
 
             <Space
-                android:layout_width="20dp"
+                android:layout_width="10dp"
                 android:layout_height="20dp"
                 android:id="@+id/space8"
+                android:focusableInTouchMode="false" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="#c7222525" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="20dp"
+                android:id="@+id/space9"
                 android:focusableInTouchMode="false" />
 
             <ProgressBar
@@ -231,8 +242,8 @@
 
             <Space
                 android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/space9" />
+                android:layout_height="10dp"
+                android:id="@+id/space10" />
 
             <TextView
                 android:layout_width="wrap_content"

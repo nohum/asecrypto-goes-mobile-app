@@ -72,8 +72,6 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
 
     private AseInteger d;
 
-    private AsyncTask rsaTask;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -172,22 +170,34 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
 
         prepareViewForResults();
 
-        rsaTask = new RSAEncryptionTask(new TaskFinishedCallable<RSAResult>() {
+        RSAEncryptionTask encryptionTask = new RSAEncryptionTask(new TaskFinishedCallable<RSAResult>() {
             @Override
             public void onAsyncTaskFinished(AsyncTask task, RSAResult result) {
-                lblResult.setText("Encryption result: " + result.getResult().toString() +
-                        " mod " + n.toString()); // TODO use StringBuilder
-
-                lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds()); // TODO use StringBuilder
-
-                scrollToBottomOfView();
+                handleResultForUser("Encryption", result);
             }
         });
 
         AseInteger e = new AseInteger(txtNumberE.getText().toString());
 
         //noinspection unchecked
-        rsaTask.execute(new RSAEncryptionParameters(n, e, message));
+        encryptionTask.execute(new RSAEncryptionParameters(n, e, message));
+    }
+
+    private void handleResultForUser(String type, RSAResult result) {
+        progressBar.setVisibility(View.INVISIBLE);
+        lblResult.setText(type + " result: " + result.getResult().toString() +
+                " mod " + n.toString()); // TODO use StringBuilder
+
+        lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() +
+                " milliseconds"); // TODO use StringBuilder
+
+        // scroll to bottom
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        });
     }
 
     private AseInteger checkAndGetNumber(EditText field, String fieldName) {
@@ -224,7 +234,31 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
     }
 
     private void doDecryption(boolean useChineseRemainderTheorem) {
+        if (!validateGeneralParameters()) {
+            return;
+        }
 
+        AseInteger message = checkAndGetNumber(txtNumberToDecrypt, "Number to decrypt");
+        if (message == null) {
+            return;
+        }
+
+        prepareViewForResults();
+
+        RSADecryptionTask decryptionTask = new RSADecryptionTask(
+                new TaskFinishedCallable<RSAResult>() {
+            @Override
+            public void onAsyncTaskFinished(AsyncTask task, RSAResult result) {
+                handleResultForUser("Decryption", result);
+            }
+        });
+
+        AseInteger p = new AseInteger(txtPrimeP.getText().toString());
+        AseInteger q = new AseInteger(txtPrimeQ.getText().toString());
+
+        //noinspection unchecked
+        decryptionTask.execute(new RSADecryptionParameters(p, q, d, message,
+                useChineseRemainderTheorem));
     }
 
     private void prepareViewForResults() {
@@ -281,16 +315,6 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
         return "q is a composite number";
     }
 
-    private void scrollToBottomOfView() {
-        // scroll to bottom
-        scrollView.post(new Runnable() {
-            @Override
-            public void run() {
-                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
-            }
-        });
-    }
-
     @Override
     public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
 
@@ -311,7 +335,7 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
             return;
         }
 
-        // recalculate n and phi(n)
+        // recalculate n, phi(n) and d
         calculateAdditionalParameters();
     }
 }

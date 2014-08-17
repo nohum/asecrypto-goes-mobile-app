@@ -52,11 +52,7 @@ public class ParameterCalculationHelperTask extends AsyncTask<AseInteger, Void, 
             eTooBig = e.compareTo(phiOfN) > -1;
 
             AseInteger[] bezoutResult = e.getBezout(phiOfN);
-            Log.d("AseCrypto", "ParameterCalculationHelperTask.doInBackground: bezout result = " +
-                    bezoutResult);
-
             gcdIsOne = bezoutResult[2].compareTo(AseInteger.ONE) == 0;
-
             decryptionNumber = bezoutResult[0];
         }
 
