@@ -119,8 +119,6 @@ public class SlowExponentiationFragment extends BaseFragment
             basisNumber = new AseInteger(basisNumberAsText);
             exponentNumber = new AseInteger(exponentNumberAsText);
             modulusNumber = new AseInteger(modulusNumberAsText);
-
-            // TODO sanity checks?
         } else {
             Toast.makeText(getActivity(),
                     "You have to input either a bit number or your desired numbers!",

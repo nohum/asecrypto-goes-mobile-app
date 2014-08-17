@@ -136,33 +136,6 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
         millerrabinTask.execute(new MillerRabinArguments(numberToTest, numberOfRuns));
     }
 
-    private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,
-                                                String nameOfNumberField) {
-        String concreteNumber = numberField.getText().toString();
-        String bitFieldText = bitField.getText().toString();
-
-        AseInteger targetNumber;
-        if (NumberHelper.isValidBitNumberInTextView(bitField)) {
-            int bits = Integer.valueOf(bitFieldText);
-
-            targetNumber = new AseInteger(bits, new Random());
-            targetNumber = targetNumber.setBit(bits - 1);
-
-            // Display number for the user in the edit element
-            numberField.setText(targetNumber.toString());
-        } else if (concreteNumber.length() > 0) {
-            targetNumber = new AseInteger(concreteNumber);
-        } else {
-
-            Toast.makeText(getActivity(), nameOfNumberField
-                    + ": You have to input either bits or a target number!", Toast.LENGTH_LONG)
-                    .show(); // TODO use StringBuilder
-            return null;
-        }
-
-        return targetNumber;
-    }
-
     private void doPostCalculationStartSetup(AseInteger testNumber) {
         progressBar.setVisibility(View.VISIBLE);
         lblTestResult.setVisibility(View.VISIBLE);

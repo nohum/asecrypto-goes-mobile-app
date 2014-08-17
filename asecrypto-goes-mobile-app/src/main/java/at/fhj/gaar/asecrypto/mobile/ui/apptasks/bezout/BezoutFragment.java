@@ -141,32 +141,6 @@ public class BezoutFragment extends BaseFragment
         bezoutTask.execute(firstNumber, secondNumber);
     }
 
-    private AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,
-                                                String whichNumberField) {
-        String concreteNumber = numberField.getText().toString();
-
-        AseInteger targetNumber;
-        if (NumberHelper.isValidBitNumberInTextView(bitField)) {
-            int bits = Integer.valueOf(bitField.getText().toString());
-
-            targetNumber = new AseInteger(bits, new Random());
-            targetNumber = targetNumber.setBit(bits - 1);
-
-            // Display number for the user in the edit element
-            numberField.setText(targetNumber.toString());
-        } else if (concreteNumber.length() > 0) {
-            targetNumber = new AseInteger(concreteNumber);
-        } else {
-
-            Toast.makeText(getActivity(), whichNumberField
-                    + ": You have to input either bits or a target number!", Toast.LENGTH_LONG)
-                    .show(); // TODO use StringBuilder
-            return null;
-        }
-
-        return targetNumber;
-    }
-
     private void doPostCalculationStartSetup() {
         progressBar.setVisibility(View.VISIBLE);
         lblResultNumberGcd.setVisibility(View.INVISIBLE);
