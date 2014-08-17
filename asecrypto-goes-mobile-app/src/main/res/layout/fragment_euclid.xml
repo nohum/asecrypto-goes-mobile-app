@@ -9,9 +9,8 @@
         style="@style/wrapping_textview" />
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="10dp"
-        android:id="@+id/space1" />
+        android:id="@+id/space1"
+        style="@style/small_space" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -52,18 +51,16 @@
     </LinearLayout>
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/space2" />
+        android:id="@+id/space2"
+        style="@style/big_space" />
 
     <TextView
         android:text="Second number:"
         style="@style/wrapping_textview" />
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="10dp"
-        android:id="@+id/space3" />
+        android:id="@+id/space3"
+        style="@style/small_space" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -104,9 +101,8 @@
     </LinearLayout>
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/space4" />
+        android:id="@+id/space4"
+        style="@style/big_space" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -134,10 +130,9 @@
     </LinearLayout>
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
         android:id="@+id/space5"
-        android:focusableInTouchMode="false" />
+        android:focusableInTouchMode="false"
+        style="@style/big_space" />
 
     <ProgressBar
         style="@style/task_progressbar"
@@ -156,9 +151,8 @@
         style="@style/wrapping_textview" />
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/space7" />
+        android:id="@+id/space7"
+        style="@style/big_space" />
 
     <TextView
         android:text="Taken time: ..."

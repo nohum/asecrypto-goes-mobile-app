@@ -13,9 +13,8 @@
             style="@style/wrapping_textview" />
 
         <Space
-            android:layout_width="20dp"
-            android:layout_height="10dp"
-            android:id="@+id/space1" />
+            android:id="@+id/space1"
+            style="@style/small_space" />
 
         <RadioButton
             android:id="@+id/rdbBits"
@@ -38,18 +37,9 @@
                 android:inputType="number" />
         </LinearLayout>
 
-        <LinearLayout style="@style/radiobutton_margin">
-            <TextView
-                android:text="Number: "
-                android:id="@+id/lblBitNumberReal"
-                android:visibility="gone"
-                style="@style/wrapping_textview" />
-        </LinearLayout>
-
         <Space
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:id="@+id/space2" />
+            android:id="@+id/space2"
+            style="@style/big_space" />
 
         <RadioButton
             android:id="@+id/rdbOwnNumber"
@@ -69,9 +59,8 @@
     </RadioGroup>
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/space4" />
+        android:id="@+id/space4"
+        style="@style/big_space" />
 
     <Button
         android:layout_width="wrap_content"
@@ -80,20 +69,16 @@
         android:id="@+id/btnCount" />
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
         android:id="@+id/space5"
-        android:focusableInTouchMode="false" />
+        style="@style/small_space" />
 
     <ProgressBar
         style="@style/task_progressbar"
         android:id="@+id/progressBar" />
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="40dp"
         android:id="@+id/space6"
-        android:clickable="false" />
+        style="@style/small_space" />
 
     <TextView
         android:text="Target number:"
@@ -102,9 +87,8 @@
         style="@style/wrapping_textview" />
 
     <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/space7" />
+        android:id="@+id/space7"
+        style="@style/small_space" />
 
     <TextView
         android:text="Taken time: ..."

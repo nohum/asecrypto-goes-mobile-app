@@ -20,9 +20,8 @@
                 style="@style/wrapping_textview" />
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:id="@+id/space1" />
+                android:id="@+id/space1"
+                style="@style/small_space" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -133,10 +132,9 @@
                 android:id="@+id/btnCalculate" />
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp"
                 android:id="@+id/space6"
-                android:focusableInTouchMode="false" />
+                android:focusableInTouchMode="false"
+                style="@style/big_space" />
 
             <ProgressBar
                 style="@style/task_progressbar"
@@ -149,9 +147,8 @@
                 style="@style/wrapping_textview" />
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/space7" />
+                android:id="@+id/space7"
+                style="@style/big_space" />
 
             <TextView
                 android:text="Taken time: ..."

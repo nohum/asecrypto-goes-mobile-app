@@ -63,9 +63,8 @@
             </LinearLayout>
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:id="@+id/space3" />
+                android:id="@+id/space3"
+                style="@style/small_space" />
 
             <TextView
                 android:text="n: will be calculated"
@@ -105,9 +104,8 @@
                 style="@style/wrapping_textview" />
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:id="@+id/space4" />
+                android:id="@+id/space4"
+                style="@style/small_space" />
 
             <View
                 android:layout_width="fill_parent"
@@ -115,9 +113,8 @@
                 android:background="#c7222525" />
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:id="@+id/space5" />
+                android:id="@+id/space5"
+                style="@style/small_space" />
 
             <TextView
                 android:text="Number to decrypt: "
@@ -151,10 +148,9 @@
             </LinearLayout>
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
                 android:id="@+id/space6"
-                android:focusableInTouchMode="false" />
+                android:focusableInTouchMode="false"
+                style="@style/small_space" />
 
             <View
                 android:layout_width="fill_parent"
@@ -162,9 +158,8 @@
                 android:background="#c7222525" />
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:id="@+id/space7" />
+                android:id="@+id/space7"
+                style="@style/small_space" />
 
             <TextView
                 android:text="Number to encrypt: "
@@ -213,9 +208,8 @@
                 android:id="@+id/progressBar" />
 
             <Space
-                android:layout_width="20dp"
-                android:layout_height="10dp"
-                android:id="@+id/space10" />
+                android:id="@+id/space10"
+                style="@style/small_space" />
 
             <TextView
                 android:text=""
