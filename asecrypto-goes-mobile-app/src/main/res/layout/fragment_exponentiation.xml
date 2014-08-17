@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:text="Input the bits for a number:"
+                    android:text="Input the bits for a random number:"
                     android:id="@+id/rdbBits"
                     style="@style/wrapping_textview"
                     android:checked="true"
