@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
     private static final String ARG_PRIME_PHI_OF_N = "phi_of_n";
 
     // General
+    private ScrollView scrollView;
+
     private EditText txtPrimeP;
 
     private EditText txtPrimeQ;
@@ -76,6 +79,7 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_rsa, container, false);
 
+        scrollView = (ScrollView) viewRoot.findViewById(R.id.scrollView);
         txtPrimeP = (EditText) viewRoot.findViewById(R.id.txtPrimeP);
         txtPrimeQ = (EditText) viewRoot.findViewById(R.id.txtPrimeQ);
         lblCalculatedN = (TextView) viewRoot.findViewById(R.id.lblCalculatedN);
@@ -168,14 +172,22 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
 
         prepareViewForResults();
 
-        rsaTask = new RSAEncryptionTask(new TaskFinishedCallable<RSAEncryptionResult>() {
+        rsaTask = new RSAEncryptionTask(new TaskFinishedCallable<RSAResult>() {
             @Override
-            public void onAsyncTaskFinished(AsyncTask task, RSAEncryptionResult result) {
+            public void onAsyncTaskFinished(AsyncTask task, RSAResult result) {
+                lblResult.setText("Encryption result: " + result.getResult().toString() +
+                        " mod " + n.toString()); // TODO use StringBuilder
 
+                lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds()); // TODO use StringBuilder
+
+                scrollToBottomOfView();
             }
         });
 
-        //rsaTask.execute(new RSAEncryptionParameters(p, q, e, d));
+        AseInteger e = new AseInteger(txtNumberE.getText().toString());
+
+        //noinspection unchecked
+        rsaTask.execute(new RSAEncryptionParameters(n, e, message));
     }
 
     private AseInteger checkAndGetNumber(EditText field, String fieldName) {
@@ -267,6 +279,16 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
         }
 
         return "q is a composite number";
+    }
+
+    private void scrollToBottomOfView() {
+        // scroll to bottom
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        });
     }
 
     @Override
