@@ -29,18 +29,10 @@ public class FastExponentiationTask extends AsyncTask<AseInteger, Void, Exponent
         StopWatch watch = new StopWatch();
         watch.start();
 
+        // there is no isCancelled() call or whatsoever in modPow; however, we consider it fast
+        // and therefore don't copy the code here just to put in a isCancelled() call after every
+        // iteration.
         result = basis.modPow(exponent, modulus);
-
-        /*	public AseInteger modPow(AseInteger exponent, AseInteger mod){
-		AseInteger result = AseInteger.ONE;
-
-		for(AseInteger counter = AseInteger.ONE; counter.compareTo(exponent)<=0 ;counter = counter.add(AseInteger.ONE) )	{
-			result = result.multiply(this);
-			result = result.mod(mod);
-		}
-
-		return result;
-	}*/
 
         watch.stop();
         return new ExponentiationResult(watch.getElapsedTime(), result);

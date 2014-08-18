@@ -89,10 +89,15 @@ public class SlowExponentiationFragment extends BaseFragment
         if (btnCalculate.equals(view)) {
             startExponentiation();
         } else if (btnCancel.equals(view)) {
-            btnCancel.setVisibility(View.INVISIBLE);
-
+            resetUIState();
             cancelTask();
         }
+    }
+
+    private void resetUIState() {
+        btnCalculate.setEnabled(true);
+        btnCancel.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     protected void startExponentiation() {

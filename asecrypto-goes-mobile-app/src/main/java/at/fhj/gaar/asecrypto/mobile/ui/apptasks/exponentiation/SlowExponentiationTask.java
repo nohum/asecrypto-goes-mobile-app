@@ -32,6 +32,10 @@ public class SlowExponentiationTask extends AsyncTask<AseInteger, Void, Exponent
 		for(AseInteger counter = AseInteger.ONE; counter.compareTo(exponent) <= 0;
                 counter = counter.add(AseInteger.ONE)) {
 			result = result.multiply(basis).mod(modulus);
+
+            if (isCancelled()) {
+                break;
+            }
 		}
 
         watch.stop();
