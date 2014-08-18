@@ -24,10 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/carmichael/CarmichaelGeneratorFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/carmichael/CarmichaelGeneratorFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/primitiveroots/PrimitiveRootFinderFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/primitiveroots/PrimitiveRootFinderFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AseCrypto goes mobile.iws" />
@@ -91,11 +89,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BezoutFragment.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="EuclidFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3168" max-vertical-offset="4050">
+              <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BezoutFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3044" max-vertical-offset="3906">
-              <caret line="200" column="93" selection-start-line="200" selection-start-column="81" selection-end-line="200" selection-end-column="93" />
+            <state vertical-scroll-proportion="0.26914153" vertical-offset="2936" max-vertical-offset="3906">
+              <caret line="176" column="37" selection-start-line="176" selection-start-column="37" selection-end-line="176" selection-end-column="37" />
               <folding>
                 <element signature="e#7506#7662#0" expanded="true" />
               </folding>
@@ -103,100 +111,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_carmichael.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_carmichael.xml">
+      <file leaf-file-name="fragment_exponentiation.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_exponentiation.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="38.57143" vertical-offset="1404" max-vertical-offset="2538">
-              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="540" max-vertical-offset="2862">
+              <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarmichaelGeneratorFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/carmichael/CarmichaelGeneratorFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3102" max-vertical-offset="3978">
-              <caret line="195" column="86" selection-start-line="195" selection-start-column="86" selection-end-line="195" selection-end-column="104" />
-              <folding>
-                <element signature="e#7738#7894#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="fragment_euclid.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml">
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EuclidFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2684" max-vertical-offset="3546">
-              <caret line="188" column="16" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RSACalculationFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/rsa/RSACalculationFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4361949" vertical-offset="3062" max-vertical-offset="6246">
-              <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
-              <folding>
-                <element signature="e#5672#5896#0" expanded="true" />
-                <element signature="e#6549#6705#0" expanded="true" />
-                <element signature="e#8446#8670#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FastExponentiationFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/FastExponentiationFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
-              <caret line="48" column="64" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlowExponentiationFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2054" max-vertical-offset="2934">
-              <caret line="154" column="16" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FermatTestFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/fermat/FermatTestFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2576" max-vertical-offset="3438">
-              <caret line="167" column="91" selection-start-line="167" selection-start-column="91" selection-end-line="167" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MillerRabinTestFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/millerrabin/MillerRabinTestFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2666" max-vertical-offset="3528">
-              <caret line="136" column="5" selection-start-line="136" selection-start-column="5" selection-end-line="136" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrimitiveRootFinderFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/primitiveroots/PrimitiveRootFinderFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2090" max-vertical-offset="2970">
-              <caret line="156" column="16" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="16" />
+            <state vertical-scroll-proportion="-12.428572" vertical-offset="462" max-vertical-offset="1404">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -920,7 +855,6 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_primitive_roots.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_carmichael.xml" />
-        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_two_number_choice.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_fermat.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_millerrabin.xml" />
@@ -936,6 +870,7 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/carmichael/CarmichaelGeneratorFragment.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/primitiveroots/PrimitiveRootFinderFragment.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java" />
       </list>
     </option>
@@ -2217,7 +2152,11 @@
       <created>1408356338418</created>
       <updated>1408356338418</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="wording">
+      <created>1408356472085</created>
+      <updated>1408356472085</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2294,10 +2233,10 @@
     <MESSAGE value="layout changes: extracted space definitions into own styles" />
     <MESSAGE value="refactored layout for euclid and bezout - deduplicated layout xml code" />
     <MESSAGE value="further layout refactoring" />
-    <MESSAGE value="wording" />
     <MESSAGE value="number counter examples: UI changes" />
     <MESSAGE value="bezout: UI changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bezout: UI changes" />
+    <MESSAGE value="wording" />
+    <option name="LAST_COMMIT_MESSAGE" value="wording" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2526,28 +2465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1332">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_exponentiation.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2862">
-          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_fermat.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -2643,17 +2560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_bezout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286" vertical-offset="558" max-vertical-offset="1728">
-          <caret line="50" column="53" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_carmichael.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -2662,16 +2568,6 @@
         <state vertical-scroll-proportion="38.57143" vertical-offset="1404" max-vertical-offset="2538">
           <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3044" max-vertical-offset="3906">
-          <caret line="200" column="93" selection-start-line="200" selection-start-column="81" selection-end-line="200" selection-end-column="93" />
-          <folding>
-            <element signature="e#7506#7662#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2725,22 +2621,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2684" max-vertical-offset="3546">
-          <caret line="188" column="16" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/rsa/RSACalculationFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4361949" vertical-offset="3062" max-vertical-offset="6246">
-          <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3062" max-vertical-offset="6246">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
           <folding>
             <element signature="e#5672#5896#0" expanded="true" />
             <element signature="e#6549#6705#0" expanded="true" />
             <element signature="e#8446#8670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.428572" vertical-offset="462" max-vertical-offset="1404">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_bezout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.057554" vertical-offset="0" max-vertical-offset="1728">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_exponentiation.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2862">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3168" max-vertical-offset="4050">
+          <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26914153" vertical-offset="2936" max-vertical-offset="3906">
+          <caret line="176" column="37" selection-start-line="176" selection-start-column="37" selection-end-line="176" selection-end-column="37" />
+          <folding>
+            <element signature="e#7506#7662#0" expanded="true" />
           </folding>
         </state>
       </provider>
