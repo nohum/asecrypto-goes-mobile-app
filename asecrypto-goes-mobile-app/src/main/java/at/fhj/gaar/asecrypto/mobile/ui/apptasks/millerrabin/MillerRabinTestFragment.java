@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,15 +20,17 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
 
 /**
  * Lab3_Task2: Miller-Rabin test
- *
- * TODO: deduplicate code
  */
 public class MillerRabinTestFragment extends BaseFragment implements View.OnClickListener,
         TaskFinishedCallable<MillerRabinResult>, TaskIntermediateCallable<MillerRabinProgress> {
 
     private String defaultConcreteTestNumber;
 
+    private RadioButton rdbBits;
+
     private EditText txtBitsForNumber;
+
+    private RadioButton rdbManually;
 
     private EditText txtConcreteNumber;
 
@@ -52,7 +55,9 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_millerrabin, container, false);
 
+        rdbBits = (RadioButton) viewRoot.findViewById(R.id.rdbBits);
         txtBitsForNumber = (EditText) viewRoot.findViewById(R.id.txtBitsForNumber);
+        rdbManually = (RadioButton) viewRoot.findViewById(R.id.rdbManually);
         txtNumberOfRuns = (EditText) viewRoot.findViewById(R.id.txtNumberOfRuns);
         txtConcreteNumber = (EditText) viewRoot.findViewById(R.id.txtConcreteNumber);
         btnStartTest = (Button) viewRoot.findViewById(R.id.btnStartTest);
@@ -74,7 +79,9 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
 
         // insert a specified test number (if given by MainActivity or any other caller)
         if (defaultConcreteTestNumber != null) {
+            rdbManually.setChecked(true);
             txtConcreteNumber.setText(defaultConcreteTestNumber);
+
             defaultConcreteTestNumber = null;
         }
     }
@@ -107,8 +114,8 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
     }
 
     private void startTesting() {
-        AseInteger numberToTest = retrieveNumber(txtBitsForNumber, txtConcreteNumber,
-                "Target number");
+        AseInteger numberToTest = retrieveNumber(rdbBits, txtBitsForNumber, rdbManually,
+                txtConcreteNumber, "Target number");
         if (numberToTest == null) {
             return;
         }

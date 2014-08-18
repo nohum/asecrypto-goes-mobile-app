@@ -2,13 +2,13 @@ package at.fhj.gaar.asecrypto.mobile.ui.apptasks.fermat;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +26,11 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
 
     private String defaultConcreteTestNumber;
 
+    private RadioButton rdbBits;
+
     private EditText txtBitsForNumber;
+
+    private RadioButton rdbManually;
 
     private EditText txtConcreteNumber;
 
@@ -51,7 +55,9 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_fermat, container, false);
 
+        rdbBits = (RadioButton) viewRoot.findViewById(R.id.rdbBits);
         txtBitsForNumber = (EditText) viewRoot.findViewById(R.id.txtBitsForNumber);
+        rdbManually = (RadioButton) viewRoot.findViewById(R.id.rdbManually);
         txtNumberOfRuns = (EditText) viewRoot.findViewById(R.id.txtNumberOfRuns);
         txtConcreteNumber = (EditText) viewRoot.findViewById(R.id.txtConcreteNumber);
         btnStartTest = (Button) viewRoot.findViewById(R.id.btnStartTest);
@@ -73,7 +79,9 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
 
         // insert a specified test number (if given by MainActivity or any other caller)
         if (defaultConcreteTestNumber != null) {
+            rdbManually.setChecked(true);
             txtConcreteNumber.setText(defaultConcreteTestNumber);
+
             defaultConcreteTestNumber = null;
         }
     }
@@ -107,8 +115,8 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
     }
 
     private void startTesting() {
-        AseInteger numberToTest = retrieveNumber(txtBitsForNumber, txtConcreteNumber,
-                "Target number");
+        AseInteger numberToTest = retrieveNumber(rdbBits, txtBitsForNumber, rdbManually,
+                txtConcreteNumber, "Target number");
         if (numberToTest == null) {
             return;
         }
@@ -125,8 +133,6 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
                     .show(); // TODO use StringBuilder
             return;
         }
-
-        Log.i("AseCrypto", "Fermat: number of runs = " + numberOfRuns);
 
         closeSoftKeyboard();
         doPostCalculationStartSetup(numberToTest);
