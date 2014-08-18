@@ -89,6 +89,7 @@ public class EuclidFragment extends BaseFragment
 
         btnIterative.setOnClickListener(this);
         btnRecursive.setOnClickListener(this);
+        btnFactorial.setOnClickListener(this);
 
         return viewRoot;
     }
