@@ -19,25 +19,24 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Iterative"
+            android:text="@string/do_iterative"
             android:id="@+id/btnIterative" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recursive"
+            android:text="@string/do_recursive"
             android:id="@+id/btnRecursive" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Factorial"
+            android:text="@string/do_factorial"
             android:id="@+id/btnFactorial" />
     </LinearLayout>
 
     <Space
         android:id="@+id/space5"
-        android:focusableInTouchMode="false"
         style="@style/big_space" />
 
     <ProgressBar
@@ -55,7 +54,7 @@
         style="@style/wrapping_textview" />
 
     <TextView
-        android:text="Greatest common divisor:"
+        android:text="@string/gcd"
         android:id="@+id/lblResultNumber"
         android:visibility="invisible"
         style="@style/wrapping_textview" />
@@ -65,7 +64,7 @@
         style="@style/big_space" />
 
     <TextView
-        android:text="Taken time: ..."
+        android:text="@string/taken_time"
         android:id="@+id/lblTimeMeasurement"
         android:visibility="invisible"
         style="@style/wrapping_textview" />

@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Bits of the three prime factors (minimum 4):"
+                android:text="@string/bits_of_primefactors"
                 style="@style/wrapping_textview" />
 
             <Space
@@ -29,7 +29,7 @@
                 android:layout_gravity="center_horizontal">
 
                 <TextView
-                    android:text="Bits: "
+                    android:text="@string/bits"
                     style="@style/wrapping_textview" />
 
                 <EditText
@@ -54,20 +54,19 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Generate Carmichael"
+                    android:text="@string/do_generate_carmichael"
                     android:id="@+id/btnStartGeneration" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cancel"
+                    android:text="@string/do_cancel"
                     android:id="@+id/btnCancel"
                     android:visibility="invisible" />
             </LinearLayout>
 
             <Space
                 android:id="@+id/space3"
-                android:focusableInTouchMode="false"
                 style="@style/big_space" />
 
             <ProgressBar
@@ -79,35 +78,31 @@
                 style="@style/big_space" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblResultNumber"
                 android:textIsSelectable="true"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblFailNumbersCount"
                 android:textIsSelectable="true"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblSuccessNumbersCount"
                 android:textIsSelectable="true"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblFailChance"
                 android:textIsSelectable="true"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text="Taken time: ..."
+                android:text="@string/taken_time"
                 android:id="@+id/lblTimeMeasurement"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
@@ -119,14 +114,14 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Start Fermat test with this number"
+                android:text="@string/do_fermat_with_number"
                 android:id="@+id/btnDoFermatTest"
                 android:visibility="invisible" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Start Miller-Rabin test with this number"
+                android:text="@string/do_millerrabin_with_number"
                 android:id="@+id/btnDoMillerRabinTest"
                 android:visibility="invisible" />
 

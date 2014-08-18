@@ -4,7 +4,7 @@
     tools:showIn="@layout/fragment_bezout">
 
     <TextView
-        android:text="First number:"
+        android:text="@string/first_number"
         style="@style/wrapping_textview" />
 
     <Space
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:text="Input the bits for a random number:"
+            android:text="@string/input_bits_for_random_number"
             android:id="@+id/rdbFirstBits"
             style="@style/wrapping_textview"
             android:checked="true"
@@ -25,7 +25,7 @@
         <LinearLayout style="@style/radiobutton_margin">
 
             <TextView
-                android:text="Bits: "
+                android:text="@string/bits"
                 style="@style/wrapping_textview" />
 
             <EditText
@@ -38,7 +38,7 @@
         </LinearLayout>
 
         <RadioButton
-            android:text="Specify a concrete number:"
+            android:text="@string/specify_concrete_number"
             android:id="@+id/rdbFirstNumber"
             style="@style/wrapping_textview"
             android:singleLine="true" />
@@ -46,7 +46,7 @@
         <LinearLayout style="@style/radiobutton_margin">
 
             <TextView
-                android:text="Number: "
+                android:text="@string/number"
                 style="@style/wrapping_textview" />
 
             <EditText
@@ -65,7 +65,7 @@
         style="@style/small_space" />
 
     <TextView
-        android:text="Second number:"
+        android:text="@string/second_number"
         style="@style/wrapping_textview" />
 
     <Space
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:text="Input the bits for a random number:"
+            android:text="@string/input_bits_for_random_number"
             android:id="@+id/rdbSecondBits"
             style="@style/wrapping_textview"
             android:checked="true"
@@ -87,7 +87,7 @@
 
 
             <TextView
-                android:text="Bits: "
+                android:text="@string/bits"
                 style="@style/wrapping_textview" />
 
             <EditText
@@ -100,7 +100,7 @@
         </LinearLayout>
 
         <RadioButton
-            android:text="Specify a concrete number:"
+            android:text="@string/specify_concrete_number"
             android:id="@+id/rdbSecondNumber"
             style="@style/wrapping_textview"
             android:singleLine="true" />
@@ -108,7 +108,7 @@
         <LinearLayout style="@style/radiobutton_margin">
 
             <TextView
-                android:text="Number: "
+                android:text="@string/number"
                 style="@style/wrapping_textview" />
 
             <EditText

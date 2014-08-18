@@ -6,6 +6,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- Task names in drawer and in action bar -->
     <string name="task_number_counter">Number counter</string>
     <string name="task_euclid">Euclid iterative, recursive and factorial</string>
     <string name="task_euclid_speed">Speed of Euclid\'s algorithm</string>
@@ -17,5 +18,58 @@
     <string name="task_miller_rabin_test">Miller-Rabin test</string>
     <string name="task_rsa_chinese_remainder">RSA and the Chinese remainder</string>
     <string name="task_primitive_roots">Primitive root finder</string>
+
+    <!-- Buttons -->
+    <string name="do_iterative">Iterative</string>
+    <string name="do_recursive">Recursive</string>
+    <string name="do_factorial">Factorial</string>
+    <string name="do_cancel">Cancel</string>
+    <string name="do_generate_carmichael">Generate Carmichael</string>
+    <string name="do_fermat_with_number">Start Fermat test with this number</string>
+    <string name="do_millerrabin_with_number">Start Miller-Rabin test with this number</string>
+    <string name="do_exponentiation">Calculate exponentiation</string>
+    <string name="do_fermat_test">Start Fermat test</string>
+    <string name="do_millerrabin_test">Start Miller-Rabin test</string>
+    <string name="do_start_counting">Start counting</string>
+    <string name="do_find_primitive_root">Find a primitive root</string>
+    <string name="do_encrypt">Encrypt</string>
+    <string name="do_decrypt">Decrypt normal</string>
+    <string name="do_decrypt_crt">Decrypt (CRT)</string>
+
+    <!-- Strings used in layouts -->
+    <string name="gcd">Greatest common divisor:</string>
+    <string name="x_value">X:</string>
+    <string name="y_value">Y:</string>
+    <string name="taken_time">Taken time:</string>
+    <string name="first_number">First number:</string>
+    <string name="input_bits_for_random_number">Input the bits for a random number:</string>
+    <string name="bits">Bits: </string>
+    <string name="specify_concrete_number">Specify a concrete number:</string>
+    <string name="number">Number: </string>
+    <string name="second_number">Second number:</string>
+    <string name="bits_of_primefactors">Bits of the three prime factors (minimum 4):</string>
+    <string name="your_number">Your number:</string>
+    <string name="specify_manually">Specify everything manually:</string>
+    <string name="basis">Basis: </string>
+    <string name="exponent">Exponent: </string>
+    <string name="modulus">Modulus: </string>
+    <string name="result">Result:</string>
+    <string name="fermat_number_to_test">Fermat - number to test:</string>
+    <string name="number_of_test_runs">Number of test runs: </string>
+    <string name="millerrabin_number_to_test">Miller-Rabin - number to test:</string>
+    <string name="how_many_bits">How many bits should the number consist of?</string>
+    <string name="specify_target_number_manually">Specify a target number manually:</string>
+    <string name="target_number">Target number:</string>
+    <string name="number_of_bits">Number of bits: </string>
+    <string name="rsa_parameters">RSA general parameters:</string>
+    <string name="p_value">p: </string>
+    <string name="q_value">q: </string>
+    <string name="n_will_calculate">n: will be calculated</string>
+    <string name="phi_of_n_will_calculate">phi(n): will be calculated</string>
+    <string name="e_value">e: </string>
+    <string name="d_will_calculate">d: will be calculated</string>
+    <string name="number_to_decrypt">Number to decrypt: </string>
+    <string name="numer_to_encrypt">Number to encrypt: </string>
+
 
 </resources>

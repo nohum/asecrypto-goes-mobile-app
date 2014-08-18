@@ -24,7 +24,7 @@
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Number of bits: " />
+                    android:text="@string/number_of_bits" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Number of test runs: " />
+                    android:text="@string/number_of_test_runs" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -69,20 +69,19 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Find a primitive root"
+                    android:text="@string/do_find_primitive_root"
                     android:id="@+id/btnFindPrimitiveRoot" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cancel"
+                    android:text="@string/do_cancel"
                     android:id="@+id/btnCancel"
                     android:visibility="invisible" />
             </LinearLayout>
 
             <Space
                 android:id="@+id/space5"
-                android:focusableInTouchMode="false"
                 style="@style/small_space" />
 
             <ProgressBar
@@ -94,19 +93,17 @@
                 style="@style/small_space" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblPrime"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblModulusNumber"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text="Taken time: ..."
+                android:text="@string/taken_time"
                 android:id="@+id/lblTimeMeasurement"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />

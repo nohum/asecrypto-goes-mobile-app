@@ -9,7 +9,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="How many bits should the number consist of?"
+            android:text="@string/how_many_bits"
             style="@style/wrapping_textview" />
 
         <Space
@@ -19,13 +19,13 @@
         <RadioButton
             android:id="@+id/rdbBits"
             android:checked="true"
-            android:text="Input the bits for a random number:"
+            android:text="@string/input_bits_for_random_number"
             style="@style/wrapping_textview" />
 
         <LinearLayout style="@style/radiobutton_margin">
 
             <TextView
-                android:text="Bits: "
+                android:text="@string/bits"
                 style="@style/wrapping_textview" />
 
             <EditText
@@ -43,7 +43,7 @@
 
         <RadioButton
             android:id="@+id/rdbOwnNumber"
-            android:text="Specify a target number manually:"
+            android:text="@string/specify_target_number_manually"
             style="@style/wrapping_textview" />
 
         <LinearLayout style="@style/radiobutton_margin">
@@ -65,7 +65,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start counting"
+        android:text="@string/do_start_counting"
         android:id="@+id/btnCount" />
 
     <Space
@@ -81,7 +81,7 @@
         style="@style/small_space" />
 
     <TextView
-        android:text="Target number:"
+        android:text="@string/target_number"
         android:id="@+id/lblResultNumber"
         android:visibility="invisible"
         style="@style/wrapping_textview" />
@@ -91,7 +91,7 @@
         style="@style/small_space" />
 
     <TextView
-        android:text="Taken time: ..."
+        android:text="@string/taken_time"
         android:id="@+id/lblTimeMeasurement"
         android:visibility="invisible"
         style="@style/wrapping_textview" />

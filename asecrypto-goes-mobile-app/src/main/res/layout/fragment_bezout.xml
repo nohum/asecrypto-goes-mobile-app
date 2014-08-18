@@ -29,13 +29,13 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Iterative"
+                    android:text="@string/do_iterative"
                     android:id="@+id/btnIterative" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Recursive"
+                    android:text="@string/do_recursive"
                     android:id="@+id/btnRecursive" />
             </LinearLayout>
 
@@ -58,19 +58,19 @@
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text="Greatest common divisor:"
+                android:text="@string/gcd"
                 android:id="@+id/lblResultNumberGcd"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text="X:"
+                android:text="@string/x_value"
                 android:id="@+id/lblResultNumberX"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text="Y:"
+                android:text="@string/y_value"
                 android:id="@+id/lblResultNumberY"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
@@ -80,7 +80,7 @@
                 style="@style/big_space" />
 
             <TextView
-                android:text="Taken time: ..."
+                android:text="@string/taken_time"
                 android:id="@+id/lblTimeMeasurement"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />

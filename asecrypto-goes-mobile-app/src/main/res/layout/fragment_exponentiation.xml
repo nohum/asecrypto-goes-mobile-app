@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Your number:"
+                android:text="@string/your_number"
                 style="@style/wrapping_textview" />
 
             <Space
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:text="Input the bits for a random number:"
+                    android:text="@string/input_bits_for_random_number"
                     android:id="@+id/rdbBits"
                     style="@style/wrapping_textview"
                     android:checked="true"
@@ -37,7 +37,7 @@
                     <LinearLayout style="@style/radiobutton_margin">
 
                         <TextView
-                            android:text="Bits: "
+                            android:text="@string/bits"
                             style="@style/wrapping_textview" />
 
                         <EditText
@@ -54,7 +54,7 @@
                     android:id="@+id/space2" />
 
                 <RadioButton
-                    android:text="Specify everything manually:"
+                    android:text="@string/specify_manually"
                     android:id="@+id/rdbManually"
                     style="@style/wrapping_textview"
                     android:singleLine="true" />
@@ -65,7 +65,7 @@
                         android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Basis: " />
+                        android:text="@string/basis" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -82,7 +82,7 @@
                         android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Exponent: " />
+                        android:text="@string/exponent" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -99,7 +99,7 @@
                         android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Modulus: " />
+                        android:text="@string/modulus" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -120,7 +120,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calculate exponent"
+                android:text="@string/do_exponentiation"
                 android:id="@+id/btnCalculate" />
 
             <Space
@@ -133,7 +133,7 @@
                 android:id="@+id/progressBar" />
 
             <TextView
-                android:text="Result:"
+                android:text="@string/result"
                 android:id="@+id/lblResultNumber"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
@@ -143,7 +143,7 @@
                 style="@style/big_space" />
 
             <TextView
-                android:text="Taken time: ..."
+                android:text="@string/taken_time"
                 android:id="@+id/lblTimeMeasurement"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />

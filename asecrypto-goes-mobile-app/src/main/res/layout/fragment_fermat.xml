@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Fermat - number to test:"
+                android:text="@string/fermat_number_to_test"
                 style="@style/wrapping_textview" />
 
             <Space
@@ -37,13 +37,13 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Start Fermat test"
+                    android:text="@string/do_fermat_test"
                     android:id="@+id/btnStartTest" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cancel"
+                    android:text="@string/do_cancel"
                     android:id="@+id/btnCancel"
                     android:visibility="invisible" />
             </LinearLayout>
@@ -61,19 +61,17 @@
                 style="@style/big_space" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblTestNumber"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text=""
                 android:id="@+id/lblTestResult"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
 
             <TextView
-                android:text="Taken time: ..."
+                android:text="@string/taken_time"
                 android:id="@+id/lblTimeMeasurement"
                 android:visibility="invisible"
                 style="@style/wrapping_textview" />
