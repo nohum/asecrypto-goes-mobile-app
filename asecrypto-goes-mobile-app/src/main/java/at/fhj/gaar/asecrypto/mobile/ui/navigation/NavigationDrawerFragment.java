@@ -111,18 +111,21 @@ public class NavigationDrawerFragment extends Fragment {
             Bundle savedInstanceState) {
         drawerListView = (ListView) inflater.inflate(
                 R.layout.navigation_drawer, container, false);
+
         drawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
             }
         });
+
         drawerListView.setAdapter(new ArrayAdapter<DrawerItem>(
                 getActionBar().getThemedContext(),
                 R.layout.navigation_drawer_item,
                 android.R.id.text1,
                 drawerItems));
         drawerListView.setItemChecked(currentSelectedPosition, true);
+
         return drawerListView;
     }
 
@@ -160,11 +163,11 @@ public class NavigationDrawerFragment extends Fragment {
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.
         drawerToggle = new ActionBarDrawerToggle(
-                getActivity(),                    /* host Activity */
-                NavigationDrawerFragment.this.drawerLayout,                    /* DrawerLayout object */
-                R.drawable.ic_drawer,             /* nav drawer image to replace 'Up' caret */
-                R.string.navigation_drawer_open,  /* "open drawer" description for accessibility */
-                R.string.navigation_drawer_close  /* "close drawer" description for accessibility */
+                getActivity(), /* host Activity */
+                NavigationDrawerFragment.this.drawerLayout, /* DrawerLayout object */
+                R.drawable.ic_drawer, /* nav drawer image to replace 'Up' caret */
+                R.string.navigation_drawer_open, /* "open drawer" description for accessibility */
+                R.string.navigation_drawer_close /* "close drawer" description for accessibility */
         ) {
             @Override
             public void onDrawerClosed(View drawerView) {
