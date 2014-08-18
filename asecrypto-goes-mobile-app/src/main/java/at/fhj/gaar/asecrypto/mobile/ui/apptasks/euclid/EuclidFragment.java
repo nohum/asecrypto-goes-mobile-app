@@ -185,6 +185,7 @@ public class EuclidFragment extends BaseFragment
         btnFactorial.setEnabled(true);
 
         lblResultNumber.setText("Greatest common divisor: " + result.getGcd().toString()); // TODO use StringBuilder
-        lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() + "ms"); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() +
+                " milliseconds"); // TODO use StringBuilder
     }
 }

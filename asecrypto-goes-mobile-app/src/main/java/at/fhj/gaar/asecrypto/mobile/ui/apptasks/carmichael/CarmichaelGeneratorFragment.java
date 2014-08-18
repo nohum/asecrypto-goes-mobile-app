@@ -193,7 +193,7 @@ public class CarmichaelGeneratorFragment extends BaseFragment implements View.On
         }
 
         lblResultNumber.setText("Generated number: " + carmichaelResult.getCarmichaelNumber()); // TODO use StringBuilder
-        lblTimeMeasurement.setText("Taken milliseconds: " + carmichaelResult.getMilliseconds()); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Time taken: " + carmichaelResult.getMilliseconds() + " milliseconds"); // TODO use StringBuilder
         lblFailNumbersCount.setText("Numbers for which Fermat will fail: "
                 + carmichaelResult.getFailNumbersCount()); // TODO use StringBuilder
         lblSuccessNumbersCount.setText("Numbers for which Fermat will succeed: "

@@ -151,6 +151,7 @@ public class SlowExponentiationFragment extends BaseFragment
         btnCalculate.setEnabled(true);
 
         lblResultNumber.setText("Result: " + exponentiationResult.getExponentiationResult()); // TODO use StringBuilder
-        lblTimeMeasurement.setText("Time taken: " + exponentiationResult.getWatchTime() + "ms"); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Time taken: " + exponentiationResult.getWatchTime() +
+                " milliseconds"); // TODO use StringBuilder
     }
 }

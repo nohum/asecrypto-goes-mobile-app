@@ -153,6 +153,7 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
 
         lblPrime.setText("Found prime: " + primitiveRootResult.getPrime()); // TODO use StringBuilder
         lblModulusNumber.setText("Residue class: " + primitiveRootResult.getModulus()); // TODO use StringBuilder
-        lblTimeMeasurement.setText("Total milliseconds: " + primitiveRootResult.getMilliseconds()); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Taken time: " + primitiveRootResult.getMilliseconds() +
+                " milliseconds"); // TODO use StringBuilder
     }
 }
