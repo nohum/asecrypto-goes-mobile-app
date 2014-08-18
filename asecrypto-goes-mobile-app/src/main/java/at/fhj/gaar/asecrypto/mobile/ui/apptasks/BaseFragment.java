@@ -60,9 +60,9 @@ public class BaseFragment extends Fragment {
         inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
-    protected AseInteger retrieveNumber(RadioButton bitChoiceButton, EditText bitField,
-                                        RadioButton numberChoiceButton, EditText numberField,
-                                        String whichNumberField) {
+    protected AseInteger retrieveAseInteger(RadioButton bitChoiceButton, EditText bitField,
+                                            RadioButton numberChoiceButton, EditText numberField,
+                                            String whichNumberField) {
 
         NumberChoiceSelector selector = new NumberChoiceSelector(bitChoiceButton, bitField,
                 numberChoiceButton, numberField);
@@ -81,6 +81,24 @@ public class BaseFragment extends Fragment {
 
         Toast.makeText(getActivity(), String.format("%s: %s", whichNumberField, userMessage),
                 Toast.LENGTH_LONG).show();
+        return null;
+    }
+
+    protected Long retrieveLong(EditText field, String fieldName) {
+        try {
+            long result = Long.parseLong(field.getText().toString());
+
+            if (result <= 0) {
+                throw new IllegalArgumentException();
+            }
+
+            return result;
+        } catch (IllegalArgumentException e) { // also catches NumberFormatException
+            Toast.makeText(getActivity(),
+                    String.format("%s: You have to input a valid number larger than zero!",
+                            fieldName), Toast.LENGTH_LONG).show();
+        }
+
         return null;
     }
 }

@@ -114,13 +114,13 @@ public class BezoutFragment extends BaseFragment
     }
 
     private void startBezoutIterative() {
-        AseInteger firstNumber = retrieveNumber(rdbFirstBits, txtFirstBits, rdbFirstNumber,
+        AseInteger firstNumber = retrieveAseInteger(rdbFirstBits, txtFirstBits, rdbFirstNumber,
                 txtFirstNumber, "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveNumber(rdbSecondBits, txtSecondBits, rdbSecondNumber,
+        AseInteger secondNumber = retrieveAseInteger(rdbSecondBits, txtSecondBits, rdbSecondNumber,
                 txtSecondNumber, "Second number");
         if (secondNumber == null) {
             return;
@@ -134,13 +134,13 @@ public class BezoutFragment extends BaseFragment
     }
 
     private void startBezoutRecursive() {
-        AseInteger firstNumber = retrieveNumber(rdbFirstBits, txtFirstBits, rdbFirstNumber,
+        AseInteger firstNumber = retrieveAseInteger(rdbFirstBits, txtFirstBits, rdbFirstNumber,
                 txtFirstNumber, "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveNumber(rdbSecondBits, txtSecondBits, rdbSecondNumber,
+        AseInteger secondNumber = retrieveAseInteger(rdbSecondBits, txtSecondBits, rdbSecondNumber,
                 txtSecondNumber, "Second number");
         if (secondNumber == null) {
             return;

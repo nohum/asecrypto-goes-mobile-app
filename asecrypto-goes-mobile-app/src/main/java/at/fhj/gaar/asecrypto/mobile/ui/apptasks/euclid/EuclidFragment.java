@@ -118,13 +118,13 @@ public class EuclidFragment extends BaseFragment
     }
 
     private void startEuclidIterative() {
-        AseInteger firstNumber = retrieveNumber(rdbFirstBits, txtFirstBits, rdbFirstNumber,
+        AseInteger firstNumber = retrieveAseInteger(rdbFirstBits, txtFirstBits, rdbFirstNumber,
                 txtFirstNumber, "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveNumber(rdbSecondBits, txtSecondBits, rdbSecondNumber,
+        AseInteger secondNumber = retrieveAseInteger(rdbSecondBits, txtSecondBits, rdbSecondNumber,
                 txtSecondNumber, "Second number");
         if (secondNumber == null) {
             return;
@@ -138,13 +138,13 @@ public class EuclidFragment extends BaseFragment
     }
 
     private void startEuclidRecursive() {
-        AseInteger firstNumber = retrieveNumber(rdbFirstBits, txtFirstBits, rdbFirstNumber,
+        AseInteger firstNumber = retrieveAseInteger(rdbFirstBits, txtFirstBits, rdbFirstNumber,
                 txtFirstNumber, "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveNumber(rdbSecondBits, txtSecondBits, rdbSecondNumber,
+        AseInteger secondNumber = retrieveAseInteger(rdbSecondBits, txtSecondBits, rdbSecondNumber,
                 txtSecondNumber, "Second number");
         if (secondNumber == null) {
             return;
@@ -165,13 +165,13 @@ public class EuclidFragment extends BaseFragment
     }
 
     private void startEuclidFactorial() {
-        AseInteger firstNumber = retrieveNumber(rdbFirstBits, txtFirstBits, rdbFirstNumber,
+        AseInteger firstNumber = retrieveAseInteger(rdbFirstBits, txtFirstBits, rdbFirstNumber,
                 txtFirstNumber, "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveNumber(rdbSecondBits, txtSecondBits, rdbSecondNumber,
+        AseInteger secondNumber = retrieveAseInteger(rdbSecondBits, txtSecondBits, rdbSecondNumber,
                 txtSecondNumber, "Second number");
         if (secondNumber == null) {
             return;

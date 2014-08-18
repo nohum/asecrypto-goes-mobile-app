@@ -114,22 +114,14 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
     }
 
     private void startTesting() {
-        AseInteger numberToTest = retrieveNumber(rdbBits, txtBitsForNumber, rdbManually,
+        AseInteger numberToTest = retrieveAseInteger(rdbBits, txtBitsForNumber, rdbManually,
                 txtConcreteNumber, "Target number");
         if (numberToTest == null) {
             return;
         }
 
-        long numberOfRuns;
-        try {
-            numberOfRuns = Long.parseLong(txtNumberOfRuns.getText().toString());
-            if (numberOfRuns <= 0) {
-                throw new IllegalArgumentException();
-            }
-        } catch (IllegalArgumentException e) { // also catches NumberFormatException
-            Toast.makeText(getActivity(), "Number of runs"
-                    + ": You have to input a valid number larger than zero!", Toast.LENGTH_LONG)
-                    .show(); // TODO use StringBuilder
+        Long numberOfRuns = retrieveLong(txtNumberOfRuns, "Number of runs");
+        if (numberOfRuns == null) {
             return;
         }
 
