@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,8 @@ import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
  */
 public class EuclidFragment extends BaseFragment
         implements View.OnClickListener, TaskFinishedCallable<EuclidResult> {
+
+    private ScrollView scrollView;
 
     private RadioButton rdbFirstBits;
 
@@ -61,6 +64,8 @@ public class EuclidFragment extends BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_euclid, container, false);
+
+        scrollView = (ScrollView) viewRoot.findViewById(R.id.scrollView);
 
         rdbFirstBits = (RadioButton) viewRoot.findViewById(R.id.rdbFirstBits);
         rdbFirstNumber = (RadioButton) viewRoot.findViewById(R.id.rdbFirstNumber);
@@ -190,7 +195,7 @@ public class EuclidFragment extends BaseFragment
         lblFirstTargetNumber.setVisibility(View.VISIBLE);
         lblFirstTargetNumber.setText("First number: " + firstNumber.toString()); // TODO use StringBuilder
         lblSecondTargetNumber.setVisibility(View.VISIBLE);
-        lblFirstTargetNumber.setText("Second number: " + secondNumber.toString()); // TODO use StringBuilder
+        lblSecondTargetNumber.setText("Second number: " + secondNumber.toString()); // TODO use StringBuilder
 
         lblResultNumber.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.INVISIBLE);
@@ -215,5 +220,13 @@ public class EuclidFragment extends BaseFragment
         lblResultNumber.setText("Greatest common divisor: " + result.getGcd().toString()); // TODO use StringBuilder
         lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() +
                 " milliseconds"); // TODO use StringBuilder
+
+        // scroll to bottom
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        });
     }
 }

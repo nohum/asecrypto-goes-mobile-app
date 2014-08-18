@@ -1,72 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/scrollview_default">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include layout="@layout/include_two_number_choice" />
+    <ScrollView
+        android:id="@+id/scrollView"
+        style="@style/scrollview_default">
 
-    <Space
-        android:id="@+id/space4"
-        style="@style/big_space" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+            <include layout="@layout/include_two_number_choice" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/do_iterative"
-            android:id="@+id/btnIterative" />
+            <Space
+                android:id="@+id/space4"
+                style="@style/big_space" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/do_recursive"
-            android:id="@+id/btnRecursive" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/do_factorial"
-            android:id="@+id/btnFactorial" />
-    </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/do_iterative"
+                    android:id="@+id/btnIterative" />
 
-    <Space
-        android:id="@+id/space5"
-        style="@style/big_space" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/do_recursive"
+                    android:id="@+id/btnRecursive" />
 
-    <ProgressBar
-        style="@style/task_progressbar"
-        android:id="@+id/progressBar" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/do_factorial"
+                    android:id="@+id/btnFactorial" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/lblFirstTargetNumber"
-        android:visibility="invisible"
-        style="@style/wrapping_textview" />
+            <Space
+                android:id="@+id/space5"
+                style="@style/big_space" />
 
-    <TextView
-        android:id="@+id/lblSecondTargetNumber"
-        android:visibility="invisible"
-        style="@style/wrapping_textview" />
+            <ProgressBar
+                style="@style/task_progressbar"
+                android:id="@+id/progressBar" />
 
-    <TextView
-        android:text="@string/gcd"
-        android:id="@+id/lblResultNumber"
-        android:visibility="invisible"
-        style="@style/wrapping_textview" />
+            <TextView
+                android:id="@+id/lblFirstTargetNumber"
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
-    <Space
-        android:id="@+id/space7"
-        style="@style/big_space" />
+            <TextView
+                android:id="@+id/lblSecondTargetNumber"
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
-    <TextView
-        android:text="@string/taken_time"
-        android:id="@+id/lblTimeMeasurement"
-        android:visibility="invisible"
-        style="@style/wrapping_textview" />
+            <TextView
+                android:text="@string/gcd"
+                android:id="@+id/lblResultNumber"
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
 
+            <Space
+                android:id="@+id/space7"
+                style="@style/big_space" />
+
+            <TextView
+                android:text="@string/taken_time"
+                android:id="@+id/lblTimeMeasurement"
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
+
+            </LinearLayout>
+
+        </ScrollView>
 </LinearLayout>
