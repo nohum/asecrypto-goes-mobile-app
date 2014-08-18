@@ -16,7 +16,6 @@
 
             <TextView
                 android:text="@string/rsa_parameters"
-                android:focusable="false"
                 style="@style/wrapping_textview" />
 
             <Space
@@ -107,10 +106,7 @@
                 android:id="@+id/space4"
                 style="@style/small_space" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="2dip"
-                android:background="#c7222525" />
+            <View style="@style/horizontal_ruler" />
 
             <Space
                 android:id="@+id/space5"
@@ -152,10 +148,7 @@
                 android:focusableInTouchMode="false"
                 style="@style/small_space" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="2dip"
-                android:background="#c7222525" />
+            <View style="@style/horizontal_ruler" />
 
             <Space
                 android:id="@+id/space7"
@@ -192,10 +185,7 @@
                 android:id="@+id/space8"
                 android:focusableInTouchMode="false" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="2dip"
-                android:background="#c7222525" />
+            <View style="@style/horizontal_ruler" />
 
             <Space
                 android:layout_width="10dp"

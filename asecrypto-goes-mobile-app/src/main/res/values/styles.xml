@@ -45,4 +45,10 @@
         <item name="android:layout_height">20dp</item>
     </style>
 
+    <style name="horizontal_ruler">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">2dip</item>
+        <item name="android:background">#c7222525</item>
+    </style>
+
 </resources>
