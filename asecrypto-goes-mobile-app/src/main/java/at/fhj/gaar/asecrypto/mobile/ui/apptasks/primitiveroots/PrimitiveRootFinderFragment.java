@@ -141,6 +141,8 @@ public class PrimitiveRootFinderFragment extends BaseFragment implements View.On
 
     @Override
     public void onAsyncTaskFinished(AsyncTask task, PrimitiveRootResult primitiveRootResult) {
+        Toast.makeText(getActivity(), "Found a primitive root", Toast.LENGTH_SHORT).show();
+
         progressBar.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
 

@@ -173,7 +173,7 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
         RSAEncryptionTask encryptionTask = new RSAEncryptionTask(new TaskFinishedCallable<RSAResult>() {
             @Override
             public void onAsyncTaskFinished(AsyncTask task, RSAResult result) {
-                handleResultForUser("Encryption", result);
+                handleMainResultForUser("Encryption", result);
             }
         });
 
@@ -183,7 +183,9 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
         encryptionTask.execute(new RSAEncryptionParameters(n, e, message));
     }
 
-    private void handleResultForUser(String type, RSAResult result) {
+    private void handleMainResultForUser(String type, RSAResult result) {
+        Toast.makeText(getActivity(), type + " finished", Toast.LENGTH_SHORT).show(); // TODO use StringBuilder
+
         progressBar.setVisibility(View.INVISIBLE);
         lblResult.setText(type + " result: " + result.getResult().toString() +
                 " mod " + n.toString()); // TODO use StringBuilder
@@ -249,7 +251,7 @@ public class RSACalculationFragment extends BaseFragment implements View.OnClick
                 new TaskFinishedCallable<RSAResult>() {
             @Override
             public void onAsyncTaskFinished(AsyncTask task, RSAResult result) {
-                handleResultForUser("Decryption", result);
+                handleMainResultForUser("Decryption", result);
             }
         });
 

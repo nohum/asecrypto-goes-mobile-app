@@ -150,6 +150,8 @@ public class FermatTestFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void onAsyncTaskFinished(AsyncTask task, FermatResult fermatResult) {
+        Toast.makeText(getActivity(), "Finished Fermat test", Toast.LENGTH_SHORT).show();
+
         progressBar.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
 

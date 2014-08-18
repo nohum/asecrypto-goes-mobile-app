@@ -148,6 +148,8 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
 
     @Override
     public void onAsyncTaskFinished(AsyncTask task, MillerRabinResult millerRabinResult) {
+        Toast.makeText(getActivity(), "Finished Miller-Rabin test", Toast.LENGTH_SHORT).show();
+
         progressBar.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
 
