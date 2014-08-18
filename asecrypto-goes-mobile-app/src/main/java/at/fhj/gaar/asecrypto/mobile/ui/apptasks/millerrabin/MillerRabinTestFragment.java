@@ -11,14 +11,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
-
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskIntermediateCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Lab3_Task2: Miller-Rabin test
@@ -110,7 +107,7 @@ public class MillerRabinTestFragment extends BaseFragment implements View.OnClic
     }
 
     private void startTesting() {
-        AseInteger numberToTest = retrieveAndDisplayNumber(txtBitsForNumber, txtConcreteNumber,
+        AseInteger numberToTest = retrieveNumber(txtBitsForNumber, txtConcreteNumber,
                 "Target number");
         if (numberToTest == null) {
             return;

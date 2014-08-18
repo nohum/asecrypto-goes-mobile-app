@@ -11,13 +11,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
-
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Implements the euclidean algorithm iterative and recursive (Lab1_Task2)
@@ -99,13 +96,13 @@ public class EuclidFragment extends BaseFragment
     }
 
     private void startEuclidIterative() {
-        AseInteger firstNumber = retrieveAndDisplayNumber(txtFirstBits, txtFirstNumber,
+        AseInteger firstNumber = retrieveNumber(txtFirstBits, txtFirstNumber,
                 "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveAndDisplayNumber(txtSecondBits, txtSecondNumber,
+        AseInteger secondNumber = retrieveNumber(txtSecondBits, txtSecondNumber,
                 "Second number");
         if (secondNumber == null) {
             return;
@@ -119,13 +116,13 @@ public class EuclidFragment extends BaseFragment
     }
 
     private void startEuclidRecursive() {
-        AseInteger firstNumber = retrieveAndDisplayNumber(txtFirstBits, txtFirstNumber,
+        AseInteger firstNumber = retrieveNumber(txtFirstBits, txtFirstNumber,
                 "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveAndDisplayNumber(txtSecondBits, txtSecondNumber,
+        AseInteger secondNumber = retrieveNumber(txtSecondBits, txtSecondNumber,
                 "Second number");
         if (secondNumber == null) {
             return;
@@ -146,13 +143,13 @@ public class EuclidFragment extends BaseFragment
     }
 
     private void startEuclidFactorial() {
-        AseInteger firstNumber = retrieveAndDisplayNumber(txtFirstBits, txtFirstNumber,
+        AseInteger firstNumber = retrieveNumber(txtFirstBits, txtFirstNumber,
                 "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveAndDisplayNumber(txtSecondBits, txtSecondNumber,
+        AseInteger secondNumber = retrieveNumber(txtSecondBits, txtSecondNumber,
                 "Second number");
         if (secondNumber == null) {
             return;

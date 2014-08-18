@@ -8,17 +8,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Random;
 
 import at.fhj.gaar.asecrypto.mobile.R;
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.TaskFinishedCallable;
 import at.fhj.gaar.asecrypto.mobile.ui.apptasks.BaseFragment;
-import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
  * Implements the bezout algorithm iterative and recursive (Lab1_Task4)
@@ -26,9 +24,17 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 public class BezoutFragment extends BaseFragment
         implements View.OnClickListener, TaskFinishedCallable<BezoutResult> {
 
+    private RadioButton rdbFirstBits;
+
+    private RadioButton rdbFirstNumber;
+
     private EditText txtFirstNumber;
 
     private EditText txtFirstBits;
+
+    private RadioButton rdbSecondBits;
+
+    private RadioButton rdbSecondNumber;
 
     private EditText txtSecondNumber;
 
@@ -39,6 +45,10 @@ public class BezoutFragment extends BaseFragment
     private Button btnRecursive;
 
     private ProgressBar progressBar;
+
+    private TextView lblFirstTargetNumber;
+
+    private TextView lblSecondTargetNumber;
 
     private TextView lblResultNumberGcd;
 
@@ -57,13 +67,22 @@ public class BezoutFragment extends BaseFragment
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_bezout, container, false);
 
+        rdbFirstBits = (RadioButton) viewRoot.findViewById(R.id.rdbFirstBits);
+        rdbFirstNumber = (RadioButton) viewRoot.findViewById(R.id.rdbFirstNumber);
+        rdbSecondBits = (RadioButton) viewRoot.findViewById(R.id.rdbSecondBits);
+        rdbSecondNumber = (RadioButton) viewRoot.findViewById(R.id.rdbSecondNumber);
+
         txtFirstNumber = (EditText) viewRoot.findViewById(R.id.txtFirstNumber);
         txtSecondNumber = (EditText) viewRoot.findViewById(R.id.txtSecondNumber);
         txtFirstBits = (EditText) viewRoot.findViewById(R.id.txtFirstBits);
         txtSecondBits = (EditText) viewRoot.findViewById(R.id.txtSecondBits);
+
         btnIterative = (Button) viewRoot.findViewById(R.id.btnIterative);
         btnRecursive = (Button) viewRoot.findViewById(R.id.btnRecursive);
+
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
+        lblFirstTargetNumber = (TextView) viewRoot.findViewById(R.id.lblFirstTargetNumber);
+        lblSecondTargetNumber = (TextView) viewRoot.findViewById(R.id.lblSecondTargetNumber);
         lblResultNumberGcd = (TextView) viewRoot.findViewById(R.id.lblResultNumberGcd);
         lblResultNumberX = (TextView) viewRoot.findViewById(R.id.lblResultNumberX);
         lblResultNumberY = (TextView) viewRoot.findViewById(R.id.lblResultNumberY);
@@ -95,34 +114,34 @@ public class BezoutFragment extends BaseFragment
     }
 
     private void startBezoutIterative() {
-        AseInteger firstNumber = retrieveAndDisplayNumber(txtFirstBits, txtFirstNumber,
-                "First number");
+        AseInteger firstNumber = retrieveNumber(rdbFirstBits, txtFirstBits, rdbFirstNumber,
+                txtFirstNumber, "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveAndDisplayNumber(txtSecondBits, txtSecondNumber,
-                "Second number");
+        AseInteger secondNumber = retrieveNumber(rdbSecondBits, txtSecondBits, rdbSecondNumber,
+                txtSecondNumber, "Second number");
         if (secondNumber == null) {
             return;
         }
 
         closeSoftKeyboard();
-        doPostCalculationStartSetup();
+        doPostCalculationStartSetup(firstNumber, secondNumber);
 
         bezoutTask = new BezoutIterativeTask(this);
         bezoutTask.execute(firstNumber, secondNumber);
     }
 
     private void startBezoutRecursive() {
-        AseInteger firstNumber = retrieveAndDisplayNumber(txtFirstBits, txtFirstNumber,
-                "First number");
+        AseInteger firstNumber = retrieveNumber(rdbFirstBits, txtFirstBits, rdbFirstNumber,
+                txtFirstNumber, "First number");
         if (firstNumber == null) {
             return;
         }
 
-        AseInteger secondNumber = retrieveAndDisplayNumber(txtSecondBits, txtSecondNumber,
-                "Second number");
+        AseInteger secondNumber = retrieveNumber(rdbSecondBits, txtSecondBits, rdbSecondNumber,
+                txtSecondNumber, "Second number");
         if (secondNumber == null) {
             return;
         }
@@ -135,14 +154,20 @@ public class BezoutFragment extends BaseFragment
         }
 
         closeSoftKeyboard();
-        doPostCalculationStartSetup();
+        doPostCalculationStartSetup(firstNumber, secondNumber);
 
         bezoutTask = new BezoutRecursiveTask(this);
         bezoutTask.execute(firstNumber, secondNumber);
     }
 
-    private void doPostCalculationStartSetup() {
+    private void doPostCalculationStartSetup(AseInteger firstNumber, AseInteger secondNumber) {
         progressBar.setVisibility(View.VISIBLE);
+
+        lblFirstTargetNumber.setVisibility(View.VISIBLE);
+        lblFirstTargetNumber.setText("First number: " + firstNumber.toString()); // TODO use StringBuilder
+        lblSecondTargetNumber.setVisibility(View.VISIBLE);
+        lblFirstTargetNumber.setText("Second number: " + secondNumber.toString()); // TODO use StringBuilder
+
         lblResultNumberGcd.setVisibility(View.INVISIBLE);
         lblResultNumberX.setVisibility(View.INVISIBLE);
         lblResultNumberY.setVisibility(View.INVISIBLE);
@@ -173,7 +198,7 @@ public class BezoutFragment extends BaseFragment
             lblResultNumberY.setText("Y: " + result.getY().toString()); // TODO use StringBuilder
         }
 
-        lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() + "ms"); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Time taken: " + result.getMilliseconds() + " milliseconds"); // TODO use StringBuilder
 
         // scroll to bottom
         scrollView.post(new Runnable() {

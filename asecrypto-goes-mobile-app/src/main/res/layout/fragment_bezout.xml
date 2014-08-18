@@ -48,6 +48,16 @@
                 android:id="@+id/progressBar" />
 
             <TextView
+                android:id="@+id/lblFirstTargetNumber"
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
+
+            <TextView
+                android:id="@+id/lblSecondTargetNumber"
+                android:visibility="invisible"
+                style="@style/wrapping_textview" />
+
+            <TextView
                 android:text="Greatest common divisor:"
                 android:id="@+id/lblResultNumberGcd"
                 android:visibility="invisible"

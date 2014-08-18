@@ -6,12 +6,15 @@ import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.math.BigInteger;
 import java.util.Random;
 
 import at.fhj.gaar.asecrypto.mobile.crypto.AseInteger;
 import at.fhj.gaar.asecrypto.mobile.ui.SectionAttachable;
+import at.fhj.gaar.asecrypto.mobile.util.NumberChoiceSelector;
 import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 
 /**
@@ -57,29 +60,27 @@ public class BaseFragment extends Fragment {
         inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
-    protected AseInteger retrieveAndDisplayNumber(EditText bitField, EditText numberField,
-                                                String whichNumberField) {
-        String concreteNumber = numberField.getText().toString();
+    protected AseInteger retrieveNumber(RadioButton bitChoiceButton, EditText bitField,
+                                        RadioButton numberChoiceButton, EditText numberField,
+                                        String whichNumberField) {
 
-        AseInteger targetNumber;
-        if (NumberHelper.isValidBitNumberInTextView(bitField)) {
-            int bits = Integer.valueOf(bitField.getText().toString());
+        NumberChoiceSelector selector = new NumberChoiceSelector(bitChoiceButton, bitField,
+                numberChoiceButton, numberField);
 
-            targetNumber = new AseInteger(bits, new Random());
-            targetNumber = targetNumber.setBit(bits - 1);
+        String userMessage;
 
-            // Display number for the user in the edit element
-            numberField.setText(targetNumber.toString());
-        } else if (concreteNumber.length() > 0) {
-            targetNumber = new AseInteger(concreteNumber);
-        } else {
-
-            Toast.makeText(getActivity(), whichNumberField
-                    + ": You have to input either bits or a target number!", Toast.LENGTH_LONG)
-                    .show(); // TODO use StringBuilder
-            return null;
+        try {
+            return selector.retrieveNumber();
+        } catch (NumberChoiceSelector.InvalidNumberException e) {
+            userMessage = "You have to input a valid target number!";
+        } catch (NumberChoiceSelector.InvalidBitsException e) {
+            userMessage = "You have to input a valid number of bits!";
+        } catch (NumberChoiceSelector.InvalidChoiceException e) {
+            userMessage = "Please select a mode of operation using the radio boxes!";
         }
 
-        return targetNumber;
+        Toast.makeText(getActivity(), String.format("%s: %s", whichNumberField, userMessage),
+                Toast.LENGTH_LONG).show();
+        return null;
     }
 }
