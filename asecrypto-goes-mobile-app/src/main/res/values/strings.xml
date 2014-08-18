@@ -27,7 +27,7 @@
     <string name="do_generate_carmichael">Generate Carmichael</string>
     <string name="do_fermat_with_number">Start Fermat test with this number</string>
     <string name="do_millerrabin_with_number">Start Miller-Rabin test with this number</string>
-    <string name="do_exponentiation">Calculate exponentiation</string>
+    <string name="do_exponentiation">Do exponentiation</string>
     <string name="do_fermat_test">Start Fermat test</string>
     <string name="do_millerrabin_test">Start Miller-Rabin test</string>
     <string name="do_start_counting">Start counting</string>

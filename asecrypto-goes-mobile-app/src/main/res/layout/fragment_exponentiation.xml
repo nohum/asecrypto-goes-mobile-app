@@ -113,19 +113,30 @@
             </RadioGroup>
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="20dp"
+                style="@style/small_space"
                 android:id="@+id/space5" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/do_exponentiation"
-                android:id="@+id/btnCalculate" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/do_exponentiation"
+                    android:id="@+id/btnCalculate" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/do_cancel"
+                    android:id="@+id/btnCancel"
+                    android:visibility="invisible" />
+            </LinearLayout>
 
             <Space
                 android:id="@+id/space6"
-                android:focusableInTouchMode="false"
                 style="@style/big_space" />
 
             <ProgressBar

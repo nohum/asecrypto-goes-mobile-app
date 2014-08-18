@@ -35,6 +35,8 @@ public class SlowExponentiationFragment extends BaseFragment
 
     private Button btnCalculate;
 
+    private Button btnCancel;
+
     private ProgressBar progressBar;
 
     private TextView lblResultNumber;
@@ -53,11 +55,13 @@ public class SlowExponentiationFragment extends BaseFragment
         txtExponentNumber = (EditText) viewRoot.findViewById(R.id.txtExponentNumber);
         txtModulusNumber = (EditText) viewRoot.findViewById(R.id.txtModulusNumber);
         btnCalculate = (Button) viewRoot.findViewById(R.id.btnCalculate);
+        btnCancel = (Button) viewRoot.findViewById(R.id.btnCancel);
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblResultNumber = (TextView) viewRoot.findViewById(R.id.lblResultNumber);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
 
         btnCalculate.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
 
         return viewRoot;
     }
@@ -84,6 +88,10 @@ public class SlowExponentiationFragment extends BaseFragment
     public void onClick(View view) {
         if (btnCalculate.equals(view)) {
             startExponentiation();
+        } else if (btnCancel.equals(view)) {
+            btnCancel.setVisibility(View.INVISIBLE);
+
+            cancelTask();
         }
     }
 
@@ -135,23 +143,28 @@ public class SlowExponentiationFragment extends BaseFragment
 
     protected void putUIInWorkingState() {
         progressBar.setVisibility(View.VISIBLE);
+
         lblResultNumber.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.INVISIBLE);
+
         btnCalculate.setEnabled(false);
+        btnCancel.setVisibility(View.VISIBLE);
     }
 
     @Override
-    public void onAsyncTaskFinished(AsyncTask task, ExponentiationResult exponentiationResult) {
+    public void onAsyncTaskFinished(AsyncTask task, ExponentiationResult result) {
         Toast.makeText(getActivity(), "Exponentiation has been finished",
                 Toast.LENGTH_SHORT).show();
 
         progressBar.setVisibility(View.INVISIBLE);
+
         lblTimeMeasurement.setVisibility(View.VISIBLE);
         lblResultNumber.setVisibility(View.VISIBLE);
-        btnCalculate.setEnabled(true);
 
-        lblResultNumber.setText("Result: " + exponentiationResult.getExponentiationResult()); // TODO use StringBuilder
-        lblTimeMeasurement.setText("Time taken: " + exponentiationResult.getWatchTime() +
-                " milliseconds"); // TODO use StringBuilder
+        btnCalculate.setEnabled(true);
+        btnCancel.setVisibility(View.INVISIBLE);
+
+        lblResultNumber.setText("Result: " + result.getExponentiationResult()); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Time taken: " + result.getWatchTime() + " milliseconds"); // TODO use StringBuilder
     }
 }

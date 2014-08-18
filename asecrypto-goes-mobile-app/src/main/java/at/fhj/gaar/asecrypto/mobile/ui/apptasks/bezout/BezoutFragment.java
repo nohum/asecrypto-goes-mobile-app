@@ -166,7 +166,7 @@ public class BezoutFragment extends BaseFragment
         lblFirstTargetNumber.setVisibility(View.VISIBLE);
         lblFirstTargetNumber.setText("First number: " + firstNumber.toString()); // TODO use StringBuilder
         lblSecondTargetNumber.setVisibility(View.VISIBLE);
-        lblFirstTargetNumber.setText("Second number: " + secondNumber.toString()); // TODO use StringBuilder
+        lblSecondTargetNumber.setText("Second number: " + secondNumber.toString()); // TODO use StringBuilder
 
         lblResultNumberGcd.setVisibility(View.INVISIBLE);
         lblResultNumberX.setVisibility(View.INVISIBLE);
