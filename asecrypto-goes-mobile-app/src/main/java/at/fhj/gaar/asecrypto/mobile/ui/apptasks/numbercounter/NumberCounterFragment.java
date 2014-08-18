@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,11 @@ import at.fhj.gaar.asecrypto.mobile.util.NumberHelper;
 public class NumberCounterFragment extends BaseFragment
         implements View.OnClickListener, TaskFinishedCallable<Long> {
 
+    private RadioButton rdbBits;
+
     private EditText txtBitNumber;
+
+    private RadioButton rdbOwnNumber;
 
     private EditText txtConcreteNumber;
 
@@ -43,7 +48,9 @@ public class NumberCounterFragment extends BaseFragment
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_number_counter, container, false);
 
+        rdbBits = (RadioButton) viewRoot.findViewById(R.id.rdbBits);
         txtBitNumber = (EditText) viewRoot.findViewById(R.id.txtBitNumber);
+        rdbOwnNumber = (RadioButton) viewRoot.findViewById(R.id.rdbOwnNumber);
         txtConcreteNumber = (EditText) viewRoot.findViewById(R.id.txtConcreteNumber);
         btnCount = (Button) viewRoot.findViewById(R.id.btnCount);
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
@@ -81,18 +88,8 @@ public class NumberCounterFragment extends BaseFragment
     }
 
     private void startCounting() {
-        String concreteNumber = txtConcreteNumber.getText().toString();
-
-        BigInteger targetNumber;
-        if (NumberHelper.isValidBitNumberInTextView(txtBitNumber)) {
-            int bits = Integer.valueOf(txtBitNumber.getText().toString());
-            targetNumber = new BigInteger("2");
-            targetNumber = targetNumber.pow(bits).subtract(BigInteger.ONE);
-        } else if (concreteNumber.length() > 0) {
-            targetNumber = new BigInteger(concreteNumber);
-        } else {
-            Toast.makeText(getActivity(), "You have to input either bits or a target number!",
-                    Toast.LENGTH_LONG).show();
+        BigInteger targetNumber = retrieveTargetNumber();
+        if (targetNumber == null) {
             return;
         }
 
@@ -107,6 +104,35 @@ public class NumberCounterFragment extends BaseFragment
         btnCount.setEnabled(false);
 
         lblResultNumber.setText("Target number: " + targetNumber); // TODO use StringBuilder
+    }
+
+    private BigInteger retrieveTargetNumber() {
+        if (rdbOwnNumber.isChecked()) {
+            try {
+                // if the user submits an empty number, this leads to an exception
+                String concreteNumber = txtConcreteNumber.getText().toString();
+                return new BigInteger(concreteNumber);
+            } catch (NumberFormatException e) {
+                Toast.makeText(getActivity(), "You have to input a valid target number!",
+                        Toast.LENGTH_LONG).show();
+                return null;
+            }
+        } else if (rdbBits.isChecked()) {
+            if (!NumberHelper.isValidBitNumberInTextView(txtBitNumber)) {
+                Toast.makeText(getActivity(), "You have to input a valid number of bits!",
+                        Toast.LENGTH_LONG).show();
+                return null;
+            }
+
+            int bits = Integer.valueOf(txtBitNumber.getText().toString());
+            BigInteger result = new BigInteger("2");
+            return result.pow(bits).subtract(BigInteger.ONE);
+        }
+
+        Toast.makeText(getActivity(),
+                "Please select a mode of operation using the radio boxes!",
+                Toast.LENGTH_LONG).show();
+        return null;
     }
 
     @Override
