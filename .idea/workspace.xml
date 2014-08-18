@@ -24,9 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/FastExponentiationTask.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/FastExponentiationTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationTask.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AseCrypto goes mobile.iws" />
@@ -162,31 +160,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SlowExponentiationFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SlowExponentiationFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45869946" vertical-offset="1485" max-vertical-offset="3258">
-              <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="3258">
+              <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_euclid.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml">
+      <file leaf-file-name="fragment_rsa.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9285715" vertical-offset="0" max-vertical-offset="1620">
-              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-              <folding>
-                <element signature="e#1076#1098#0" expanded="true" />
-                <element signature="e#1324#1346#0" expanded="true" />
-                <element signature="e#1572#1594#0" expanded="true" />
-                <element signature="e#2312#2325#0" expanded="true" />
-                <element signature="e#2632#2652#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.53419596" vertical-offset="485" max-vertical-offset="3924">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -942,7 +934,6 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_primitive_roots.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_millerrabin.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_fermat.xml" />
-        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/euclid/EuclidFragment.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/bezout/BezoutFragment.java" />
@@ -951,6 +942,7 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationTask.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/FastExponentiationTask.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml" />
       </list>
     </option>
   </component>
@@ -2271,7 +2263,11 @@
       <created>1408396296828</created>
       <updated>1408396296828</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="fix slow exponentiation example: added isCancelled() call in async task">
+      <created>1408396544265</created>
+      <updated>1408396544265</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2281,7 +2277,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2835821" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2835821" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32772166" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2326,7 +2322,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="fixed problems with fragments restoring their saved instance state" />
     <MESSAGE value="removed unnecessary bundle-save calls (save instance state)" />
     <MESSAGE value="removed original primitive root calculator" />
     <MESSAGE value="RSA example - parameter calculation" />
@@ -2351,7 +2346,8 @@
     <MESSAGE value="fixed display bugs in euclid example" />
     <MESSAGE value="fix missing event listener in euclid example" />
     <MESSAGE value="added cancel button to exponentiation example" />
-    <option name="LAST_COMMIT_MESSAGE" value="added cancel button to exponentiation example" />
+    <MESSAGE value="fix slow exponentiation example: added isCancelled() call in async task" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix slow exponentiation example: added isCancelled() call in async task" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2740,31 +2736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.142857" vertical-offset="0" max-vertical-offset="4014">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="36" />
-          <folding>
-            <element signature="e#543#567#0" expanded="true" />
-            <element signature="e#1073#1090#0" expanded="true" />
-            <element signature="e#1797#1814#0" expanded="true" />
-            <element signature="e#2379#2405#0" expanded="true" />
-            <element signature="e#2602#2635#0" expanded="true" />
-            <element signature="e#3086#3103#0" expanded="true" />
-            <element signature="e#3562#3588#0" expanded="true" />
-            <element signature="e#4059#4086#0" expanded="true" />
-            <element signature="e#4853#4873#0" expanded="true" />
-            <element signature="e#5103#5127#0" expanded="true" />
-            <element signature="e#5584#5610#0" expanded="true" />
-            <element signature="e#6377#6397#0" expanded="true" />
-            <element signature="e#7393#7413#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_euclid.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -2875,8 +2846,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45869946" vertical-offset="1485" max-vertical-offset="3258">
-          <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="3258">
+          <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53419596" vertical-offset="485" max-vertical-offset="3924">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>

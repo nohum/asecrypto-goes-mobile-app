@@ -145,7 +145,6 @@
 
             <Space
                 android:id="@+id/space6"
-                android:focusableInTouchMode="false"
                 style="@style/small_space" />
 
             <View style="@style/horizontal_ruler" />
@@ -180,18 +179,14 @@
             </LinearLayout>
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="20dp"
-                android:id="@+id/space8"
-                android:focusableInTouchMode="false" />
+                style="@style/small_space"
+                android:id="@+id/space8" />
 
             <View style="@style/horizontal_ruler" />
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="20dp"
-                android:id="@+id/space9"
-                android:focusableInTouchMode="false" />
+                style="@style/small_space"
+                android:id="@+id/space9" />
 
             <ProgressBar
                 style="@style/task_progressbar"
