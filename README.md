@@ -17,12 +17,6 @@ Provided examples
 * Exercise 15: RSA speed up with chinese remainder
 * Exercise 18: Primitive root finder
 
-TODO
-----
-
-* Refactoring (there are many places in the code which could be de-duplicated or made easier) 
-* UI design
-
 Used resources
 --------------
 

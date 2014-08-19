@@ -24,7 +24,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/navigation/NavigationDrawerFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/navigation/NavigationDrawerFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AseCrypto goes mobile.iws" />
@@ -87,119 +86,7 @@
     <favorites_list name="AseCrypto goes mobile" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SlowExponentiationTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1008">
-              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FastExponentiationFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/FastExponentiationFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="637" max-vertical-offset="1260">
-              <caret line="48" column="64" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FastExponentiationTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/FastExponentiationTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="367" max-vertical-offset="936">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AseInteger.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/crypto/AseInteger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2817" max-vertical-offset="8892">
-              <caret line="167" column="22" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlowExponentiationFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/exponentiation/SlowExponentiationFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="3258">
-              <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_rsa.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.321428" vertical-offset="485" max-vertical-offset="3924">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavigationDrawerCallable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/navigation/NavigationDrawerCallable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavigationDrawerFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/navigation/NavigationDrawerFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52196836" vertical-offset="3465" max-vertical-offset="5490">
-              <caret line="209" column="31" selection-start-line="209" selection-start-column="31" selection-end-line="209" selection-end-column="31" />
-              <folding>
-                <element signature="e#4791#5009#0" expanded="true" />
-                <element signature="e#8745#8881#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_exponentiation.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_exponentiation.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2857143" vertical-offset="1944" max-vertical-offset="3060">
-              <caret line="110" column="31" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
-              <folding>
-                <element signature="e#544#565#0" expanded="true" />
-                <element signature="e#918#956#0" expanded="true" />
-                <element signature="e#1294#1308#0" expanded="true" />
-                <element signature="e#1967#1993#0" expanded="true" />
-                <element signature="e#2477#2492#0" expanded="true" />
-                <element signature="e#3213#3231#0" expanded="true" />
-                <element signature="e#3955#3972#0" expanded="true" />
-                <element signature="e#4850#4877#0" expanded="true" />
-                <element signature="e#5103#5122#0" expanded="true" />
-                <element signature="e#5533#5549#0" expanded="true" />
-                <element signature="e#5856#5876#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -2262,7 +2149,11 @@
       <created>1408396675387</created>
       <updated>1408396675387</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="small formatting changes">
+      <created>1408397351769</created>
+      <updated>1408397351770</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2283,7 +2174,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32772166" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884398" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884398" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2317,7 +2208,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="removed original primitive root calculator" />
     <MESSAGE value="RSA example - parameter calculation" />
     <MESSAGE value="RSA encryption" />
     <MESSAGE value="finished RSA example" />
@@ -2342,7 +2232,8 @@
     <MESSAGE value="added cancel button to exponentiation example" />
     <MESSAGE value="fix slow exponentiation example: added isCancelled() call in async task" />
     <MESSAGE value="rsa example: small layout changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="rsa example: small layout changes" />
+    <MESSAGE value="small formatting changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small formatting changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2768,7 +2659,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2857143" vertical-offset="1944" max-vertical-offset="3060">
+        <state vertical-scroll-proportion="0.043165468" vertical-offset="1944" max-vertical-offset="3060">
           <caret line="110" column="31" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
           <folding>
             <element signature="e#544#565#0" expanded="true" />
@@ -2855,7 +2746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/navigation/NavigationDrawerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52196836" vertical-offset="3465" max-vertical-offset="5490">
+        <state vertical-scroll-proportion="0.34454757" vertical-offset="3465" max-vertical-offset="5490">
           <caret line="209" column="31" selection-start-line="209" selection-start-column="31" selection-end-line="209" selection-end-column="31" />
           <folding>
             <element signature="e#4791#5009#0" expanded="true" />
