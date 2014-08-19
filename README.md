@@ -27,7 +27,7 @@ For the performance comparison, see the [Performance comparison.pdf](Performance
 Screenshot
 ----------
 
-![Application screenshot](paper/app-screenshot.png)
+![Application screenshot](paper/app-screenshot-small.png)
 
 Used resources
 --------------
