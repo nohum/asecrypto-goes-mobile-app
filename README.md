@@ -3,7 +3,7 @@ asecrypto-goes-mobile-app
 
 Implementation of ASE crypto examples for mobile devices running Android.
 
-This project has been developed using Android Studio and may be directly imported into it. Alternatively, find the [asecrypto-goes-mobile-app.apk](precompiled APK for installation here).
+This project has been developed using Android Studio and may be directly imported into it. Alternatively, find the [precompiled APK for installation here](asecrypto-goes-mobile-app.apk).
 
 Provided examples
 -----------------
