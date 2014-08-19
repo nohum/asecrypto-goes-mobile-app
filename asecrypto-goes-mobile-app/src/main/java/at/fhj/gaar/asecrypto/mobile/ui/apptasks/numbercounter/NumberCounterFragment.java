@@ -35,6 +35,8 @@ public class NumberCounterFragment extends BaseFragment
 
     private Button btnCount;
 
+    private Button btnCancel;
+
     private ProgressBar progressBar;
 
     private TextView lblResultNumber;
@@ -53,11 +55,13 @@ public class NumberCounterFragment extends BaseFragment
         rdbOwnNumber = (RadioButton) viewRoot.findViewById(R.id.rdbOwnNumber);
         txtConcreteNumber = (EditText) viewRoot.findViewById(R.id.txtConcreteNumber);
         btnCount = (Button) viewRoot.findViewById(R.id.btnCount);
+        btnCancel = (Button) viewRoot.findViewById(R.id.btnCancel);
         progressBar = (ProgressBar) viewRoot.findViewById(R.id.progressBar);
         lblResultNumber = (TextView) viewRoot.findViewById(R.id.lblResultNumber);
         lblTimeMeasurement = (TextView) viewRoot.findViewById(R.id.lblTimeMeasurement);
 
         btnCount.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
 
         return viewRoot;
     }
@@ -84,6 +88,9 @@ public class NumberCounterFragment extends BaseFragment
     public void onClick(View view) {
         if (btnCount.equals(view)) {
             startCounting();
+        } else if (btnCancel.equals(view)) {
+            resetUI();
+            cancelTask();
         }
     }
 
@@ -101,7 +108,9 @@ public class NumberCounterFragment extends BaseFragment
         progressBar.setVisibility(View.VISIBLE);
         lblResultNumber.setVisibility(View.VISIBLE);
         lblTimeMeasurement.setVisibility(View.INVISIBLE);
+
         btnCount.setEnabled(false);
+        btnCancel.setVisibility(View.VISIBLE);
 
         lblResultNumber.setText("Target number: " + targetNumber); // TODO use StringBuilder
     }
@@ -141,8 +150,19 @@ public class NumberCounterFragment extends BaseFragment
 
         progressBar.setVisibility(View.INVISIBLE);
         lblTimeMeasurement.setVisibility(View.VISIBLE);
+
         btnCount.setEnabled(true);
+        btnCancel.setVisibility(View.INVISIBLE);
 
         lblTimeMeasurement.setText("Time taken: " + elapsedTime + "ms"); // TODO use StringBuilder
+    }
+
+    private void resetUI() {
+        progressBar.setVisibility(View.INVISIBLE);
+        lblTimeMeasurement.setVisibility(View.INVISIBLE);
+        lblResultNumber.setVisibility(View.INVISIBLE);
+
+        btnCount.setEnabled(true);
+        btnCancel.setVisibility(View.INVISIBLE);
     }
 }

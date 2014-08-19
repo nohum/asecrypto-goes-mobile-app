@@ -62,11 +62,25 @@
         android:id="@+id/space4"
         style="@style/big_space" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/do_start_counting"
-        android:id="@+id/btnCount" />
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/do_start_counting"
+            android:id="@+id/btnCount" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/do_cancel"
+            android:id="@+id/btnCancel"
+            android:visibility="invisible" />
+    </LinearLayout>
 
     <Space
         android:id="@+id/space5"
