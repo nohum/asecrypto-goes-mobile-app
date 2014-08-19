@@ -24,6 +24,11 @@ Performance comparison
 
 For the performance comparison, see the [Performance comparison.pdf](Performance comparison.pdf) document.
 
+Screenshot
+----------
+
+![Application screenshot](paper/app-screenshot.png)
+
 Used resources
 --------------
 
