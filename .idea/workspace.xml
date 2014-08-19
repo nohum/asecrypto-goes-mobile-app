@@ -23,9 +23,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: at.fhj.gaar.asecrypto.mobile" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="added cancel button to">
+    <list default="true" id="5748d6a6-9b06-4981-84c4-d713f330ad98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterFragment.java" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_number_counter.xml" afterPath="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_number_counter.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AseCrypto goes mobile.iws" />
@@ -105,8 +104,8 @@
       <file leaf-file-name="NumberCounterFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2545" max-vertical-offset="3132">
-              <caret line="151" column="55" selection-start-line="151" selection-start-column="55" selection-end-line="151" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2491" max-vertical-offset="3132">
+              <caret line="156" column="80" selection-start-line="156" selection-start-column="80" selection-end-line="156" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -890,8 +889,8 @@
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_rsa.xml" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/navigation/NavigationDrawerFragment.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/res/layout/fragment_number_counter.xml" />
-        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterFragment.java" />
         <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterTask.java" />
+        <option value="$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterFragment.java" />
       </list>
     </option>
   </component>
@@ -1735,7 +1734,11 @@
       <created>1408397351769</created>
       <updated>1408397351770</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="added cancel button to number counter example">
+      <created>1408449600241</created>
+      <updated>1408449600241</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1790,7 +1793,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="RSA example - parameter calculation" />
     <MESSAGE value="RSA encryption" />
     <MESSAGE value="finished RSA example" />
     <MESSAGE value="refactoring: pulled up method" />
@@ -1815,7 +1817,8 @@
     <MESSAGE value="fix slow exponentiation example: added isCancelled() call in async task" />
     <MESSAGE value="rsa example: small layout changes" />
     <MESSAGE value="small formatting changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small formatting changes" />
+    <MESSAGE value="added cancel button to number counter example" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cancel button to number counter example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2292,8 +2295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asecrypto-goes-mobile-app/src/main/java/at/fhj/gaar/asecrypto/mobile/ui/apptasks/numbercounter/NumberCounterFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2545" max-vertical-offset="3132">
-          <caret line="151" column="55" selection-start-line="151" selection-start-column="55" selection-end-line="151" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2491" max-vertical-offset="3132">
+          <caret line="156" column="80" selection-start-line="156" selection-start-column="80" selection-end-line="156" selection-end-column="80" />
           <folding />
         </state>
       </provider>

@@ -154,7 +154,7 @@ public class NumberCounterFragment extends BaseFragment
         btnCount.setEnabled(true);
         btnCancel.setVisibility(View.INVISIBLE);
 
-        lblTimeMeasurement.setText("Time taken: " + elapsedTime + "ms"); // TODO use StringBuilder
+        lblTimeMeasurement.setText("Time taken: " + elapsedTime + " milliseconds"); // TODO use StringBuilder
     }
 
     private void resetUI() {
