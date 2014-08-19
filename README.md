@@ -1,7 +1,9 @@
 asecrypto-goes-mobile-app
 =========================
 
-Implementation of ASE crypto examples for mobile devices running Android
+Implementation of ASE crypto examples for mobile devices running Android.
+
+This project has been developed using Android Studio and may be directly imported into it.
 
 Provided examples
 -----------------
@@ -16,6 +18,11 @@ Provided examples
 * Lab3_Task2: Miller-Rabin test
 * Exercise 15: RSA speed up with chinese remainder
 * Exercise 18: Primitive root finder
+
+Performance comparison
+----------------------
+
+For the performance comparison, see the [Performance comparison.pdf](Performance comparison.pdf) document.
 
 Used resources
 --------------
